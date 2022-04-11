@@ -1,0 +1,9 @@
+.spacer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.mat-icon{
+    margin-right: 5px; 
+    font-size: 21px;
+}
