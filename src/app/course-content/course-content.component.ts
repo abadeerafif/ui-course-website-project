@@ -18,14 +18,14 @@ export class CourseContentComponent implements OnInit {
         'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse ut unde doloremque soluta voluptatem quas minus quidem consectetur ratione cumque?',
         'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse ut unde doloremque soluta voluptatem quas minus quidem consectetur ratione cumque?',
         'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse ut unde doloremque soluta voluptatem quas minus quidem consectetur ratione cumque?',
-        'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse ut unde doloremque soluta voluptatem quas minus quidem consectetur ratione cumque?',
-        'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse ut unde doloremque soluta voluptatem quas minus quidem consectetur ratione cumque?',
       ],
       instructorDetails: {
+        isSchool:"inst",
         Name: 'Peter Iskander',
-        Potsition: 'CTO SW Architect, Founder of Google and Microsoft',
+        Position: 'CTO SW Architect, Founder of Google and Microsoft',
       },
       institutionDetails: {
+        isSchool:"school",
         Name: 'YALE',
         Position:
           'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse ut unde doloremque soluta voluptatem quas minus quidem consectetur ratione cumque?',
@@ -62,4 +62,5 @@ export class CourseContentComponent implements OnInit {
       ],
     },
   };
+  selectedCourse = this.courses['webdev'];
 }
