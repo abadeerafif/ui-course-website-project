@@ -45,3 +45,11 @@ form {
     width: 50%;
   }
   
+  a{
+    color: #0c04aa;
+    text-decoration: underline;
+  }
+
+  a:hover{
+    color: blueviolet;
+  }
