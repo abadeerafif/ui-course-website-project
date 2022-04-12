@@ -1,0 +1,21 @@
+.course-content-layout {
+  padding: 20px;
+}
+
+.course-desc {
+  width: 600px;
+  height: 100px;
+  padding: 5px;
+}
+
+.learning-objectives {
+  width: 600px;
+  height: fit-content;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.objectives-container {
+  display: grid;
+  grid-template-columns: auto auto;
+}

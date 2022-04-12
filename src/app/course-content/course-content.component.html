@@ -1,0 +1,19 @@
+<div class="course-content-layout">
+  <h1>About this Course</h1>
+  <textarea class="course-desc">
+        This course provides a broad overview of the fundamental concepts, principles, and practices of mindfulness. With interactive exercises to help students explore their own attitudes, mental habits and behaviors, Foundations of Mindfulness offers a pathway for living with more freedom, authenticity and ease. Featured components of the course include experiential exercises, guided meditations, personal reflection and interactive discussions.
+    </textarea
+  >
+  <div class="learning-objectives">
+    <h3>What you will learn</h3>
+    <div class="objectives-container">
+      <app-learning-objective
+        *ngFor="let number of [0, 1, 2, 3]"
+      ></app-learning-objective>
+    </div>
+  </div>
+  <app-instructor></app-instructor
+  ><!-- send instructor details {{title name position}}-->
+  <app-instructor></app-instructor
+  ><!-- send offered by details {{title name position}}-->
+</div>
