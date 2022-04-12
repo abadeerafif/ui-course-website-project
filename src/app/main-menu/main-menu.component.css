@@ -1,0 +1,60 @@
+.main-menu-layout{
+    width:auto;
+    display: inline-block;
+    position: relative;
+
+}
+.upperbutton{
+    width:50%;
+    margin-left:25%;
+    margin-right:25%;
+    margin-bottom: 20%;
+    position: absolute;
+    right: 217px;
+    z-index: 12;
+}
+.btn1{
+    width: 250px;
+    height: 80px;
+    color: white;
+    text-size-adjust: 25%;
+    background-color: rgb(0, 17, 255);
+    margin-top: 45%;
+    
+}
+.explore{
+    width: 90px;
+    height: 30px;
+    margin-left: 45%;
+    color: blue;
+    background-color: white;
+    margin-top: 3%;
+}
+.img1{
+    width: 100%;
+}
+.courses-header{
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+.courses{
+    margin-left: 5%;
+}
+.card{
+    width: 150px;
+    height: 300px;
+    float: left;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+.h1{
+    margin-left: 10%;
+}
+.h6{
+    margin-left: 10%;
+}
+.h3{
+    margin-left: 10%;
+}
