@@ -1,12 +1,15 @@
 <div class="instructor">
   <h3>Instructor</h3>
   <div class="flex-space-between">
-    <span class="material-icons"> account_circle </span>
+    <span *ngIf="data.isSchool==='school'" class="material-icons"> school </span>
+    <span *ngIf="data.isSchool==='inst'" class="material-icons"> account_circle </span>
     <div>
-      <h4>
-        Name <br />
-        Position
-      </h4>
+      <p>
+        {{ data.Name }}
+      </p>
+      <p>
+        {{ data.Position }}
+      </p>
     </div>
   </div>
 </div>
