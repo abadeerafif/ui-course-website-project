@@ -9,13 +9,14 @@ import { Router } from '@angular/router';
 export class CourseContentComponent implements OnInit {
   constructor(private route:ActivatedRoute) {}
   
-  selected_id:string="";
+  
   ngOnInit(): void {
     
     
   }
-  courses = {
-    webdev: {
+  courses = [
+    {
+      id:"1",
       courseDesc:
         'This course provides a broad overview of the fundamental concepts, principles, and practices of mindfulness. With interactive exercises to help students explore their own attitudes, mental habits and behaviors, Foundations of Mindfulness offers a pathway for living with more freedom, authenticity and ease. Featured components of the course include experiential exercises, guided meditations, personal reflection and interactive discussions.',
       learningObjectives: [
@@ -66,11 +67,7 @@ export class CourseContentComponent implements OnInit {
         },
       ],
     },
-  ];
+  ]
   selected_id = this.route.snapshot.paramMap.get('id');
   selectedCourse=this.courses.filter((course) => course.id === this.selected_id);
-  showSelected(){
-    console.log(this.selectedCourse)
-  }
-
 }
