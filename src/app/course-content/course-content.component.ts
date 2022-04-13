@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-course-content',
@@ -6,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./course-content.component.css'],
 })
 export class CourseContentComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
+  constructor(private route:ActivatedRoute) {}
+  
+  selected_id:string="";
+  ngOnInit(): void {
+    
+    
+  }
   courses = {
     webdev: {
       courseDesc:
@@ -62,5 +67,6 @@ export class CourseContentComponent implements OnInit {
       ],
     },
   };
-  selectedCourse = this.courses['webdev'];
+
+  selectedCourse = this.courses[this.route.snapshot.paramMap.get('id')];
 }

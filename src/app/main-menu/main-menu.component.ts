@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-menu',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit(): void {
+  }
+  goto(simple_route:string) {
+    console.log(simple_route);
+    this.route.navigateByUrl(simple_route);
   }
   netImage:any = "../assets/images/image1.png";
   courseImage:any = "../assets/images/courseimg.png";
