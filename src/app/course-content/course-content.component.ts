@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-course-content',
   templateUrl: './course-content.component.html',
@@ -65,5 +65,8 @@ export class CourseContentComponent implements OnInit {
   ];
   selected_id = this.route.snapshot.paramMap.get('id');
   selectedCourse=this.courses.filter((course) => course.id === this.selected_id);
-  
+  showSelected(){
+    console.log(this.selectedCourse)
+  }
+
 }

@@ -1,5 +1,5 @@
 <div class="course-content-layout">
-  <h1>About this Course</h1>
+  <!-- <h1>About this Course</h1>
   <textarea class="course-desc">
         {{ selectedCourse.courseDesc }}
         </textarea
@@ -9,15 +9,14 @@
     <div class="objectives-container">
       <app-learning-objective
         *ngFor="let data of selectedCourse.learningObjectives"
-      [data]="data"
-        >
+        [data]="data"
+      >
       </app-learning-objective>
     </div>
   </div>
   <app-instructor [data]="selectedCourse.instructorDetails"></app-instructor
-  ><!-- send instructor details {{title name position}}-->
+  >
   <app-instructor [data]="selectedCourse.institutionDetails"></app-instructor
-  ><!-- send offered by details {{title name position}}-->
-  
-
+  > -->
+  {{selectedCourse}}
 </div>
