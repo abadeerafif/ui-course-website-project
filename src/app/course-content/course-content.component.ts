@@ -7,15 +7,11 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./course-content.component.css'],
 })
 export class CourseContentComponent implements OnInit {
-  constructor(private route:ActivatedRoute) {}
-  
-  selected_id:string="";
-  ngOnInit(): void {
-    
-    
-  }
-  courses = {
-    webdev: {
+  constructor(private route: ActivatedRoute) {}
+  ngOnInit(): void {}
+  courses = [
+    {
+      id: '1',
       courseDesc:
         'This course provides a broad overview of the fundamental concepts, principles, and practices of mindfulness. With interactive exercises to help students explore their own attitudes, mental habits and behaviors, Foundations of Mindfulness offers a pathway for living with more freedom, authenticity and ease. Featured components of the course include experiential exercises, guided meditations, personal reflection and interactive discussions.',
       learningObjectives: [
@@ -25,12 +21,12 @@ export class CourseContentComponent implements OnInit {
         'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse ut unde doloremque soluta voluptatem quas minus quidem consectetur ratione cumque?',
       ],
       instructorDetails: {
-        isSchool:"inst",
+        isSchool: 'inst',
         Name: 'Peter Iskander',
         Position: 'CTO SW Architect, Founder of Google and Microsoft',
       },
       institutionDetails: {
-        isSchool:"school",
+        isSchool: 'school',
         Name: 'YALE',
         Position:
           'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse ut unde doloremque soluta voluptatem quas minus quidem consectetur ratione cumque?',
@@ -66,7 +62,8 @@ export class CourseContentComponent implements OnInit {
         },
       ],
     },
-  };
-
-  selectedCourse = this.courses[this.route.snapshot.paramMap.get('id')];
+  ];
+  selected_id = this.route.snapshot.paramMap.get('id');
+  selectedCourse=this.courses.filter((course) => course.id === this.selected_id);
+  
 }
