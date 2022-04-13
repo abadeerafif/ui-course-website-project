@@ -1,22 +1,22 @@
 <div class="course-content-layout">
-  <!-- <h1>About this Course</h1>
+  <h1>About this Course</h1>
   <textarea class="course-desc">
-        {{ selectedCourse.courseDesc }}
+        {{ selectedCourse[0].courseDesc }}
         </textarea
   >
   <div class="learning-objectives">
     <h3>What you will learn</h3>
     <div class="objectives-container">
       <app-learning-objective
-        *ngFor="let data of selectedCourse.learningObjectives"
+        *ngFor="let data of selectedCourse[0].learningObjectives"
         [data]="data"
       >
       </app-learning-objective>
     </div>
   </div>
-  <app-instructor [data]="selectedCourse.instructorDetails"></app-instructor
+  <app-instructor [data]="selectedCourse[0].instructorDetails"></app-instructor
   >
-  <app-instructor [data]="selectedCourse.institutionDetails"></app-instructor
-  > -->
-  {{selectedCourse}}
+  <app-instructor [data]="selectedCourse[0].institutionDetails"></app-instructor
+  >
+  
 </div>
