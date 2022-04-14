@@ -14,6 +14,7 @@ import { RegisterComponent } from './register/register.component';
 import { CourseContentComponent } from './course-content/course-content.component';
 import { LearningObjectiveComponent } from './learning-objective/learning-objective.component';
 import { InstructorComponent } from './instructor/instructor.component';
+import { SyllabusComponent } from './syllabus/syllabus.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { InstructorComponent } from './instructor/instructor.component';
     CourseContentComponent,
     LearningObjectiveComponent,
     InstructorComponent,
+    SyllabusComponent,
   ],
   imports: [
     BrowserModule,
