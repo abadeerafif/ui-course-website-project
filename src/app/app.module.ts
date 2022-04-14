@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-
+import { MatCardModule } from "@angular/material/card";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,7 @@ import { CourseContentComponent } from './course-content/course-content.componen
 import { LearningObjectiveComponent } from './learning-objective/learning-objective.component';
 import { InstructorComponent } from './instructor/instructor.component';
 import { SyllabusComponent } from './syllabus/syllabus.component';
+import { MainMenuComponent } from './main-menu/main-menu.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SyllabusComponent } from './syllabus/syllabus.component';
     LearningObjectiveComponent,
     InstructorComponent,
     SyllabusComponent,
+    MainMenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,7 @@ import { SyllabusComponent } from './syllabus/syllabus.component';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
