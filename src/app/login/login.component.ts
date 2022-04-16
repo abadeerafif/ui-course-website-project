@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/register']);
   }
 
+  courses: string[] = ['Data Structure', 'OOP', 'Algorithms', 'UID', 'Web Development'];
+
   ngOnInit(): void {
   }
 
