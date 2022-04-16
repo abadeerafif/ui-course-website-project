@@ -5,7 +5,6 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -15,6 +14,8 @@ import { RegisterComponent } from './register/register.component';
 import { CourseContentComponent } from './course-content/course-content.component';
 import { LearningObjectiveComponent } from './learning-objective/learning-objective.component';
 import { InstructorComponent } from './instructor/instructor.component';
+import { SyllabusComponent } from './syllabus/syllabus.component';
+import { MainMenuComponent } from './main-menu/main-menu.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,8 @@ import { InstructorComponent } from './instructor/instructor.component';
     CourseContentComponent,
     LearningObjectiveComponent,
     InstructorComponent,
+    SyllabusComponent,
+    MainMenuComponent,
   ],
   imports: [
     BrowserModule,
