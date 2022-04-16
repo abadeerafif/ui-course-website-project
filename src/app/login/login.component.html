@@ -18,21 +18,3 @@
       
     </div>
 </form>
-
-<div style="margin-left: 100px;">
-<h4 style="color:  #c280ff;">Courses and Specialization</h4>
-<h2>Courses You Can Complete in a Day</h2>
-<h5>Over 4,000 courses in topics like business analytics, graphic design, Python, and more.</h5>
-
-<div style="display: flex; justify-content: center;">
-<mat-card class="courses" *ngFor="let course of courses" style="margin: 10px;">
-  <mat-card-header style="justify-content: center;">
-    <mat-card-title>{{course}}</mat-card-title>
-  </mat-card-header>
-  <img mat-card-image src="https://www.worldfuturecouncil.org/wp-content/uploads/2021/02/Jada-H.-Article-518x705.jpg" alt="Photo of a book">
-  <mat-card-actions>
-    <button mat-button>View Course</button>
-  </mat-card-actions>
-</mat-card>
-</div>
-</div>

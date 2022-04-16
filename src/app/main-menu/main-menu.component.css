@@ -22,14 +22,17 @@
     margin-top: 45%;
     
 }
-.explore{
+/* .explore{
     width: 90px;
     height: 30px;
     margin-left: 45%;
     color: blue;
     background-color: white;
     margin-top: 3%;
-}
+    border-radius: 2px;
+    border-color: #0c04aa;
+    flex-direction: row;
+} */
 .img1{
     width: 100%;
 }
@@ -37,9 +40,17 @@
     margin-left: 2%;
     margin-bottom: 2%;
 }
-.courses{
-    margin-left: 5%;
-}
+button {
+    background-color: #0c04aa;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    justify-content: center;
+    border-radius: 10px;
+  }
 .card{
     width: 150px;
     height: 300px;
@@ -66,3 +77,6 @@
 .h3{
     margin-left: 10%;
 }
+.courses{
+    max-width: 200px;
+  }

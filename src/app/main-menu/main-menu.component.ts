@@ -10,6 +10,9 @@ export class MainMenuComponent implements OnInit {
 
   constructor(private route:Router) { }
 
+  courses: string[] = ['Data Structure', 'OOP', 'Algorithms', 'UID', 'Web Development'];
+
+
   ngOnInit(): void {
   }
   goto(simple_route:string) {

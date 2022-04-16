@@ -3,6 +3,9 @@
     display: flex;
     justify-content: space-between;
 }
+span:hover{
+    cursor: pointer;
+}
 .mat-icon{
     margin-right: 5px; 
     font-size: 21px;
