@@ -16,6 +16,7 @@ import { LearningObjectiveComponent } from './learning-objective/learning-object
 import { InstructorComponent } from './instructor/instructor.component';
 import { SyllabusComponent } from './syllabus/syllabus.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
+import { CourseDataService } from './course-data.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
     MatIconModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [CourseDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

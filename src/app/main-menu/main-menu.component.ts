@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CourseDataService } from '../course-data.service';
 
 @Component({
   selector: 'app-main-menu',
@@ -8,13 +9,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class MainMenuComponent implements OnInit {
 
-  constructor(private route:Router) { }
+  constructor(private route:Router,private courseData:CourseDataService) { }
 
-  courses: string[] = ['Data Structure', 'OOP', 'Algorithms', 'UID', 'Web Development'];
+  public courses: string [] = [];
+
 
 
   ngOnInit(): void {
+    this.courses=this.courseData.getCourseNames();
   }
+
   goto(simple_route:string) {
     console.log(simple_route);
     this.route.navigateByUrl(simple_route);
