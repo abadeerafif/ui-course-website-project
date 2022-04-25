@@ -1,40 +1,73 @@
 .main-menu-layout{
-    width:auto;
-    display: inline-block;
-    position: relative;
-
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0px auto;
+    max-width: 1400px;
+    width: 100%;
 }
 .upperbutton{
-    width:50%;
-    margin-left:25%;
-    margin-right:25%;
-    margin-bottom: 20%;
-    position: absolute;
-    right: 217px;
-    z-index: 12;
+    margin-left: 100px;
+    margin-right: 180px;
+    padding: 40px 0 55px;
+    width: 570px;
+    z-index: 3;
 }
 .btn1{
-    width: 250px;
-    height: 80px;
-    color: white;
-    text-size-adjust: 25%;
-    background-color: rgb(0, 17, 255);
-    margin-top: 45%;
-    
+    border-radius: 4px;
+    text-align: center;
+    color: #fff;
+    background-color: #0056d2;
+    font-family: "Source Sans Pro",Arial,sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.1px;
+    padding: 12px 32px;
+    border: 2px solid #0056d2;
+    font-size: 20px;
+    height: 72px;
+    margin-right: 10px;
+    width: 238px;
 }
-/* .explore{
-    width: 90px;
-    height: 30px;
-    margin-left: 45%;
-    color: blue;
-    background-color: white;
-    margin-top: 3%;
-    border-radius: 2px;
-    border-color: #0c04aa;
-    flex-direction: row;
-} */
+.btn1:hover{
+    background-color: #00419E;
+}
+.btn2{
+    border-radius: 4px;
+    text-align: center;
+    color: #0056d2;
+    background-color: #fff;
+    box-shadow: inset 0 0 0 1px #0056d2;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: "Source Sans Pro",Arial,sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.1px;
+    padding: 12px 32px;
+    border: 2px solid #0056d2;
+    height: 72px;
+    width: 320px;
+}
+.btn2:hover{
+    background-color: #F3F8FF;
+}
+input{
+    cursor: pointer;
+}
+h1{
+    color: #1f1f1f;
+    font-size: 5.25rem;
+    line-height: 5.75rem;
+    font-family: "Source Sans Pro",Arial,sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+}
+
 .img1{
-    width: 100%;
+    height: 497px;
+    width: 459px;
+    margin-bottom: 32px;
+    margin-right: 24px;
+    margin-top: 32px;
 }
 .courses-header{
     margin-left: 2%;

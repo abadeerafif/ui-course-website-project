@@ -17,6 +17,7 @@ import { InstructorComponent } from './instructor/instructor.component';
 import { SyllabusComponent } from './syllabus/syllabus.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { CourseDataService } from './course-data.service';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { CourseDataService } from './course-data.service';
     InstructorComponent,
     SyllabusComponent,
     MainMenuComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

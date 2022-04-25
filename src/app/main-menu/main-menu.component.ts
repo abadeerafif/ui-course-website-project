@@ -23,6 +23,6 @@ export class MainMenuComponent implements OnInit {
     console.log(simple_route);
     this.route.navigateByUrl(simple_route);
   }
-  netImage:any = "../assets/images/image1.png";
+  netImage:any = "../assets/images/coursera.png";
   courseImage:any = "../assets/images/courseimg.png";
 }
