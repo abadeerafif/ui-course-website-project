@@ -1,6 +1,8 @@
 app-navbar{
-    position: fixed;
-    top: 0;
     width: 100%;    
     z-index: 5;
+    margin-bottom: 20px;
+}
+app-footer{
+    margin-top: 20px;
 }

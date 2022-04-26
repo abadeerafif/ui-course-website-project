@@ -1,0 +1,30 @@
+<div style="margin-top: 20px;">
+<div>
+    <h1>Topics and Skills</h1>
+    <div style="justify-content: center; flex-wrap: wrap; display: flex;">
+    <mat-card class="courses" *ngFor="let item of [].constructor(4); let i = index" style="margin: 10px; width:20%;">
+      <mat-card-header style="justify-content: center;">
+        <mat-card-title>Topic {{i+1}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/browse/domains/data_science.png?auto=compress&dpr=2&w=&h=340&fit=crop" alt="Photo of a book" style="height: 350px;">
+      <mat-card-actions>
+        <button mat-button (click)="goto('course-content/1')">View Course</button>
+      </mat-card-actions>
+    </mat-card>
+    </div>
+</div>
+<div style="margin-top: 10px;">
+    <h1>Most Popular Courses</h1>
+    <div style="justify-content: center; flex-wrap: wrap; display: flex;">
+    <mat-card class="courses" *ngFor="let item of [].constructor(10); let i = index" style="margin: 10px; width:20%;">
+      <mat-card-header style="justify-content: center;">
+        <mat-card-title>Course {{i+1}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="https://www.worldfuturecouncil.org/wp-content/uploads/2021/02/Jada-H.-Article-518x705.jpg" alt="Photo of a book" style="height: 350px;">
+      <mat-card-actions>
+        <button mat-button (click)="goto('course-content/1')">View Course</button>
+      </mat-card-actions>
+    </mat-card>
+    </div>
+</div>
+</div>

@@ -22,6 +22,26 @@
                     2 videos (Total 7 min), 3 readings
                 </div>
             </div>
+            <a (click)="readMore=!readMore" style="color: blue; text-decoration-line: underline;"><p *ngIf="!readMore" style="margin-left: 200px;">Read More..</p><p *ngIf="readMore" style="margin-left: 200px;">Show Less..</p></a>
+            <div *ngIf="readMore" style="margin-top: 10px;">
+                <div class="numOfVideos">
+                <span class="material-icons">video_library</span>
+                <h3> 2 Videos</h3>
+                </div>
+                <div style="margin-left: 20px;">
+                    <p>Meet the Professor  4m</p>
+                    <p>Course Introduction  2m</p>
+                </div>
+                <div class="numOfVideos">
+                <span class="material-icons">book</span>
+                <h3> 3 Readings</h3>
+                </div>
+                <div style="margin-left: 20px;">
+                    <p>Course Information and Keys to Success  10m</p>
+                    <p>Discussion Forum Guidelines  2m</p>
+                    <p>Accessibility and Accommodations Statement  1m</p>
+                </div>
+            </div>
 
         </div>
 

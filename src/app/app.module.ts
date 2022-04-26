@@ -18,6 +18,7 @@ import { SyllabusComponent } from './syllabus/syllabus.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { CourseDataService } from './course-data.service';
 import { FooterComponent } from './footer/footer.component';
+import { ExploreComponent } from './explore/explore.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { FooterComponent } from './footer/footer.component';
     SyllabusComponent,
     MainMenuComponent,
     FooterComponent,
+    ExploreComponent,
   ],
   imports: [
     BrowserModule,

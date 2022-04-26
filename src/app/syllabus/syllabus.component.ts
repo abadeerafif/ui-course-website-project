@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SyllabusComponent implements OnInit {
 
+  readMore=false;
   constructor() { }
 
   ngOnInit(): void {
   }
+
+//   showText() {
+//     this.isReadMore = !this.isReadMore
+//  }
 
 }

@@ -1,0 +1,15 @@
+button {
+    background-color: #0c04aa;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    justify-content: center;
+    border-radius: 10px;
+}
+h1{
+    text-align: center;
+    font-weight: bold;
+}

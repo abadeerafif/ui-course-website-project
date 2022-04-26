@@ -34,7 +34,7 @@
     text-align: left;
   }
   .courcontent {
-    position:absolute;
+    position:relative;
     right: 70%;
     
   }
@@ -57,3 +57,11 @@
     justify-content:left
 
   }
+  /* .limitTextHeight {
+    height: 20px;
+    overflow: hidden;
+} */
+
+.numOfVideos{
+  display: flex;
+}
