@@ -65,3 +65,8 @@
 .numOfVideos{
   display: flex;
 }
+
+.videosLinks a{
+  color: blue;
+  cursor: pointer;
+}

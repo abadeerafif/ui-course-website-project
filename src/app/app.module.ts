@@ -19,6 +19,7 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
 import { CourseDataService } from './course-data.service';
 import { FooterComponent } from './footer/footer.component';
 import { ExploreComponent } from './explore/explore.component';
+import { VideoComponent } from './video/video.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ExploreComponent } from './explore/explore.component';
     MainMenuComponent,
     FooterComponent,
     ExploreComponent,
+    VideoComponent,
   ],
   imports: [
     BrowserModule,

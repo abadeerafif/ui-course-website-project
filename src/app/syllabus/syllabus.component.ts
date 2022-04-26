@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-syllabus',
@@ -8,13 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class SyllabusComponent implements OnInit {
 
   readMore=false;
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit(): void {
   }
 
-//   showText() {
-//     this.isReadMore = !this.isReadMore
-//  }
+  goto(simple_route:string) {
+    console.log(simple_route);
+    this.route.navigateByUrl(simple_route);
+  }
 
 }
