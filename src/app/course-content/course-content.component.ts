@@ -20,6 +20,7 @@ export class CourseContentComponent implements OnInit {
   ngAfterContentInit() {
     this.getCourseByID();
   }
+  selectedCourseName="Course 1";
   selected_id = this.route.snapshot.paramMap.get('id');
   selectedCourse: any = null;
   getCourseByID() {

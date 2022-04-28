@@ -1,0 +1,15 @@
+<form>
+    <label for="courseDesc">Course Description:</label><br>
+    <textarea #desc id="courseDesc" name="Description"></textarea><br>
+    <label for="learningObj">Learning Objective:</label><br>
+    <textarea #objec id="learningObj"></textarea><br>
+    <label for="numOfVids">Number of Videos:</label><br>
+    <input #vids type="text" id="numOfVids"><br>
+    <label for="numOfReads">Number of Readings:</label><br>
+    <input #reads type="text" id="numOfReads"><br>
+    <label for="quizzes">Number of Quizzes:</label><br>
+    <input #quiz type="text" id="quizzes"><br>
+    <label for="numOfHrs">Number of Hours to Complete:</label><br>
+    <input #hrs type="text" id="numOfHrs"><br>
+    <button (click)="ggonSubmit(desc.value,objec.value,vids.value,reads.value,quiz.value,hrs.value)">Submit</button>
+</form>

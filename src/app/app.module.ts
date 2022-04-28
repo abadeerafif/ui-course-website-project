@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import {FormsModule, NgForm} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
@@ -20,6 +21,7 @@ import { CourseDataService } from './course-data.service';
 import { FooterComponent } from './footer/footer.component';
 import { ExploreComponent } from './explore/explore.component';
 import { VideoComponent } from './video/video.component';
+import { AddCourseComponent } from './add-course/add-course.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { VideoComponent } from './video/video.component';
     FooterComponent,
     ExploreComponent,
     VideoComponent,
+    AddCourseComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { VideoComponent } from './video/video.component';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule,
   ],
   providers: [CourseDataService],
   bootstrap: [AppComponent]
