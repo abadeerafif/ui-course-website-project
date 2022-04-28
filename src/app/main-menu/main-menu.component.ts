@@ -14,9 +14,13 @@ export class MainMenuComponent implements OnInit {
   public courses: string [] = [];
 
 
-
   ngOnInit(): void {
     this.courses=this.courseData.getCourseNames();
+
+  }
+
+  goset(emaill:string){
+    this.courseData.setEmail(emaill);
   }
 
   goto(simple_route:string) {

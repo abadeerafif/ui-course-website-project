@@ -6,6 +6,13 @@ import { Injectable } from '@angular/core';
 export class CourseDataService {
   constructor() {}
 
+  email="petergeoorge@gmail.com";
+
+  setEmail(emai:string){
+    this.email=emai;
+    console.log(this.email);
+  }
+
   getCourseNames() {
     return ['Data Structure', 'OOP', 'Algorithms', 'UID', 'Web Development'];
   }
