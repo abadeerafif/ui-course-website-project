@@ -26,34 +26,35 @@ export class AddCourseComponent implements OnInit {
     console.log(desc, obj, vid, read, quiz, hrs);
   }
   addCourseForm = this.formBuilder.group({
+    facultyCourse: [''],
     courseName: [''],
     learningObjectives: [''],
     courseDescription: [''],
-    numberOfVideos: [''],
-    numberOfReadings: [''],
-    numberOfQuizzes: [''],
+    courseVideos: [[]],
+    courseReadings: [[]],
+    courseQuizzes: [[]],
     numberOfHouesToComplete: [''],
   });
 
   saveForm() {
-    console.log('Form data is ', this.addCourseForm.value);
+    console.log('saving', this.addCourseForm.value);
   }
   openQuizDialog() {
     let dialogRef = this.dialog.open(AddCourseQuizDialogComponent);
     dialogRef.afterClosed().subscribe((res) => {
-      console.log(res)
-     });
+      this.addCourseForm.value.courseQuizzes.push(res);
+    });
   }
   openVideoDialog() {
     let dialogRef = this.dialog.open(AddCourseVideoDialogComponent);
     dialogRef.afterClosed().subscribe((res) => {
-      console.log(res);
+      this.addCourseForm.value.courseVideos.push(res);
     });
   }
   openReadingDialog() {
     let dialogRef = this.dialog.open(AddCourseReadingsDialogComponent);
     dialogRef.afterClosed().subscribe((res) => {
-      console.log(res);
+      this.addCourseForm.value.courseReadings.push(res);
     });
   }
 }

@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-add-course-quiz-dialog',
   templateUrl: './add-course-quiz-dialog.component.html',
   styleUrls: ['./add-course-quiz-dialog.component.css'],
 })
 export class AddCourseQuizDialogComponent implements OnInit {
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private dialogRef: MatDialogRef<AddCourseQuizDialogComponent>
+  ) {}
 
   ngOnInit(): void {}
   numberOfQuestion: number = 0;
@@ -79,7 +83,6 @@ export class AddCourseQuizDialogComponent implements OnInit {
       },
     };
 
-    console.log(this.courseQuiz.value);
-    return this.returnQuiz;
+    this.dialogRef.close(this.returnQuiz);
   }
 }

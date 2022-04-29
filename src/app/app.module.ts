@@ -37,7 +37,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { AddCourseVideoDialogComponent } from './add-course-video-dialog/add-course-video-dialog.component';
 import { AddCourseQuizDialogComponent } from './add-course-quiz-dialog/add-course-quiz-dialog.component';
 import { AddCourseReadingsDialogComponent } from './add-course-readings-dialog/add-course-readings-dialog.component';
-
 @NgModule({
   declarations: [
     AppComponent,

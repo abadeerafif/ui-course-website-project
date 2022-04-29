@@ -213,12 +213,7 @@
     </div>
     <mat-card-actions class="flex">
       <button mat-button mat-dialog-close>Cancel</button>
-      <button
-        mat-dialog-close
-        mat-dialog-close="{{saveForm()}}"
-        mat-raised-button
-        color="primary"
-      >
+      <button (click)="saveForm()" mat-raised-button color="primary">
         Save Quiz
       </button>
     </mat-card-actions>

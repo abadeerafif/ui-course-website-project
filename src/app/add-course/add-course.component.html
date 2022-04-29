@@ -6,6 +6,15 @@
         <div class="col-sm-6">
           <mat-form-field class="full-width">
             <input
+              formControlName="facultyCourse"
+              matInput
+              placeholder="Faculty Responsible for the Course"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="full-width">
+            <input
               formControlName="courseName"
               matInput
               placeholder="Course Name"
@@ -22,44 +31,14 @@
           </mat-form-field>
         </div>
       </div>
-      <!-- <div class="col-sm-6">
-        <mat-form-field class="full-width">
-          <input
-          formControlName="numberOfVideos"
-          matInput
-          placeholder="Number Of Videos"
-          type="number"
-          />
-        </mat-form-field>
-      </div>
+
       <div class="col-sm-6">
         <mat-form-field class="full-width">
-          <input
-          formControlName="numberOfReadings"
-          matInput
-          placeholder="Number Of Readings"
-          type="number"
-          />
-        </mat-form-field>
-      </div>
-      <div class="col-sm-6">
-        <mat-form-field class="full-width">
-          <input
-          formControlName="numberOfQuizzes"
-          matInput
-          placeholder="Number Of Quizzes"
-          type="number"
-          />
-        </mat-form-field> 
-      </div>-->
-      <div class="col-sm-6">
-        <mat-form-field class="full-width">
-          <input
-            formControlName="numberOfHouesToComplete"
+          <textarea
+            formControlName="courseDescription"
             matInput
-            placeholder="Number Of Houes To Complete"
-            type="number"
-          />
+            placeholder="Course Description"
+          ></textarea>
         </mat-form-field>
       </div>
       <div class="add-course-buttons">
@@ -77,11 +56,12 @@
       </div>
       <div class="col-sm-6">
         <mat-form-field class="full-width">
-          <textarea
-            formControlName="courseDescription"
+          <input
+            formControlName="numberOfHouesToComplete"
             matInput
-            placeholder="Course Description"
-          ></textarea>
+            placeholder="Number Of Houes To Complete"
+            type="number"
+          />
         </mat-form-field>
       </div>
     </mat-card-content>
