@@ -6,10 +6,10 @@ import { Injectable } from '@angular/core';
 export class CourseDataService {
   constructor() {}
 
-  email="petergeoorge@gmail.com";
+  email = 'petergeoorge@gmail.com';
 
-  setEmail(emai:string){
-    this.email=emai;
+  setEmail(emai: string) {
+    this.email = emai;
     console.log(this.email);
   }
 
@@ -72,4 +72,36 @@ export class CourseDataService {
       },
     ];
   }
+  getAuthedUserAdmin() {
+    return {
+      name: 'Ain Shams University',
+      email: 'asd@gmail.com',
+      type: 'admin',
+      all_courses: ['OOP', 'ALGO'],
+      all_system_users: ['FCIS', 'Abadeer Afif'],
+      student_registration_pending_approval: [
+        {
+          student_name: 'Abadeer Afif',
+          course_name: 'System Design and Architecture',
+        },
+        {
+          student_name: 'Peter George',
+          course_name: 'Vue Js',
+        },
+        {
+          student_name: 'Peter Magdy',
+          course_name: 'Introduction to Programming',
+        },
+      ],
+    };
+  }
+  AuthedUser = {
+    name: 'asd',
+    email: 'asd@gmail.com',
+    type: /*one of ['admin', 'faculty','student']*/ 'student',
+    enrolledCourses: ['da', 'asd', 'asd'], //if student
+    allCourses: ['da', 'asd', 'asd'], //if faculty or admin,
+    allUsersOfSystem: ['da', 'asd', 'asd'], //if admin -> array of users [they have the type attribute]
+    registering_course_pending_approval: 'msh 3aref hateb2a 3amla ezay', //users me2adimin 3ala course
+  };
 }

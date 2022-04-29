@@ -1,4 +1,4 @@
-form{
+/* form{
     margin: auto;
     width: 600px;
     text-align: center;
@@ -8,4 +8,25 @@ form{
 textarea{
     width: 500px;
     height:200px;
+} */
+.full-width {
+  width: 100%;
+}
+
+.top-padding {
+  padding-top: 3px;
+}
+
+.margin-left mat-radio-button:not(:first-child) {
+  margin-left: 10px;
+}
+
+.form-container {
+  margin: 0 30%;
+}
+
+.add-course-buttons{
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-evenly;
 }

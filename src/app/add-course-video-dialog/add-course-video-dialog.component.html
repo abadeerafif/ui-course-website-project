@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Please Add a Video</h1>
+<div mat-dialog-content>
+  Please go to youtube and click share on the video and copy paste the code from
+  the <strong>Embed Video</strong>
+</div>
+<div class="col-sm-6">
+  <mat-form-field class="full-width">
+    <textarea
+      [(ngModel)]="videoEmbedCode"
+      matInput
+      placeholder="Video Embed Code"
+    ></textarea>
+  </mat-form-field>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button mat-dialog-close mat-dialog-close="{{ videoEmbedCode }}">
+      Submit
+    </button>
+  </div>
+</div>

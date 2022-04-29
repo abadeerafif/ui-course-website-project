@@ -1,13 +1,15 @@
-mat-toolbar{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
+mat-toolbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
-mat-toolbar p{
-    margin-top: 15px;
+
+mat-toolbar p {
+  margin-top: 15px;
 }
-.data p{
-    font-size: small;
-    justify-content: center;
-    margin: 0 auto;
+
+.data p {
+  font-size: small;
+  justify-content: center;
+  margin: 0 auto;
 }

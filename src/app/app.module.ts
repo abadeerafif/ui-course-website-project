@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
-import {FormsModule, NgForm} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatCardModule} from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +21,22 @@ import { FooterComponent } from './footer/footer.component';
 import { ExploreComponent } from './explore/explore.component';
 import { VideoComponent } from './video/video.component';
 import { AddCourseComponent } from './add-course/add-course.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
+import { AcceptStudentRegistrationComponent } from './accept-student-registration/accept-student-registration.component';
+import { AllUsersDetailsComponent } from './all-users-details/all-users-details.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
+
+import { MatDialogModule } from '@angular/material/dialog';
+
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { AddCourseVideoDialogComponent } from './add-course-video-dialog/add-course-video-dialog.component';
+import { AddCourseQuizDialogComponent } from './add-course-quiz-dialog/add-course-quiz-dialog.component';
+import { AddCourseReadingsDialogComponent } from './add-course-readings-dialog/add-course-readings-dialog.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +53,12 @@ import { AddCourseComponent } from './add-course/add-course.component';
     ExploreComponent,
     VideoComponent,
     AddCourseComponent,
+    AdminPageComponent,
+    AcceptStudentRegistrationComponent,
+    AllUsersDetailsComponent,
+    AddCourseVideoDialogComponent,
+    AddCourseQuizDialogComponent,
+    AddCourseReadingsDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,8 +69,18 @@ import { AddCourseComponent } from './add-course/add-course.component';
     MatIconModule,
     MatCardModule,
     FormsModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatCardModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatDialogModule,
   ],
   providers: [CourseDataService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,0 +1,226 @@
+<h1 mat-dialog-title>Please add a quiz</h1>
+
+<form [formGroup]="courseQuiz" class="form-container">
+  <mat-card-content>
+    <div class="row">
+      <div class="col-sm-6">
+        <mat-form-field class="full-width">
+          <input
+            formControlName="questionOne"
+            matInput
+            placeholder="Question One"
+          />
+        </mat-form-field>
+      </div>
+      <div class="flex">
+        <mat-form-field>
+          <input
+            formControlName="questionOneAnswerOne"
+            matInput
+            placeholder="Question One Answer One"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            formControlName="questionOneAnswerTwo"
+            matInput
+            placeholder="Question One Answer Two"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            formControlName="questionOneAnswerThree"
+            matInput
+            placeholder="Question One Answer Three"
+          />
+        </mat-form-field>
+      </div>
+      <mat-form-field class="flex">
+        <input
+          formControlName="questionOneAnswer"
+          matInput
+          placeholder="Question One Answer "
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <mat-form-field class="full-width">
+          <input
+            formControlName="questionTwo"
+            matInput
+            placeholder="Question Two"
+          />
+        </mat-form-field>
+      </div>
+      <div class="flex">
+        <mat-form-field>
+          <input
+            formControlName="questionTwoAnswerOne"
+            matInput
+            placeholder="Question Two Answer One"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            formControlName="questionTwoAnswerTwo"
+            matInput
+            placeholder="Question Two Answer Two"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            formControlName="questionTwoAnswerThree"
+            matInput
+            placeholder="Question Two Answer Three"
+          />
+        </mat-form-field>
+      </div>
+      <mat-form-field class="flex">
+        <input
+          formControlName="questionTwoAnswer"
+          matInput
+          placeholder="Question Two Answer "
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <mat-form-field class="full-width">
+          <input
+            formControlName="questionThree"
+            matInput
+            placeholder="Question Three"
+          />
+        </mat-form-field>
+      </div>
+      <div class="flex">
+        <mat-form-field>
+          <input
+            formControlName="questionThreeAnswerOne"
+            matInput
+            placeholder="Question Three Answer One"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            formControlName="questionThreeAnswerTwo"
+            matInput
+            placeholder="Question Three Answer Two"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            formControlName="questionThreeAnswerThree"
+            matInput
+            placeholder="Question Three Answer Three"
+          />
+        </mat-form-field>
+      </div>
+      <mat-form-field class="flex">
+        <input
+          formControlName="questionThreeAnswer"
+          matInput
+          placeholder="Question Three Answer "
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <mat-form-field class="full-width">
+          <input
+            formControlName="questionFour"
+            matInput
+            placeholder="Question Four"
+          />
+        </mat-form-field>
+      </div>
+      <div class="flex">
+        <mat-form-field>
+          <input
+            formControlName="questionFourAnswerOne"
+            matInput
+            placeholder="Question Four Answer One"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            formControlName="questionFourAnswerTwo"
+            matInput
+            placeholder="Question Four Answer Two"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            formControlName="questionFourAnswerThree"
+            matInput
+            placeholder="Question Four Answer Three"
+          />
+        </mat-form-field>
+      </div>
+      <mat-form-field class="flex">
+        <input
+          formControlName="questionFourAnswer"
+          matInput
+          placeholder="Question Four Answer "
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <mat-form-field class="full-width">
+          <input
+            formControlName="questionFive"
+            matInput
+            placeholder="Question Five"
+          />
+        </mat-form-field>
+      </div>
+      <div class="flex">
+        <mat-form-field>
+          <input
+            formControlName="questionFiveAnswerOne"
+            matInput
+            placeholder="Question Five Answer One"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            formControlName="questionFiveAnswerTwo"
+            matInput
+            placeholder="Question Five Answer Two"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            formControlName="questionFiveAnswerThree"
+            matInput
+            placeholder="Question Five Answer Three"
+          />
+        </mat-form-field>
+      </div>
+      <mat-form-field class="flex">
+        <input
+          formControlName="questionFiveAnswer"
+          matInput
+          placeholder="Question Five Answer "
+        />
+      </mat-form-field>
+    </div>
+    <mat-card-actions class="flex">
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button
+        mat-dialog-close
+        mat-dialog-close="{{saveForm()}}"
+        mat-raised-button
+        color="primary"
+      >
+        Save Quiz
+      </button>
+    </mat-card-actions>
+  </mat-card-content>
+</form>

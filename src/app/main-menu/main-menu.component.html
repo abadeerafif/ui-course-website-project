@@ -7,35 +7,80 @@
     </figure>
 </div> -->
 <div class="main-menu-layout">
-    <div class="upperbutton">
-        <h1>Learn without limits</h1>
-        <p>Get that "ready for anything" feeling with more than 5,000 courses, Professional Certificates, and degrees from world-class universities and companies.</p>
-            <input type="button" value="Join for free" class="btn1"/>
-            <input type="button" value="Try WeLearn for Business" class="btn2"/>
-    </div>
-        <img [src]="netImage" class="img1">
+  <div class="upperbutton">
+    <h1>Learn without limits</h1>
+    <p>
+      Get that "ready for anything" feeling with more than 5,000 courses,
+      Professional Certificates, and degrees from world-class universities and
+      companies.
+    </p>
+    <input type="button" value="Join for free" class="btn1" />
+    <input type="button" value="Try WeLearn for Business" class="btn2" />
+  </div>
+  <img [src]="netImage" class="img1" />
 </div>
-<div style="margin-left: 100px;">
-    <h4 style="color:  #c280ff;">Courses and Specialization</h4>
-    <h2>Courses You Can Complete in a Day</h2>
-    <h5>Over 4,000 courses in topics like business analytics, graphic design, Python, and more.</h5>
-    
-    <div style="display: flex; justify-content: center;">
-    <mat-card class="courses" *ngFor="let course of courses" style="margin: 10px;">
-      <mat-card-header style="justify-content: center;">
-        <mat-card-title>{{course}}</mat-card-title>
+<div style="margin-left: 100px">
+  <h4 style="color: #c280ff">Courses and Specialization</h4>
+  <h2>Courses You Can Complete in a Day</h2>
+  <h5>
+    Over 4,000 courses in topics like business analytics, graphic design,
+    Python, and more.
+  </h5>
+
+  <div style="display: flex; justify-content: center">
+    <mat-card
+      class="courses"
+      *ngFor="let course of courses"
+      style="margin: 10px"
+    >
+      <mat-card-header style="justify-content: center">
+        <mat-card-title>{{ course }}</mat-card-title>
       </mat-card-header>
-      <img mat-card-image src="https://www.worldfuturecouncil.org/wp-content/uploads/2021/02/Jada-H.-Article-518x705.jpg" alt="Photo of a book">
+      <img
+        mat-card-image
+        src="https://www.worldfuturecouncil.org/wp-content/uploads/2021/02/Jada-H.-Article-518x705.jpg"
+        alt="Photo of a book"
+      />
       <mat-card-actions>
-        <button mat-button (click)="goto('course-content/1')">View Course</button>
+        <button mat-button (click)="goto('course-content/1')">
+          View Course
+        </button>
       </mat-card-actions>
     </mat-card>
-    </div>
+  </div>
 </div>
-<div style="display: flex; justify-content: center; align-items: center;">
-<button mat-button (click)="goto('explore')" style="width: fit-content; height: fit-content;  background-color: white; color: blue;">Explore More<span class="material-icons" style="color: blue; margin: 0; align-self: center;"> arrow_forward </span></button>
-<button mat-button (click)="goset('newpetergeoorge@hotmail.com')" style="width: fit-content; height: fit-content;  background-color: white; color: blue;">Add Cour</button>
-
+<div style="display: flex; justify-content: center; align-items: center">
+  <button
+    mat-button
+    (click)="goto('explore')"
+    style="
+      width: fit-content;
+      height: fit-content;
+      background-color: white;
+      color: blue;
+    "
+  >
+    Explore More<span
+      class="material-icons"
+      style="color: blue; margin: 0; align-self: center"
+    >
+      arrow_forward
+    </span>
+  </button>
+  <button
+    mat-button
+    (click)="goset('newpetergeoorge@hotmail.com')"
+    style="
+      width: fit-content;
+      height: fit-content;
+      background-color: white;
+      color: blue;
+    "
+  >
+    Add Cour
+  </button>
 </div>
 
-
+<!-- <div>
+  <app-admin-page></app-admin-page>
+</div> -->

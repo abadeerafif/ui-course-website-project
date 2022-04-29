@@ -1,0 +1,13 @@
+.form-container {
+  width: 750px;
+  height: 600px;
+}
+
+.full-width {
+  width: 100%;
+}
+.flex{
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-evenly;
+  }

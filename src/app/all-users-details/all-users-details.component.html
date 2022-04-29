@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-card-title>Manage System Users</mat-card-title>
+  <mat-card class="example-card" *ngFor="let username of data">
+    <mat-card-content>
+      <h4>{{ username }}</h4>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button>View More Info</button>
+      <button mat-raised-button>Remove User</button>
+    </mat-card-actions>
+  </mat-card>
+</mat-card>
+
+<!-- dialog appear on more info -->
