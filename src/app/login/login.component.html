@@ -14,7 +14,7 @@
 
       <button type="Login">Login</button>
 
-      <div class="anotherPage" onclick="" style="display: flex;">New to WeLearn? <a (click)="gotoRegister()" style="margin-left: 2px;">Register Now</a></div>
+      <div class="anotherPage" *ngIf="!isFaculty" onclick="" style="display: flex;" >New to WeLearn? <a (click)="gotoRegister()" style="margin-left: 2px;">Register Now</a></div>
       
     </div>
 </form>

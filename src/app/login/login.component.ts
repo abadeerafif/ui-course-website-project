@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CourseDataService } from '../course-data.service';
 
 
 @Component({
@@ -9,15 +10,18 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private courseData: CourseDataService) { }
 
   gotoRegister() {
     this.router.navigate(['/register']);
   }
 
+  isFaculty=false;
+
   courses: string[] = ['Data Structure', 'OOP', 'Algorithms', 'UID', 'Web Development'];
 
   ngOnInit(): void {
+    this.isFaculty=this.courseData.isFaculty;
   }
 
 }

@@ -14,7 +14,10 @@
     </div>
         <a mat-button>Courses</a>
         <a mat-button>Registered Courses</a>
-        <a mat-raised-button routerLink="login">Login</a>
+        <div style="display: flex;">
+        <a routerLink="login" (click)="onFacultyLoginClick(true)" style="font-size: medium; margin-right: 6px;">Login as Faculty</a>
+        <a mat-raised-button (click)="onFacultyLoginClick(false)" routerLink="login">Login</a>
+        </div>
     </div>
     
 </mat-toolbar>
