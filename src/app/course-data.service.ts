@@ -13,6 +13,15 @@ export class CourseDataService {
     console.log(this.email);
   }
 
+  isFaculty=false;
+
+  setIsFaculty(isFaculty:boolean){
+    this.isFaculty=isFaculty;
+  }
+
+
+
+
   getCourseNames() {
     return ['Data Structure', 'OOP', 'Algorithms', 'UID', 'Web Development'];
   }

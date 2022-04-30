@@ -5,16 +5,19 @@
     <div class="dropdown">
         <a mat-button class="drpbtn" routerLink="explore">Explore</a>
         <div class="dropdown-content">
-            <a href="#">Data Structure</a>
-            <a href="#">OOP</a>
-            <a href="#">Algorithms</a>
-            <a href="#">UID</a>
-            <a href="#">Web Development</a>
+            <a routerLink="course-content/1">Data Structure</a>
+            <a routerLink="course-content/1">OOP</a>
+            <a routerLink="course-content/1">Algorithms</a>
+            <a routerLink="course-content/1">UID</a>
+            <a routerLink="course-content/1">Web Development</a>
         </div>
     </div>
         <a mat-button>Courses</a>
         <a mat-button>Registered Courses</a>
-        <a mat-raised-button routerLink="login">Login</a>
+        <div style="display: flex;">
+        <a routerLink="login" (click)="onFacultyLoginClick(true)" style="font-size: medium; margin-right: 6px;">Login as Faculty</a>
+        <a mat-raised-button (click)="onFacultyLoginClick(false)" routerLink="login">Login</a>
+        </div>
     </div>
     
 </mat-toolbar>

@@ -2,6 +2,9 @@ mat-toolbar {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  box-shadow:outset 0 10px 10px 0px rgba(0,0,0,0.2);
+  margin-top: 10px;
+  /* border: 0; */
 }
 
 mat-toolbar p {

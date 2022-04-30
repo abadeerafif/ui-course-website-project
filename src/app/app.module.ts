@@ -37,6 +37,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { AddCourseVideoDialogComponent } from './add-course-video-dialog/add-course-video-dialog.component';
 import { AddCourseQuizDialogComponent } from './add-course-quiz-dialog/add-course-quiz-dialog.component';
 import { AddCourseReadingsDialogComponent } from './add-course-readings-dialog/add-course-readings-dialog.component';
+import { FacultyMyCoursesComponent } from './faculty-my-courses/faculty-my-courses.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +59,7 @@ import { AddCourseReadingsDialogComponent } from './add-course-readings-dialog/a
     AddCourseVideoDialogComponent,
     AddCourseQuizDialogComponent,
     AddCourseReadingsDialogComponent,
+    FacultyMyCoursesComponent,
   ],
   imports: [
     BrowserModule,
