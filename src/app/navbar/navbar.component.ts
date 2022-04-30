@@ -4,19 +4,14 @@ import { CourseDataService } from '../course-data.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  constructor(public courseData: CourseDataService) {}
 
-  constructor(
-    private courseData: CourseDataService
-  ) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-  onFacultyLoginClick(isFac:boolean){
+  onFacultyLoginClick(isFac: boolean) {
     this.courseData.setIsFaculty(isFac);
   }
-
 }

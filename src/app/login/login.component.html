@@ -1,20 +1,27 @@
 <form>
-    <h1>Welcome Back</h1>
-      <div class="container">
-        <div>
-      <label for="uname"><b>Email</b></label> <br/>
-      <input type="text" placeholder="Enter Email" name="uname" required>
+  <h1>Welcome Back</h1>
+  <div class="container">
+    <div>
+      <label for="uname"><b>Email</b></label> <br />
+      <input type="text" placeholder="Enter Email" name="uname" required />
     </div>
 
-
-  <div>
-      <label for="psw"><b>Password</b></label><br/>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+    <div>
+      <label for="psw"><b>Password</b></label
+      ><br />
+      <input type="password" placeholder="Enter Password" name="psw" required />
     </div>
 
-      <button type="Login">Login</button>
+    <button (click)="login()">Login</button>
 
-      <div class="anotherPage" *ngIf="!isFaculty" onclick="" style="display: flex;" >New to WeLearn? <a (click)="gotoRegister()" style="margin-left: 2px;">Register Now</a></div>
-      
+    <div
+      class="anotherPage"
+      *ngIf="!isFaculty"
+      onclick=""
+      style="display: flex"
+    >
+      New to WeLearn?
+      <a (click)="gotoRegister()" style="margin-left: 2px">Register Now</a>
     </div>
+  </div>
 </form>

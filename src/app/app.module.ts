@@ -21,7 +21,6 @@ import { FooterComponent } from './footer/footer.component';
 import { ExploreComponent } from './explore/explore.component';
 import { VideoComponent } from './video/video.component';
 import { AddCourseComponent } from './add-course/add-course.component';
-import { AdminPageComponent } from './admin-page/admin-page.component';
 import { AcceptStudentRegistrationComponent } from './accept-student-registration/accept-student-registration.component';
 import { AllUsersDetailsComponent } from './all-users-details/all-users-details.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -53,7 +52,6 @@ import { FacultyMyCoursesComponent } from './faculty-my-courses/faculty-my-cours
     ExploreComponent,
     VideoComponent,
     AddCourseComponent,
-    AdminPageComponent,
     AcceptStudentRegistrationComponent,
     AllUsersDetailsComponent,
     AddCourseVideoDialogComponent,

@@ -12,15 +12,19 @@ export class CourseDataService {
     this.email = emai;
     console.log(this.email);
   }
-
-  isFaculty=false;
-
-  setIsFaculty(isFaculty:boolean){
-    this.isFaculty=isFaculty;
+  isLoggedIn = false;
+  isFaculty = false;
+  isStudent = false;
+  isAdmin = false;
+  setIsFaculty(isFaculty: boolean) {
+    this.isFaculty = isFaculty;
+    this.isLoggedIn = true;
   }
 
-
-
+  setIsAdmin(isAdmin: boolean) {
+    this.isAdmin = isAdmin;
+    this.isLoggedIn = true;
+  }
 
   getCourseNames() {
     return ['Data Structure', 'OOP', 'Algorithms', 'UID', 'Web Development'];
@@ -89,18 +93,11 @@ export class CourseDataService {
       all_courses: ['OOP', 'ALGO'],
       all_system_users: ['FCIS', 'Abadeer Afif'],
       student_registration_pending_approval: [
-        {
-          student_name: 'Abadeer Afif',
-          course_name: 'System Design and Architecture',
-        },
-        {
-          student_name: 'Peter George',
-          course_name: 'Vue Js',
-        },
-        {
-          student_name: 'Peter Magdy',
-          course_name: 'Introduction to Programming',
-        },
+        'Abadeer Afif',
+
+        'Peter George',
+
+        'Peter Magdy',
       ],
     };
   }
