@@ -1,11 +1,103 @@
-<div>
-    <h1>Your Faculty Courses</h1>
-    <div style="justify-content: center; flex-wrap: wrap; display: flex;">
-        <mat-card *ngFor="let course of courses">
-            <mat-card-title>{{course}}</mat-card-title>
-            <mat-card-actions>
-              <button mat-button>View Course</button>
-            </mat-card-actions>
-        </mat-card>
-    </div>
-</div>
+<mat-card>
+  <mat-card-title>Your Faculty Courses</mat-card-title>
+  <div
+    style="
+      margin: 0 auto;
+      width: 70%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      display: flex;
+    "
+  >
+    <mat-card *ngFor="let course of courses">
+      <mat-card-title>{{ course }}</mat-card-title>
+      <mat-card-actions>
+        <button mat-button (click)="display(course)">View Course</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div class="form-container">
+    <mat-card-title>{{
+      selectedCourse == ""
+        ? "Add Course"
+        : "Add to " + addCourseForm.value.courseName + " Course"
+    }}</mat-card-title>
+    <form [formGroup]="addCourseForm">
+      <mat-card-content>
+        <div class="row">
+          <div class="col-sm-6">
+            <mat-form-field class="full-width">
+              <input
+                formControlName="facultyCourse"
+                matInput
+                placeholder="Faculty Responsible for the Course"
+                [readonly]=true
+              />
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field class="full-width">
+              <input
+                formControlName="courseName"
+                matInput
+                placeholder="Course Name"
+              />
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field class="full-width">
+              <textarea
+                formControlName="learningObjectives"
+                matInput
+                placeholder="Learning Objectives"
+              ></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <mat-form-field class="full-width">
+            <textarea
+              formControlName="courseDescription"
+              matInput
+              placeholder="Course Description"
+            ></textarea>
+          </mat-form-field>
+        </div>
+        <div class="add-course-buttons">
+          <button mat-button (click)="openQuizDialog()" mat-raised-button>
+            Add Quiz
+          </button>
+
+          <button mat-button (click)="openVideoDialog()" mat-raised-button>
+            Add Video
+          </button>
+
+          <button mat-button (click)="openReadingDialog()" mat-raised-button>
+            Add Reading
+          </button>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="full-width">
+            <input
+              formControlName="numberOfHouesToComplete"
+              matInput
+              placeholder="Number Of Houes To Complete"
+              type="number"
+            />
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button (click)="saveForm()" mat-raised-button color="primary">
+          {{
+            !selectedCourse
+              ? "Add Course"
+              : "Add to " + addCourseForm.value.courseName + " Course"
+          }}
+        </button>
+      </mat-card-actions>
+    </form>
+  </div>
+</mat-card>

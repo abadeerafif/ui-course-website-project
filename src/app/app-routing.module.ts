@@ -9,6 +9,7 @@ import { VideoComponent } from './video/video.component';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { AcceptStudentRegistrationComponent } from './accept-student-registration/accept-student-registration.component';
 import { AllUsersDetailsComponent } from './all-users-details/all-users-details.component';
+import { FacultyMyCoursesComponent } from './faculty-my-courses/faculty-my-courses.component';
 const routes: Routes = [
   { path: 'mainMenu', component: MainMenuComponent },
   { path: 'login', component: LoginComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
     path: 'all-user-details',
     component: AllUsersDetailsComponent,
   },
+  { path: 'my-faculty-course', component: FacultyMyCoursesComponent },
   { path: 'addCourse', component: AddCourseComponent },
   { path: 'course-content/:id', component: CourseContentComponent },
   { path: 'videos/:id', component: VideoComponent },
