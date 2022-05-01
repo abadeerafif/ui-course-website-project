@@ -6,7 +6,7 @@
         mat-button
         class="drpbtn"
         routerLink="explore"
-        *ngIf="!courseData.isAdmin && !courseData.isFaculty"
+        *ngIf="!courseData.isAdmin && !courseData.isFacultyLoggedIn"
         >Explore</a
       >
       <div
@@ -34,10 +34,11 @@
       routerLink="accept-student-registration"
       >Accept Student Registration</a
     >
-    <div style="display: flex">
-      <a mat-raised-button routerLink="login">{{
-        courseData.isLoggedIn ? "Logout" : "Login"
-      }}</a>
+    <div style="display: flex;">
+        <a routerLink="login" *ngIf="!courseData.isLoggedIn" (click)="courseData.isFaculty=true">Login as Faculty</a>
+        <a mat-raised-button routerLink="login">{{
+            courseData.isLoggedIn ? "Logout" : "Login"
+        }}</a>
     </div>
   </div>
 </mat-toolbar>

@@ -12,6 +12,8 @@ export class CourseDataService {
     this.email = emai;
     console.log(this.email);
   }
+  isStudentLoggedIn=false;
+  isFacultyLoggedIn=false;
   isLoggedIn = false;
   isFaculty = false;
   isStudent = false;
