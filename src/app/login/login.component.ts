@@ -8,7 +8,7 @@ import { CourseDataService } from '../course-data.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private router: Router, private courseData: CourseDataService) {}
+  constructor(private router: Router, public courseData: CourseDataService) {}
 
   gotoRegister() {
     this.router.navigate(['/register']);
