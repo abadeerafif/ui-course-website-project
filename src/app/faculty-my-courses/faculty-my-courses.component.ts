@@ -18,27 +18,21 @@ export class FacultyMyCoursesComponent implements OnInit {
   ) {}
 
   public courses: string[] = [];
-
+  public AuthedUser: any = null;
   ngOnInit(): void {
     this.courses = this.courseData.getCourseNames();
+    this.AuthedUser = this.courseData.getAuthedUser();
   }
-  public coursesDetails = [
-    {
-      facultyCourse: 'FCIS',
-      courseName: 'OOP',
-      learningObjectives: 'lorem 20',
-      courseDescription: 'lorem 20',
-      courseVideos: ['lorem'],
-      courseReadings: ['lorem'],
-      courseQuizzes: [],
-      numberOfHouesToComplete: 24,
-    },
-  ];
+  ngAfterContentInit() {
+    if (this.AuthedUser.type === 'faculty')
+      this.addCourseForm.controls['facultyCourse'].setValue('FCIS');
+  }
+
   addCourseForm = this.formBuilder.group({
-    facultyCourse: ['FCIS'],
+    facultyCourse: [''],
     courseName: [''],
     learningObjectives: [''],
-    courseDescription: [''],
+    courseDesc: [''],
     courseVideos: [[]],
     courseReadings: [[]],
     courseQuizzes: [[]],
@@ -68,32 +62,32 @@ export class FacultyMyCoursesComponent implements OnInit {
   selectedCourse: string = '';
   display(courseName: string) {
     this.selectedCourse = courseName;
-    for (let i = 0; i < this.coursesDetails.length; i++) {
-      if (this.coursesDetails[i].courseName === courseName) {
-       
-        this.addCourseForm.controls['courseName'].setValue(
-          this.coursesDetails[i].courseName
-        );
-        this.addCourseForm.controls['learningObjectives'].setValue(
-          this.coursesDetails[i].learningObjectives
-        );
-        this.addCourseForm.controls['courseDescription'].setValue(
-          this.coursesDetails[i].courseDescription
-        );
-        this.addCourseForm.controls['courseVideos'].setValue(
-          this.coursesDetails[i].courseVideos
-        );
-        this.addCourseForm.controls['courseReadings'].setValue(
-          this.coursesDetails[i].courseReadings
-        );
-        this.addCourseForm.controls['courseQuizzes'].setValue(
-          this.coursesDetails[i].courseQuizzes
-        );
-        this.addCourseForm.controls['numberOfHouesToComplete'].setValue(
-          this.coursesDetails[i].numberOfHouesToComplete
-        );
-        break;
-      }
+    let courseDetails = this.courseData.GetCourseDetails(courseName);
+    if (courseDetails) {
+      this.addCourseForm.controls['facultyCourse'].setValue(
+        courseDetails.facultyCourse
+      );
+      this.addCourseForm.controls['courseName'].setValue(
+        courseDetails.courseName
+      );
+      this.addCourseForm.controls['learningObjectives'].setValue(
+        courseDetails.learningObjectives
+      );
+      this.addCourseForm.controls['courseDesc'].setValue(
+        courseDetails.courseDesc
+      );
+      this.addCourseForm.controls['courseVideos'].setValue(
+        courseDetails.courseVideos
+      );
+      this.addCourseForm.controls['courseReadings'].setValue(
+        courseDetails.courseReadings
+      );
+      this.addCourseForm.controls['courseQuizzes'].setValue(
+        courseDetails.courseQuizzes
+      );
+      this.addCourseForm.controls['numberOfHouesToComplete'].setValue(
+        courseDetails.numberOfHouesToComplete
+      );
     }
   }
 }

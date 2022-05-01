@@ -9,7 +9,12 @@ export class AcceptStudentRegistrationComponent implements OnInit {
   constructor(private courseData: CourseDataService) {}
   public data: string[] = [];
   ngOnInit(): void {
-    this.data =
-      this.courseData.getAuthedUserAdmin().student_registration_pending_approval;
+    this.data = this.courseData.getAllUsersWaitingApproval();
+  }
+  Accept(username: string) {
+    console.log(username);
+  }
+  Decline(username: string) {
+    console.log(username);
   }
 }

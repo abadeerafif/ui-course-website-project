@@ -5,8 +5,7 @@
       <h4>{{ username }}</h4>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button>View More Info</button>
-      <button mat-raised-button>Remove User</button>
+      <button mat-raised-button (click)="removeUser(username)">Remove User</button>
     </mat-card-actions>
   </mat-card>
 </mat-card>

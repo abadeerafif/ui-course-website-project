@@ -29,5 +29,6 @@ export class LoginComponent implements OnInit {
   }
   login() {
     this.courseData.setIsAdmin(true);
+    this.router.navigate(['/all-user-details']);
   }
 }

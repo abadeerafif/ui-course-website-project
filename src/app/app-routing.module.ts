@@ -6,7 +6,6 @@ import { CourseContentComponent } from './course-content/course-content.componen
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { ExploreComponent } from './explore/explore.component';
 import { VideoComponent } from './video/video.component';
-import { AddCourseComponent } from './add-course/add-course.component';
 import { AcceptStudentRegistrationComponent } from './accept-student-registration/accept-student-registration.component';
 import { AllUsersDetailsComponent } from './all-users-details/all-users-details.component';
 import { FacultyMyCoursesComponent } from './faculty-my-courses/faculty-my-courses.component';
@@ -15,7 +14,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'explore', component: ExploreComponent },
-  { path: 'addCourse', component: AddCourseComponent },
   {
     path: 'accept-student-registration',
     component: AcceptStudentRegistrationComponent,
@@ -25,7 +23,7 @@ const routes: Routes = [
     component: AllUsersDetailsComponent,
   },
   { path: 'my-faculty-course', component: FacultyMyCoursesComponent },
-  { path: 'addCourse', component: AddCourseComponent },
+  { path: 'add-course', component: FacultyMyCoursesComponent },
   { path: 'course-content/:id', component: CourseContentComponent },
   { path: 'videos/:id', component: VideoComponent },
   { path: '', redirectTo: '/mainMenu', pathMatch: 'full' },
