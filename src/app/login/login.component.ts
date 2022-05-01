@@ -29,6 +29,11 @@ export class LoginComponent implements OnInit {
   }
   login() {
     this.courseData.setIsAdmin(true);
+    this.courseData.login({
+      name: 'Ain Shams University',
+      email: 'ASU@gmail.com',
+      type: 'admin',
+    });
     this.router.navigate(['/all-user-details']);
   }
 }

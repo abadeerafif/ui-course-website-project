@@ -12,8 +12,8 @@ export class CourseDataService {
     this.email = emai;
     console.log(this.email);
   }
-  isStudentLoggedIn=false;
-  isFacultyLoggedIn=false;
+  isStudentLoggedIn = false;
+  isFacultyLoggedIn = false;
   isLoggedIn = false;
   isFaculty = false;
   isStudent = false;
@@ -415,6 +415,7 @@ export class CourseDataService {
   }
   logout() {
     this.setAuthedUser(null);
+    console.log(this.AuthedUser);
   }
 
   /*Courses */

@@ -2,17 +2,8 @@
   <div class="spacer">
     <span routerLink=""><mat-icon>menu_book</mat-icon>We Learn</span>
     <div class="dropdown">
-      <a
-        mat-button
-        class="drpbtn"
-        routerLink="explore"
-        *ngIf="!courseData.isAdmin && !courseData.isFacultyLoggedIn"
-        >Explore</a
-      >
-      <div
-        class="dropdown-content"
-        *ngIf="!courseData.isAdmin && !courseData.isFaculty"
-      >
+      <a mat-button class="drpbtn" routerLink="explore">Explore</a>
+      <div class="dropdown-content">
         <a routerLink="course-content/1">Data Structure</a>
         <a routerLink="course-content/1">OOP</a>
         <a routerLink="course-content/1">Algorithms</a>
@@ -22,23 +13,34 @@
     </div>
     <a *ngIf="courseData.isStudent" mat-button>Courses</a>
     <a *ngIf="courseData.isStudent" mat-button>Registered Courses</a>
-    <a *ngIf="courseData.isAdmin" mat-button routerLink="add-course"
+    <a
+      *ngIf="courseData.AuthedUser && courseData.AuthedUser.type === 'admin'"
+      mat-button
+      routerLink="add-course"
       >Add Courses</a
     >
-    <a *ngIf="courseData.isAdmin" mat-button routerLink="all-user-details"
+    <a
+      *ngIf="courseData.AuthedUser && courseData.AuthedUser.type === 'admin'"
+      mat-button
+      routerLink="all-user-details"
       >All Users Details</a
     >
     <a
-      *ngIf="courseData.isAdmin"
+      *ngIf="courseData.AuthedUser && courseData.AuthedUser.type === 'admin'"
       mat-button
       routerLink="accept-student-registration"
       >Accept Student Registration</a
     >
-    <div style="display: flex;">
-        <a routerLink="login" *ngIf="!courseData.isLoggedIn" (click)="courseData.isFaculty=true">Login as Faculty</a>
-        <a mat-raised-button routerLink="login">{{
-            courseData.isLoggedIn ? "Logout" : "Login"
-        }}</a>
+    <div style="display: flex">
+      <!-- <a
+        routerLink="login"
+        *ngIf="!courseData.isLoggedIn"
+        (click)="courseData.isFaculty = true"
+        >Login as Faculty</a
+      > -->
+      <a mat-raised-button (click)="loginlogout()">{{
+        courseData.AuthedUser ? "Logout" : "Login"
+      }}</a>
     </div>
   </div>
 </mat-toolbar>
