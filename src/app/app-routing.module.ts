@@ -9,6 +9,7 @@ import { VideoComponent } from './video/video.component';
 import { AcceptStudentRegistrationComponent } from './accept-student-registration/accept-student-registration.component';
 import { AllUsersDetailsComponent } from './all-users-details/all-users-details.component';
 import { FacultyMyCoursesComponent } from './faculty-my-courses/faculty-my-courses.component';
+import { AddUserToSystemComponent } from './add-user-to-system/add-user-to-system.component';
 const routes: Routes = [
   { path: 'mainMenu', component: MainMenuComponent },
   { path: 'login', component: LoginComponent },
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'all-user-details',
     component: AllUsersDetailsComponent,
+  },
+  {
+    path: 'add-user-to-system',
+    component: AddUserToSystemComponent,
   },
   { path: 'my-faculty-course', component: FacultyMyCoursesComponent },
   { path: 'add-course', component: FacultyMyCoursesComponent },
