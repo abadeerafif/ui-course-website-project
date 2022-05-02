@@ -37,6 +37,7 @@ import { AddCourseQuizDialogComponent } from './add-course-quiz-dialog/add-cours
 import { AddCourseReadingsDialogComponent } from './add-course-readings-dialog/add-course-readings-dialog.component';
 import { FacultyMyCoursesComponent } from './faculty-my-courses/faculty-my-courses.component';
 import { AddUserToSystemComponent } from './add-user-to-system/add-user-to-system.component';
+import { CalendarComponent } from './calendar/calendar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +59,7 @@ import { AddUserToSystemComponent } from './add-user-to-system/add-user-to-syste
     AddCourseReadingsDialogComponent,
     FacultyMyCoursesComponent,
     AddUserToSystemComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,

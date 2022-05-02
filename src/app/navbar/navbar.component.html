@@ -13,6 +13,7 @@
     </div>
     <a *ngIf="courseData.isStudent" mat-button>Courses</a>
     <a *ngIf="courseData.isStudent" mat-button>Registered Courses</a>
+    <a *ngIf="courseData.isStudent" routerLink="calendar" mat-button>My Calendar</a>
     <a
       *ngIf="courseData.AuthedUser && courseData.AuthedUser.type === 'admin'"
       mat-button
@@ -38,12 +39,12 @@
       >Add a Student</a
     >
     <div style="display: flex">
-      <!-- <a
+      <a
         routerLink="login"
         *ngIf="!courseData.isLoggedIn"
         (click)="courseData.isFaculty = true"
         >Login as Faculty</a
-      > -->
+      >
       <a mat-raised-button (click)="loginlogout()">{{
         courseData.AuthedUser ? "Logout" : "Login"
       }}</a>

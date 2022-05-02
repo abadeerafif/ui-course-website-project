@@ -10,11 +10,13 @@ import { AcceptStudentRegistrationComponent } from './accept-student-registratio
 import { AllUsersDetailsComponent } from './all-users-details/all-users-details.component';
 import { FacultyMyCoursesComponent } from './faculty-my-courses/faculty-my-courses.component';
 import { AddUserToSystemComponent } from './add-user-to-system/add-user-to-system.component';
+import { CalendarComponent } from './calendar/calendar.component';
 const routes: Routes = [
   { path: 'mainMenu', component: MainMenuComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'explore', component: ExploreComponent },
+  { path: 'calendar', component: CalendarComponent },
   {
     path: 'accept-student-registration',
     component: AcceptStudentRegistrationComponent,
