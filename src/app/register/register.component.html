@@ -9,16 +9,16 @@
 
     <div>
         <label for="uname"><b>Email</b></label> <br/>
-        <input type="text" placeholder="name@email.com" name="uname" required>
+        <input type="text" placeholder="name@email.com" name="uname" required #email>
     </div>
 
   <div>
       <label for="psw"><b>Password</b></label><br/>
-      <input type="password" placeholder="Create Password" name="psw" required>
+      <input type="password" placeholder="Create Password" name="psw" required  #password>
       <label>Between 0 and 72 characters</label>
     </div>
 
-      <button type="Login">Join For Free</button>
+      <button type="Login" (click)="submitsignup(email.value,password.value)">Join For Free</button>
 
       <div class="anotherPage" >Already in WeLearn? <a (click)="gotoLogin()" style="margin-left: 2px;">Login Now</a></div>
       

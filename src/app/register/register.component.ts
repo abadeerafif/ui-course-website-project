@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {signup} from '../firebasemodules/signupmodule'
 
 @Component({
   selector: 'app-register',
@@ -12,9 +13,17 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  submitsignup(email:string,password:string)
+  {
+    signup(email,password);
+    
+
+  }
 
   gotoLogin() {
     this.router.navigate(['/login']);
+    
+    
   }
 
 }

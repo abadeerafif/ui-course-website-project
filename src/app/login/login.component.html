@@ -3,16 +3,16 @@
   <div class="container">
     <div>
       <label for="uname"><b>Email</b></label> <br />
-      <input type="text" placeholder="Enter Email" name="uname" required />
+      <input type="text" placeholder="Enter Email" name="uname" required #email/>
     </div>
 
     <div>
       <label for="psw"><b>Password</b></label
       ><br />
-      <input type="password" placeholder="Enter Password" name="psw" required />
+      <input type="password" placeholder="Enter Password" name="psw" required #password/>
     </div>
 
-    <button (click)="login()">Login</button>
+    <button (click)="login(email.value,password.value)">Login</button>
 
     <div
       class="anotherPage"
@@ -25,3 +25,4 @@
     </div>
   </div>
 </form>
+
