@@ -1,0 +1,13 @@
+.form-container {
+    width: 60%;
+    margin: 25px auto;
+  }
+  
+  .full-width {
+    width: 100%
+  }
+  .add-course-buttons{
+      margin: 15px 0;
+      display: flex;
+      justify-content: space-evenly;
+    }

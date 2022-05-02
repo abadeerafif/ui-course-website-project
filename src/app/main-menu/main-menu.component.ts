@@ -5,28 +5,27 @@ import { CourseDataService } from '../course-data.service';
 @Component({
   selector: 'app-main-menu',
   templateUrl: './main-menu.component.html',
-  styleUrls: ['./main-menu.component.css']
+  styleUrls: ['./main-menu.component.css'],
 })
 export class MainMenuComponent implements OnInit {
+  constructor(private route: Router, private courseData: CourseDataService) {}
 
-  constructor(private route:Router,private courseData:CourseDataService) { }
-
-  public courses: string [] = [];
-
+  public courses: string[] = [];
 
   ngOnInit(): void {
-    this.courses=this.courseData.getCourseNames();
-
+    this.courses = this.courseData.getCourseNames();
   }
 
-  goset(emaill:string){
+  goset(emaill: string) {
     this.courseData.setEmail(emaill);
   }
-
-  goto(simple_route:string) {
+  goToRoute(courseName: string) {
+    return `course-content/${courseName}`;
+  }
+  goto(simple_route: string) {
     console.log(simple_route);
     this.route.navigateByUrl(simple_route);
   }
-  netImage:any = "../assets/images/coursera.png";
-  courseImage:any = "../assets/images/courseimg.png";
+  netImage: any = '../assets/images/coursera.png';
+  courseImage: any = '../assets/images/courseimg.png';
 }

@@ -1,5 +1,5 @@
 <div class="course-content-layout">
-  {{ selectedCourseName }}
+  {{ selectedCourse.courseName }}
   <h1>About this Course</h1>
   <textarea class="course-desc">
         {{ selectedCourse.courseDesc }}
@@ -19,4 +19,3 @@
   <app-instructor [data]="selectedCourse.institutionDetails"></app-instructor>
 </div>
 <app-syllabus></app-syllabus>
-

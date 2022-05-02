@@ -13,25 +13,11 @@ export class CourseContentComponent implements OnInit {
     private courseData: CourseDataService
   ) {}
   courses: any[] = [];
-  ngOnInit(): void {
-    this.courses = this.courseData.getCourses();
-    this.myemail=this.courseData.email;
-    console.log("this is my email",this.myemail);
-    console.log(this.courses.length, this.courseData.getCourses());
-  }
-  ngAfterContentInit() {
-    this.getCourseByID();
-  } 
-  myemail="";
-  selectedCourseName="Course 1";
-  selected_id = this.route.snapshot.paramMap.get('id');
+  ngOnInit(): void {}
   selectedCourse: any = null;
-  getCourseByID() {
-    for (let i = 0; i < this.courses.length; i++) {
-      console.log(this.courses[i]);
-      if (this.courses[i].id === this.selected_id) {
-        this.selectedCourse = this.courses[i];
-      }
-    }
+  ngAfterContentInit() {
+    this.selectedCourse = this.courseData.GetCourseDetails(
+      this.route.snapshot.paramMap.get('id')
+    );
   }
 }

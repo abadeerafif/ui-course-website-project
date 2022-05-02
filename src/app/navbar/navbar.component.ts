@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CourseDataService } from '../course-data.service';
 
 @Component({
@@ -7,11 +8,18 @@ import { CourseDataService } from '../course-data.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  constructor(public courseData: CourseDataService) {}
+  constructor(private router: Router, public courseData: CourseDataService) {}
 
   ngOnInit(): void {}
 
   onFacultyLoginClick(isFac: boolean) {
     this.courseData.setIsFaculty(isFac);
+  }
+  loginlogout() {
+    if (this.courseData.AuthedUser) {
+      this.courseData.logout();
+    } else {
+      this.router.navigate(['/login']);
+    }
   }
 }

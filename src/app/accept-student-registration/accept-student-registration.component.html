@@ -5,8 +5,8 @@
       <h4>{{ username }}</h4>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>Accept</button>
-      <button mat-button>Decline</button>
+      <button mat-button (click)="Accept(username)">Accept</button>
+      <button mat-button (click)="Decline(username)">Decline</button>
     </mat-card-actions>
   </mat-card>
 </mat-card>

@@ -1,3 +1,28 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+
+@Component({
+  selector: 'app-add-user-to-system',
+  templateUrl: './add-user-to-system.component.html',
+  styleUrls: ['./add-user-to-system.component.css'],
+})
+export class AddUserToSystemComponent implements OnInit {
+  constructor(private formBuilder: FormBuilder) {}
+
+  ngOnInit(): void {}
+  addNewStudent = this.formBuilder.group({
+    username: [''],
+    password: ['abc12345'],
+  });
+  saveForm() {
+    console.log('saving', this.addNewStudent.value);
+  }
+}
+
+/*
+
+
+
 import { CourseDataService } from '../course-data.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
@@ -91,3 +116,5 @@ export class FacultyMyCoursesComponent implements OnInit {
     }
   }
 }
+
+*/

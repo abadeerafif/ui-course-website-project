@@ -20,7 +20,6 @@ import { CourseDataService } from './course-data.service';
 import { FooterComponent } from './footer/footer.component';
 import { ExploreComponent } from './explore/explore.component';
 import { VideoComponent } from './video/video.component';
-import { AddCourseComponent } from './add-course/add-course.component';
 import { AcceptStudentRegistrationComponent } from './accept-student-registration/accept-student-registration.component';
 import { AllUsersDetailsComponent } from './all-users-details/all-users-details.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -37,6 +36,15 @@ import { AddCourseVideoDialogComponent } from './add-course-video-dialog/add-cou
 import { AddCourseQuizDialogComponent } from './add-course-quiz-dialog/add-course-quiz-dialog.component';
 import { AddCourseReadingsDialogComponent } from './add-course-readings-dialog/add-course-readings-dialog.component';
 import { FacultyMyCoursesComponent } from './faculty-my-courses/faculty-my-courses.component';
+
+
+
+
+
+
+
+import { AddUserToSystemComponent } from './add-user-to-system/add-user-to-system.component';
+import { CalendarComponent } from './calendar/calendar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,13 +59,14 @@ import { FacultyMyCoursesComponent } from './faculty-my-courses/faculty-my-cours
     FooterComponent,
     ExploreComponent,
     VideoComponent,
-    AddCourseComponent,
     AcceptStudentRegistrationComponent,
     AllUsersDetailsComponent,
     AddCourseVideoDialogComponent,
     AddCourseQuizDialogComponent,
     AddCourseReadingsDialogComponent,
     FacultyMyCoursesComponent,
+    AddUserToSystemComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,

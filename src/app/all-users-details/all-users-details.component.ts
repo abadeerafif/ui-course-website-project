@@ -9,6 +9,9 @@ export class AllUsersDetailsComponent implements OnInit {
   constructor(private courseData: CourseDataService) {}
   public data: string[] = [];
   ngOnInit(): void {
-    this.data = this.courseData.getAuthedUserAdmin().all_system_users;
+    this.data = this.courseData.GetAllSystemUsernames();
+  }
+  removeUser(username: string) {
+    console.log(username);
   }
 }
