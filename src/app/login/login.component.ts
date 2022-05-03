@@ -38,12 +38,14 @@ export class LoginComponent implements OnInit {
     {
       this.dialog.open(dialogg);
     }
+    else{
     this.courseData.login({
       name: 'Ain Shams University',
       email: 'ASU@gmail.com',
       type: 'admin',
     });
     this.router.navigate(['/all-user-details']);
+  }
   }
 }
 
