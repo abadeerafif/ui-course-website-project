@@ -44,44 +44,44 @@ export class AddCourseQuizDialogComponent implements OnInit {
 
   returnQuiz: any = null;
   saveForm() {
-    this.returnQuiz = {
-      questionOne: {
-        questionOne: this.courseQuiz.value.questionOne,
-        questionOneAnswerOne: this.courseQuiz.value.questionOneAnswerOne,
-        questionOneAnswerTwo: this.courseQuiz.value.questionOneAnswerTwo,
-        questionOneAnswerThree: this.courseQuiz.value.questionOneAnswerThree,
-        questionOneAnswer: this.courseQuiz.value.questionOneAnswer,
+    this.returnQuiz = [
+      {
+        question: this.courseQuiz.value.questionOne,
+        questionAnswerOne: this.courseQuiz.value.questionOneAnswerOne,
+        questionAnswerTwo: this.courseQuiz.value.questionOneAnswerTwo,
+        questionAnswerThree: this.courseQuiz.value.questionOneAnswerThree,
+        questionAnswer: this.courseQuiz.value.questionOneAnswer,
       },
-      questionTwo: {
-        questionTwo: this.courseQuiz.value.questionTwo,
-        questionTwoAnswerOne: this.courseQuiz.value.questionTwoAnswerOne,
-        questionTwoAnswerTwo: this.courseQuiz.value.questionTwoAnswerTwo,
-        questionTwoAnswerThree: this.courseQuiz.value.questionTwoAnswerThree,
-        questionTwoAnswer: this.courseQuiz.value.questionTwoAnswer,
+      {
+        question: this.courseQuiz.value.questionTwo,
+        questionAnswerOne: this.courseQuiz.value.questionTwoAnswerOne,
+        questionAnswerTwo: this.courseQuiz.value.questionTwoAnswerTwo,
+        questionAnswerThree: this.courseQuiz.value.questionTwoAnswerThree,
+        questionAnswer: this.courseQuiz.value.questionTwoAnswer,
       },
-      questionThree: {
-        questionThree: this.courseQuiz.value.questionThree,
-        questionThreeAnswerOne: this.courseQuiz.value.questionThreeAnswerOne,
-        questionThreeAnswerTwo: this.courseQuiz.value.questionThreeAnswerTwo,
-        questionThreeAnswerThree:
+      {
+        question: this.courseQuiz.value.questionThree,
+        questionAnswerOne: this.courseQuiz.value.questionThreeAnswerOne,
+        questionAnswerTwo: this.courseQuiz.value.questionThreeAnswerTwo,
+        questionAnswerThree:
           this.courseQuiz.value.questionThreeAnswerThree,
-        questionThreeAnswer: this.courseQuiz.value.questionThreeAnswer,
+        questionAnswer: this.courseQuiz.value.questionThreeAnswer,
       },
-      questionFour: {
-        questionFour: this.courseQuiz.value.questionFour,
-        questionFourAnswerOne: this.courseQuiz.value.questionFourAnswerOne,
-        questionFourAnswerTwo: this.courseQuiz.value.questionFourAnswerTwo,
-        questionFourAnswerThree: this.courseQuiz.value.questionFourAnswerThree,
-        questionFourAnswer: this.courseQuiz.value.questionFourAnswer,
+      {
+        question: this.courseQuiz.value.questionFour,
+        questionAnswerOne: this.courseQuiz.value.questionFourAnswerOne,
+        questionAnswerTwo: this.courseQuiz.value.questionFourAnswerTwo,
+        questionAnswerThree: this.courseQuiz.value.questionFourAnswerThree,
+        questionAnswer: this.courseQuiz.value.questionFourAnswer,
       },
-      questionFive: {
-        questionFive: this.courseQuiz.value.questionFive,
-        questionFiveAnswerOne: this.courseQuiz.value.questionFiveAnswerOne,
-        questionFiveAnswerTwo: this.courseQuiz.value.questionFiveAnswerTwo,
-        questionFiveAnswerThree: this.courseQuiz.value.questionFiveAnswerThree,
-        questionFiveAnswer: this.courseQuiz.value.questionFiveAnswer,
+      {
+        question: this.courseQuiz.value.questionFive,
+        questionAnswerOne: this.courseQuiz.value.questionFiveAnswerOne,
+        questionAnswerTwo: this.courseQuiz.value.questionFiveAnswerTwo,
+        questionAnswerThree: this.courseQuiz.value.questionFiveAnswerThree,
+        questionAnswer: this.courseQuiz.value.questionFiveAnswer,
       },
-    };
+    ];
 
     this.dialogRef.close(this.returnQuiz);
   }

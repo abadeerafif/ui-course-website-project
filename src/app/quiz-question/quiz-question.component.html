@@ -1,0 +1,26 @@
+<mat-card style="margin: 10px auto; width: 70%">
+  <mat-card-subtitle> Question {{ index + 1 }} </mat-card-subtitle>
+  <mat-card-title>{{ data.question }}</mat-card-title>
+  <div style="margin-top: 25px; margin-bottom: 10px">
+    <mat-radio-group
+      aria-label="Select an option"
+      style="display: flex; justify-content: space-around"
+    >
+      <mat-radio-button
+        value="data.questionAnswerOne"
+        (click)="submitAnswerForQuestion(index + 1, data.questionAnswerOne)"
+        >{{ data.questionAnswerOne }}</mat-radio-button
+      >
+      <mat-radio-button
+        value="data.questionAnswerTwo"
+        (click)="submitAnswerForQuestion(index + 1, data.questionAnswerTwo)"
+        >{{ data.questionAnswerTwo }}</mat-radio-button
+      >
+      <mat-radio-button
+        value="data.questionAnswerThree"
+        (click)="submitAnswerForQuestion(index + 1, data.questionAnswerThree)"
+        >{{ data.questionAnswerThree }}</mat-radio-button
+      >
+    </mat-radio-group>
+  </div>
+</mat-card>

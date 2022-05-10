@@ -431,6 +431,7 @@ export class CourseDataService {
     const Courses=await GetCourses()
     return Courses;
   }
+
   getAuthedUserAdmin() {
     return {
       name: 'Ain Shams University',
@@ -452,6 +453,7 @@ export class CourseDataService {
     type: 'student',
     courses: ['WebDevelopment', 'DataStructure'],
   };
+
   /*Authentication */
   setAuthedUser(authedUser: any) {
     this.AuthedUser = authedUser;

@@ -11,27 +11,36 @@ import { AllUsersDetailsComponent } from './all-users-details/all-users-details.
 import { FacultyMyCoursesComponent } from './faculty-my-courses/faculty-my-courses.component';
 import { AddUserToSystemComponent } from './add-user-to-system/add-user-to-system.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { AdminGuardGuard } from './admin-guard.guard';
+import { FacultyGuard } from './faculty.guard';
+import { StudentGuard } from './student.guard';
+
 const routes: Routes = [
   { path: 'mainMenu', component: MainMenuComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'register', component: RegisterComponent,canActivate: [StudentGuard] },
   { path: 'explore', component: ExploreComponent },
   { path: 'calendar', component: CalendarComponent },
   {
     path: 'accept-student-registration',
     component: AcceptStudentRegistrationComponent,
+    canActivate: [AdminGuardGuard]
   },
   {
     path: 'all-user-details',
     component: AllUsersDetailsComponent,
+    canActivate: [AdminGuardGuard]
   },
   {
     path: 'add-user-to-system',
     component: AddUserToSystemComponent,
+    canActivate: [AdminGuardGuard]
   },
-  { path: 'my-faculty-course', component: FacultyMyCoursesComponent },
-  { path: 'add-course', component: FacultyMyCoursesComponent },
+  { path: 'my-faculty-course', component: FacultyMyCoursesComponent, canActivate: [FacultyGuard] },
+  { path: 'add-course', component: FacultyMyCoursesComponent, canActivate:[AdminGuardGuard,FacultyGuard] },
   { path: 'course-content/:id', component: CourseContentComponent },
+  { path: 'quiz/:id', component: QuizComponent },
   { path: 'videos/:id', component: VideoComponent },
   { path: '', redirectTo: '/mainMenu', pathMatch: 'full' },
 ];

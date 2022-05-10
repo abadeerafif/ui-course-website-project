@@ -12,6 +12,10 @@
    
     
   }
+
+  .weekheader{
+    margin: 20px;
+  }
   
   .hourstocomplete{
     width: 300px;
@@ -35,21 +39,17 @@
   }
   .courcontent {
     position:relative;
-    right: 70%;
+    column-gap: 150px;
     
   }
   .week{
     display: flex;
-    justify-content: space-between;
   }
   .courselength{
     display: flex;
-    justify-content: space-between;
-
   }
   .videocount{
-    position:absolute;
-    right: 20%;
+    position:relative;
 
   }
   .hourstocomplete{
@@ -57,16 +57,24 @@
     justify-content:left
 
   }
-  /* .limitTextHeight {
-    height: 20px;
-    overflow: hidden;
-} */
 
 .numOfVideos{
   display: flex;
 }
 
-.videosLinks a{
+a{
   color: blue;
   cursor: pointer;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.contentDiv{
+  margin-top: 20px;
+}
+
+span{
+  margin-right: 5px;
 }

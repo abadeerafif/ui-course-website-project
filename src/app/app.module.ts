@@ -4,6 +4,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,7 +25,6 @@ import { AcceptStudentRegistrationComponent } from './accept-student-registratio
 import { AllUsersDetailsComponent } from './all-users-details/all-users-details.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
-
 import { MatDialogModule } from '@angular/material/dialog';
 
 import { MatRadioModule } from '@angular/material/radio';
@@ -45,6 +45,11 @@ import { FacultyMyCoursesComponent } from './faculty-my-courses/faculty-my-cours
 
 import { AddUserToSystemComponent } from './add-user-to-system/add-user-to-system.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { QuizQuestionComponent } from './quiz-question/quiz-question.component';
+import { CourseCardComponent } from './course-card/course-card.component';
+import { MatTableModule } from '@angular/material/table';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,6 +72,9 @@ import { CalendarComponent } from './calendar/calendar.component';
     FacultyMyCoursesComponent,
     AddUserToSystemComponent,
     CalendarComponent,
+    QuizComponent,
+    QuizQuestionComponent,
+    CourseCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,11 +90,12 @@ import { CalendarComponent } from './calendar/calendar.component';
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
-    MatCardModule,
     MatButtonModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatDialogModule,
+    MatCheckboxModule,
+    MatTableModule,
   ],
   providers: [CourseDataService],
   bootstrap: [AppComponent],

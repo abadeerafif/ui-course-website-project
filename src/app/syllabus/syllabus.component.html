@@ -2,7 +2,7 @@
 <div class="syllabuscont">
     <div class="week">
         <div class="weekheader">
-            <h2>Week 1</h2>
+            <h2>Content</h2>
         </div>
         <div class="courcontent">
             <div class="hourstocomplete">
@@ -11,19 +11,16 @@
                     </span>
                 <div> 1 hour to complete </div>
             </div>
-            <div class="coursetitle">
-                Welcome to the Course
-            </div>
             <div class="courselength">
                 <span class="material-icons">
                     menu_book
                 </span>
                 <div class="videocount">
-                    2 videos (Total 7 min), 3 readings
+                    {{vidCount}} videos , {{readCount}} readings
                 </div>
             </div>
-            <a (click)="readMore=!readMore" style="color: blue; text-decoration-line: underline;"><p *ngIf="!readMore" style="margin-left: 200px;">Read More..</p><p *ngIf="readMore" style="margin-left: 200px;">Show Less..</p></a>
-            <div *ngIf="readMore" style="margin-top: 10px;">
+            <a (click)="readMore=!readMore" style="color: blue; text-decoration-line: underline; margin-top: 10px;"><p *ngIf="!readMore" style="margin-left: 200px;">Read More..</p><p *ngIf="readMore" style="margin-left: 200px;">Show Less..</p></a>
+            <!-- <div *ngIf="readMore" style="margin-top: 10px;">
                 <div class="numOfVideos">
                 <span class="material-icons">video_library</span>
                 <h3> 2 Videos</h3>
@@ -42,6 +39,26 @@
                     <p>Discussion Forum Guidelines  2m</p>
                     <p>Accessibility and Accommodations Statement  1m</p>
                 </div>
+            </div> -->
+
+            <div *ngIf="readMore" class="contentDiv" style="margin-top: 10px;">
+                <span class="example-list-section">
+                    <ul>
+                      <li *ngFor="let course of content">
+                        <mat-checkbox [(ngModel)]="course.completed" (ngModelChange)="updateAllComplete()">
+                        <div *ngIf="course.type=='video'">
+                            <span class="material-icons">video_library</span>
+                            <a (click)="goto('videos/1')">{{course.title}}</a>
+                        </div>
+                        <div *ngIf="course.type=='readings'">
+                            <span class="material-icons">book</span>
+                            <a>{{course.title}}</a>
+                        </div>
+                        </mat-checkbox>
+                      </li>
+                    </ul>
+                  </span>
+                  <button mat-raised-button title="Go to Quiz" *ngIf="allComplete" (click)="navigateToQuiz()">Go to Quiz</button>
             </div>
 
         </div>

@@ -1,5 +1,8 @@
 .example-card {
-    max-width: 400px;
-    margin:15px auto;
-  }
-  
+  max-width: 400px;
+  margin: 15px auto;
+}
+
+mat-table {
+  width: 100%;
+}

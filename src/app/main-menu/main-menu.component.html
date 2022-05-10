@@ -20,6 +20,7 @@
   </div>
   <img [src]="netImage" class="img1" />
 </div>
+
 <div style="margin-left: 100px">
   <h4 style="color: #c280ff">Courses and Specialization</h4>
   <h2>Courses You Can Complete in a Day</h2>
@@ -27,29 +28,39 @@
     Over 4,000 courses in topics like business analytics, graphic design,
     Python, and more.
   </h5>
-
   <div style="display: flex; justify-content: center">
-    <mat-card
-      class="courses"
-      *ngFor="let course of courses"
-      style="margin: 10px"
-    >
-      <mat-card-header style="justify-content: center">
-        <mat-card-title>{{ course }}</mat-card-title>
-      </mat-card-header>
-      <img
-        mat-card-image
-        src="https://www.worldfuturecouncil.org/wp-content/uploads/2021/02/Jada-H.-Article-518x705.jpg"
-        alt="Photo of a book"
-      />
-      <mat-card-actions>
-        <button mat-button (click)="goto(goToRoute(course))">
-          View Course
-        </button>
-      </mat-card-actions>
-    </mat-card>
+    <app-course-card *ngFor="let course of courses" [course]="course">
+    </app-course-card>
   </div>
 </div>
+
+<div
+  style="margin-left: 100px"
+  *ngIf="courseData.AuthedUser && courseData.AuthedUser.type === 'student'"
+>
+  <h2>Your Courses</h2>
+
+  <div style="display: flex; justify-content: center">
+    <app-course-card *ngFor="let course of studentCourses" [course]="course">
+    </app-course-card>
+  </div>
+</div>
+
+<div
+  style="margin-left: 100px"
+  *ngIf="courseData.AuthedUser && courseData.AuthedUser.type === 'student'"
+>
+  <h2>Courses you Can apply to</h2>
+
+  <div style="display: flex; justify-content: center">
+    <app-course-card
+      *ngFor="let course of availablePrerequisitedCourses"
+      [course]="course"
+    >
+    </app-course-card>
+  </div>
+</div>
+
 <div style="display: flex; justify-content: center; align-items: center">
   <button
     mat-button

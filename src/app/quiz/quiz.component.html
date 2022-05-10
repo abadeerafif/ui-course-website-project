@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-title> Quiz {{ quizName }} </mat-card-title>
+
+  <app-quiz-question
+    *ngFor="let data of quiz; let i = index"
+    [data]="data"
+    [index]="i"
+    (answer)="addAnswer($event)"
+  ></app-quiz-question>
+  <button mat-raised-button (click)="evaluate()" style="margin: 25px 45%">
+    Submit
+  </button>
+  <mat-card *ngIf="graded">
+    <mat-card-title style="margin: 25px 0">
+      Congratualtions you got <span style="color: red"> {{ grade }}</span
+      >/5
+    </mat-card-title>
+  </mat-card>
+</mat-card>
