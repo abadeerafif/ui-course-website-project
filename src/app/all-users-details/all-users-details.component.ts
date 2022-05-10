@@ -69,6 +69,8 @@ export class AllUsersDetailsComponent implements OnInit {
     });
 
     console.log(this.usersToBeRemoved);
+    this.courseData.deleteusers(this.usersToBeRemoved)
     this.usersToBeRemoved = [];
+    
   }
 }

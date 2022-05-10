@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { filter } from 'rxjs';
-import {GetCourses,Getuseraccepted,Getuserspending,GetCoursesname} from '../app/firebasemodules/getingdatamodule'
+import {GetCourses,Getuseraccepted,Getuserspending,GetCoursesname,deleteuser} from '../app/firebasemodules/getingdatamodule'
 import {signin} from '../app/firebasemodules/signinmodule'
 
 @Injectable({
@@ -480,6 +480,13 @@ export class CourseDataService {
       if (courseName === co[i].courseName) return co[i];
     }
     return null;
+  }
+  async deleteusers(uNames: string[]): Promise<void> {
+    const co= await this.getCourses()
+    for (let i = 0; i < uNames.length; i++) {
+      deleteuser(uNames[i]);
+    }
+    
   }
 
   coursesAfterTheseOne(courseNames: string[]) {

@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { collection, getDocs, setDoc,doc, query, where,getDoc} from "firebase/firestore"; 
+import { collection, getDocs, setDoc,doc, query, where,getDoc,deleteDoc} from "firebase/firestore"; 
 const firebaseConfig = {
     apiKey: "AIzaSyC_60OgwzHwk5crb7-MFxBwg8WLU4smWdU",
     authDomain: "uiproject-fc8e0.firebaseapp.com",
@@ -110,6 +110,16 @@ export async function isaccepted(mail:string)
       console.log("No such document!");
       return false
     }
+    
+    
+
+}
+export async function deleteuser(mail:string)
+{
+    const docRef = doc(db, "users",mail);
+    
+    
+    await deleteDoc(docRef);
     
     
 
