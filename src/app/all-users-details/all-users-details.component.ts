@@ -64,7 +64,7 @@ export class AllUsersDetailsComponent implements OnInit {
   removeUser() {
     this.selected.map((user) => {
       if (user.selected) {
-        this.usersToBeRemoved.push(user.name);
+        this.usersToBeRemoved.push(user.email);
       }
     });
 
