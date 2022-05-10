@@ -19,7 +19,7 @@ import { StudentGuard } from './student.guard';
 const routes: Routes = [
   { path: 'mainMenu', component: MainMenuComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent,canActivate: [StudentGuard] },
+  { path: 'register', component: RegisterComponent },
   { path: 'explore', component: ExploreComponent },
   { path: 'calendar', component: CalendarComponent },
   {

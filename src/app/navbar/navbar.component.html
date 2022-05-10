@@ -45,7 +45,7 @@
         (click)="courseData.isFaculty = true"
         >Login as Faculty</a
       >
-      <a mat-raised-button (click)="loginlogout()">{{
+      <a mat-raised-button (click)="loginlogout(); courseData.isFaculty = false">{{
         courseData.AuthedUser ? "Logout" : "Login"
       }}</a>
     </div>
