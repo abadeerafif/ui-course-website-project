@@ -474,9 +474,10 @@ export class CourseDataService {
     const names= await GetCoursesname()
     return names;
   }
-  GetCourseDetails(courseName: any): any {
-    for (let i = 0; i < this.allCourse.length; i++) {
-      if (courseName === this.allCourse[i].courseName) return this.allCourse[i];
+  async GetCourseDetails(courseName: any): Promise<any> {
+    const co= await this.getCourses()
+    for (let i = 0; i < co.length; i++) {
+      if (courseName === co[i].courseName) return co[i];
     }
     return null;
   }

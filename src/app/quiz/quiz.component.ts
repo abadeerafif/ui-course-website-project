@@ -14,10 +14,9 @@ export class QuizComponent implements OnInit {
     private courseData: CourseDataService
   ) {}
 
-  ngOnInit(): void {
-    this.quiz = this.courseData.GetCourseDetails(
-      this.route.snapshot.paramMap.get('id')
-    ).courseQuizzes;
+  async ngOnInit(): Promise<void> {
+    this.quiz = await this.courseData.GetCourseDetails(this.route.snapshot.paramMap.get('id'))
+    this.quiz=this.quiz.courseQuizzes;
   }
   quizName: string = 'coming from route';
   quiz: any = [];

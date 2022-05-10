@@ -41,12 +41,12 @@ export async function GetCoursesname()
 }
 export async function Getuserspending()
 {
-    var arr: string[]=[];
+    var arr: any[]=[];
 
     const querySnapshot = await getDocs(collection(db, "pendingusers"));
     querySnapshot.forEach((doc) => {
         console.log(doc.data());
-        arr.push(doc.data()["name"])
+        arr.push(doc.data())
     });
     return arr
     
@@ -62,12 +62,12 @@ export async function adduserpending(email:string,name:string)
 }
 export async function Getuseraccepted()
 {
-    var arr: string[]=[];
+    var arr: any[]=[];
 
     const querySnapshot = await getDocs(collection(db, "users"));
     querySnapshot.forEach((doc) => {
         console.log(doc.data());
-        arr.push(doc.data()["name"])
+        arr.push(doc.data())
     });
     return arr
     

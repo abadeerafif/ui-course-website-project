@@ -60,9 +60,9 @@ export class FacultyMyCoursesComponent implements OnInit {
     });
   }
   selectedCourse: string = '';
-  display(courseName: string) {
+  async display(courseName: string) {
     this.selectedCourse = courseName;
-    let courseDetails = this.courseData.GetCourseDetails(courseName);
+    let courseDetails = await this.courseData.GetCourseDetails(courseName);
     if (courseDetails) {
       this.addCourseForm.controls['facultyCourse'].setValue(
         courseDetails.facultyCourse

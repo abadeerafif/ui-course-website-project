@@ -15,8 +15,8 @@ export class CourseContentComponent implements OnInit {
   courses: any[] = [];
   ngOnInit(): void {}
   selectedCourse: any = null;
-  ngAfterContentInit() {
-    this.selectedCourse = this.courseData.GetCourseDetails(
+  async ngAfterContentInit() {
+    this.selectedCourse = await this.courseData.GetCourseDetails(
       this.route.snapshot.paramMap.get('id')
     );
   }
