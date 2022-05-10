@@ -19,8 +19,8 @@ export class FacultyMyCoursesComponent implements OnInit {
 
   public courses: string[] = [];
   public AuthedUser: any = null;
-  ngOnInit(): void {
-    this.courses = this.courseData.getCourseNames();
+  async ngOnInit(): Promise<void> {
+    this.courses = await this.courseData.getCourseNames();
     this.AuthedUser = this.courseData.getAuthedUser();
   }
   ngAfterContentInit() {

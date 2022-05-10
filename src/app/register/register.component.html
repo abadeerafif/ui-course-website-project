@@ -4,7 +4,7 @@
       <div class="container">
     <div>
       <label for="fullname"><b>Full Name</b></label> <br/>
-      <input type="text" placeholder="Enter your Full Name" name="fullname" required>
+      <input type="text" placeholder="Enter your Full Name" name="fullname" required #name>
     </div>
 
     <div>
@@ -18,7 +18,7 @@
       <label>Between 0 and 72 characters</label>
     </div>
 
-      <button type="Login" (click)="submitsignup(email.value,password.value)">Join For Free</button>
+      <button type="Login" (click)="submitsignup(email.value,password.value,name.value)">Join For Free</button>
 
       <div class="anotherPage" >Already in WeLearn? <a (click)="gotoLogin()" style="margin-left: 2px;">Login Now</a></div>
       

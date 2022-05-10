@@ -12,8 +12,8 @@ export class MainMenuComponent implements OnInit {
 
   public courses: string[] = [];
 
-  ngOnInit(): void {
-    this.courses = this.courseData.getCourseNames();
+  async ngOnInit(): Promise<void> {
+    this.courses = await this.courseData.getCourseNames();
   }
 
   goset(emaill: string) {

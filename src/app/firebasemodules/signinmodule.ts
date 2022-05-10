@@ -1,6 +1,7 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import {initializeApp } from 'firebase/app';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {Getuserspending,Getuserdata,isaccepted} from'../firebasemodules/getingdatamodule'
 const firebaseConfig = {
     apiKey: "AIzaSyC_60OgwzHwk5crb7-MFxBwg8WLU4smWdU",
     authDomain: "uiproject-fc8e0.firebaseapp.com",
@@ -13,9 +14,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth();
-export async function signin(email:string,password:string):Promise<string>
+export async function signin(email:string,password:string):Promise<any>
 {
-    var output="waiting"
+    var output;
     
     var usersi=await signInWithEmailAndPassword(auth, email, password).catch((error) => {
         const errorCode = error.code;
@@ -27,7 +28,15 @@ export async function signin(email:string,password:string):Promise<string>
       {
         output="error"
       }
-     console.log(usersi)
+      else{
+        const accepted=await isaccepted(email);
+        console.log("acccccccccccccccccccc",accepted)
+        if(accepted)
+          output=await Getuserdata(email);
+
+
+      }
+     console.log("abaaaaaaaaaaaaaaaaaaaaa",output)
   
   
   return output

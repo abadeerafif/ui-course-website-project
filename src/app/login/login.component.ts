@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CourseDataService } from '../course-data.service';
-import {signin} from '../firebasemodules/signinmodule'
+import {signin} from '../firebasemodules/signinmodule';
+import {GetCourses} from '../firebasemodules/getingdatamodule'
 import {MatDialog} from '@angular/material/dialog';
 @Component({
   selector: 'app-login',
@@ -32,18 +33,31 @@ export class LoginComponent implements OnInit {
     this.isFaculty = this.courseData.isFaculty;
   }
   async login(email:string,password:string) {
-    this.courseData.setIsAdmin(true);
+    
+    
     const mess= await signin(email,password);
+    this.courseData.setAuthedUser(mess)
+    if(mess["type"]=="admin")
+    {
+      this.courseData.setIsAdmin(true);
+      console.log("admin")
+    }
+    else if(mess["type"]=="faculty")
+    {
+      this.courseData.setIsFaculty(true);
+      console.log("faculity")
+    }
+    else
+    {
+      console.log("student")
+    }
+    GetCourses()
     if(mess=="error")
     {
       this.dialog.open(dialogg);
     }
     else{
-    this.courseData.login({
-      name: 'Ain Shams University',
-      email: 'ASU@gmail.com',
-      type: 'admin',
-    });
+    this.courseData.login(mess);
     this.router.navigate(['/all-user-details']);
   }
   }

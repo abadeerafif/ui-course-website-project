@@ -8,8 +8,9 @@ import { CourseDataService } from '../course-data.service';
 export class AllUsersDetailsComponent implements OnInit {
   constructor(private courseData: CourseDataService) {}
   public data: string[] = [];
-  ngOnInit(): void {
-    this.data = this.courseData.GetAllSystemUsernames();
+  async ngOnInit(): Promise<void> {
+    this.data = await this.courseData.GetAllSystemUsernames();
+    
   }
   removeUser(username: string) {
     console.log(username);

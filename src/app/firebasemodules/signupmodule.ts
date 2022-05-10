@@ -1,6 +1,7 @@
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import {initializeApp } from 'firebase/app';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {adduserpending} from'../firebasemodules/getingdatamodule'
 const firebaseConfig = {
     apiKey: "AIzaSyC_60OgwzHwk5crb7-MFxBwg8WLU4smWdU",
     authDomain: "uiproject-fc8e0.firebaseapp.com",
@@ -13,7 +14,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth();
-export async function signup(email:string,password:string):Promise<string>
+export async function signup(email:string,password:string,name:string):Promise<string>
 {
     var output="waiting"
     
@@ -28,6 +29,7 @@ export async function signup(email:string,password:string):Promise<string>
         output="error"
       }
      console.log(usersi)
+     adduserpending(email,name)
   
   
   return output

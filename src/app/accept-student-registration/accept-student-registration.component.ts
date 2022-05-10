@@ -8,8 +8,8 @@ import { CourseDataService } from '../course-data.service';
 export class AcceptStudentRegistrationComponent implements OnInit {
   constructor(private courseData: CourseDataService) {}
   public data: string[] = [];
-  ngOnInit(): void {
-    this.data = this.courseData.getAllUsersWaitingApproval();
+ async ngOnInit(): Promise<void> {
+    this.data = await this.courseData.getAllUsersWaitingApproval();
   }
   Accept(username: string) {
     console.log(username);
