@@ -9,6 +9,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CourseCardComponent implements OnInit {
   constructor(private route: Router) {}
 
+  @Input() number=0;
+
   ngOnInit(): void {}
   @Input() course = '';
   goToRoute(courseName: string) {

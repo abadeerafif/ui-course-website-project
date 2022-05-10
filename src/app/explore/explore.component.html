@@ -6,18 +6,18 @@
       <mat-card-header style="justify-content: center;">
         <mat-card-title>Faculty {{i+1}}</mat-card-title>
       </mat-card-header>
-      <img mat-card-image src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/browse/domains/data_science.png?auto=compress&dpr=2&w=&h=340&fit=crop" alt="Photo of a book" style="height: 350px;">
+      <img mat-card-image src="https://picsum.photos/1000/1000?random={{i+courses.length}}" alt="Photo of a book" style="height: 350px;">
     </mat-card>
     </div>
 </div>
 <div style="margin-top: 10px;" id="ourCourses">
     <h1>Our Available Courses</h1>
     <div style="justify-content: center; flex-wrap: wrap; display: flex;">
-    <mat-card class="courses" *ngFor="let item of courses" style="margin: 10px; width:20%;">
+    <mat-card class="courses" *ngFor="let item of courses; let i=index" style="margin: 10px; width:20%;">
       <mat-card-header style="justify-content: center;">
         <mat-card-title>{{item}}</mat-card-title>
       </mat-card-header>
-      <img mat-card-image src="https://www.worldfuturecouncil.org/wp-content/uploads/2021/02/Jada-H.-Article-518x705.jpg" alt="Photo of a book" style="height: 350px;">
+      <img mat-card-image src="https://picsum.photos/1000/1000?random={{i}}" alt="Photo of a book" style="height: 350px;">
     </mat-card>
     </div>
 </div>
