@@ -32,12 +32,6 @@
       routerLink="accept-student-registration"
       >Accept Student Registration</a
     >
-    <a
-      *ngIf="courseData.AuthedUser && courseData.AuthedUser.type === 'admin'"
-      mat-button
-      routerLink="add-user-to-system"
-      >Add a Student</a
-    >
     <div style="display: flex">
       <a
         routerLink="login"

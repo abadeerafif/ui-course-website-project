@@ -11,3 +11,20 @@
     display: flex;
     justify-content: space-evenly;
   }
+
+  .overFour{
+    justify-content: space-between;
+  align-items: center;
+  }
+  .learning-objectives {
+    width: 600px;
+    height: fit-content;
+    padding: 5px;
+    border: 1px solid black;
+  }
+  
+  .objectives-container {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  

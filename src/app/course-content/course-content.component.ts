@@ -19,5 +19,6 @@ export class CourseContentComponent implements OnInit {
     this.selectedCourse = await this.courseData.GetCourseDetails(
       this.route.snapshot.paramMap.get('id')
     );
+    console.log(this.selectedCourse)
   }
 }

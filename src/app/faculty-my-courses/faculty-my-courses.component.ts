@@ -31,13 +31,25 @@ export class FacultyMyCoursesComponent implements OnInit {
   addCourseForm = this.formBuilder.group({
     facultyCourse: [''],
     courseName: [''],
-    learningObjectives: [''],
+    obj: [''],
+    learningObjectives: [[]],
     courseDesc: [''],
     courseVideos: [[]],
     courseReadings: [[]],
     courseQuizzes: [[]],
     numberOfHouesToComplete: [''],
   });
+  obj: string = '';
+  addCourseObjective() {
+    if (this.addCourseForm.value.obj === '') {
+      alert('please enter objective first');
+      return;
+    }
+    this.addCourseForm.value.learningObjectives.push(
+      this.addCourseForm.value.obj
+    );
+    this.addCourseForm.controls['obj'].setValue('');
+  }
   saveForm() {
     console.log('saving', this.addCourseForm.value);
   }

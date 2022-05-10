@@ -12,11 +12,11 @@ export class FacultyGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-    if(this.courseData.AuthedUser.type!="faculty"){
-      alert('You are not allowed to view this page');
-      return false;
+    if(this.courseData.AuthedUser.type==="faculty"||this.courseData.AuthedUser.type==="admin"){
+      return true;
     }
-    return true;
+    alert('You are not allowed to view this page');
+    return false;
   }
   
 }

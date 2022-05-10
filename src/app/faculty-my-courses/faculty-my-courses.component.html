@@ -52,14 +52,33 @@
           <div class="col-sm-6">
             <mat-form-field class="full-width">
               <textarea
-                formControlName="learningObjectives"
+                formControlName="obj"
                 matInput
                 placeholder="Learning Objectives"
-              ></textarea>
+                [readonly]="addCourseForm.value.learningObjectives.length === 4 ? true : false"
+
+                ></textarea>
             </mat-form-field>
           </div>
         </div>
-
+        <div class="add-course-buttons overFour">
+          <button mat-button (click)="addCourseObjective()" mat-raised-button [disabled]="addCourseForm.value.learningObjectives.length === 4 ? true : false">
+            Add Objective
+          </button>
+          <mat-card-title style="margin-top: 0;">
+            {{this.addCourseForm.value.learningObjectives.length}}/4
+          </mat-card-title>
+        </div>
+        <div class="learning-objectives">
+          <h3>What you will learn</h3>
+          <div class="objectives-container">
+            <app-learning-objective
+              *ngFor="let data of this.addCourseForm.value.learningObjectives"
+              [data]="data"
+            >
+            </app-learning-objective>
+          </div>
+        </div>
         <div class="col-sm-6">
           <mat-form-field class="full-width">
             <textarea

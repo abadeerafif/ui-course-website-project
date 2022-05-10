@@ -9,7 +9,6 @@ import { VideoComponent } from './video/video.component';
 import { AcceptStudentRegistrationComponent } from './accept-student-registration/accept-student-registration.component';
 import { AllUsersDetailsComponent } from './all-users-details/all-users-details.component';
 import { FacultyMyCoursesComponent } from './faculty-my-courses/faculty-my-courses.component';
-import { AddUserToSystemComponent } from './add-user-to-system/add-user-to-system.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { AdminGuardGuard } from './admin-guard.guard';
@@ -32,11 +31,7 @@ const routes: Routes = [
     component: AllUsersDetailsComponent,
     canActivate: [AdminGuardGuard]
   },
-  {
-    path: 'add-user-to-system',
-    component: AddUserToSystemComponent,
-    canActivate: [AdminGuardGuard]
-  },
+  
   { path: 'my-faculty-course', component: FacultyMyCoursesComponent, canActivate: [FacultyGuard] },
   { path: 'add-course', component: FacultyMyCoursesComponent, canActivate:[AdminGuardGuard,FacultyGuard] },
   { path: 'course-content/:id', component: CourseContentComponent },
