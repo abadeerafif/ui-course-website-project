@@ -15,8 +15,8 @@
       Professional Certificates, and degrees from world-class universities and
       companies.
     </p>
-    <input type="button" value="Join for free" class="btn1" />
-    <input type="button" value="Try WeLearn for Business" class="btn2" />
+    <input type="button" value="Join for free" class="btn1"(click)="courseData.isFaculty = false;goto('login')"/>
+    <!-- <input type="button" value="Try WeLearn for Business" class="btn2" (click)="courseData.isFaculty = true;goto('login');" /> -->
   </div>
   <img [src]="netImage" class="img1" />
 </div>
