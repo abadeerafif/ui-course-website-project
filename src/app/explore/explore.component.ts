@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CourseDataService } from '../course-data.service';
 
 
 @Component({
@@ -9,9 +10,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ExploreComponent implements OnInit {
 
-  constructor(private route:Router) { }
+  constructor(private route:Router, public courseData: CourseDataService) { }
 
-  ngOnInit(): void {
+  public courses: string[] = [];
+  public faculties: string[] = [];
+  async ngOnInit(): Promise<void> {
+    this.courses=await this.courseData.getCourseNames();
+    // this.faculties=await this.courseData.getFaculties();  function to get all faculties having courses
   }
 
   goto(simple_route:string) {

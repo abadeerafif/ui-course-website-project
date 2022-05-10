@@ -15,8 +15,8 @@
       Professional Certificates, and degrees from world-class universities and
       companies.
     </p>
-    <input type="button" value="Join for free" class="btn1" />
-    <input type="button" value="Try WeLearn for Business" class="btn2" />
+    <input type="button" value="Join for free" class="btn1"(click)="courseData.isFaculty = false;goto('login')"/>
+    <!-- <input type="button" value="Try WeLearn for Business" class="btn2" (click)="courseData.isFaculty = true;goto('login');" /> -->
   </div>
   <img [src]="netImage" class="img1" />
 </div>
@@ -29,7 +29,7 @@
     Python, and more.
   </h5>
   <div style="display: flex; justify-content: center">
-    <app-course-card *ngFor="let course of courses" [course]="course">
+    <app-course-card *ngFor="let course of courses; let i=index;" [course]="course" [number]="i">
     </app-course-card>
   </div>
 </div>
@@ -41,7 +41,7 @@
   <h2>Your Courses</h2>
 
   <div style="display: flex; justify-content: center">
-    <app-course-card *ngFor="let course of studentCourses" [course]="course">
+    <app-course-card *ngFor="let course of studentCourses;let i=index;" [course]="course" [number]="i+courses.length">
     </app-course-card>
   </div>
 </div>
@@ -53,10 +53,7 @@
   <h2>Courses you Can apply to</h2>
 
   <div style="display: flex; justify-content: center">
-    <app-course-card
-      *ngFor="let course of availablePrerequisitedCourses"
-      [course]="course"
-    >
+    <app-course-card *ngFor="let course of availablePrerequisitedCourses;let i=index;" [course]="course" [number]="i+courses.length+studentCourses.length">
     </app-course-card>
   </div>
 </div>

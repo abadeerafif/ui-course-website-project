@@ -1,18 +1,18 @@
-<div style="display: flex; justify-content: center">
+<div style="display: flex; justify-content: center; ">
     <mat-card
       class="courses"
-      style="margin: 10px"
+      style="margin: 10px;"
     >
       <mat-card-header style="justify-content: center">
         <mat-card-title>{{ course }}</mat-card-title>
       </mat-card-header>
       <img
         mat-card-image
-        src="https://www.worldfuturecouncil.org/wp-content/uploads/2021/02/Jada-H.-Article-518x705.jpg"
+        src="https://picsum.photos/1000/1000?random={{number}}"
         alt="Photo of a book"
       />
       <mat-card-actions>
-        <button mat-button (click)="goto(goToRoute(course))">
+        <button mat-button (click)="goto(goToRoute(course))" >
           View Course
         </button>
       </mat-card-actions>

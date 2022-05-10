@@ -4,11 +4,8 @@
     <div class="dropdown">
       <a mat-button class="drpbtn" routerLink="explore">Explore</a>
       <div class="dropdown-content">
-        <a routerLink="course-content/1">Data Structure</a>
-        <a routerLink="course-content/1">OOP</a>
-        <a routerLink="course-content/1">Algorithms</a>
-        <a routerLink="course-content/1">UID</a>
-        <a routerLink="course-content/1">Web Development</a>
+        <a routerLink="explore">Faculties</a>
+        <a (click)="gotoCourse()">Courses</a>
       </div>
     </div>
     <a *ngIf="courseData.isStudent" mat-button>Courses</a>
@@ -33,12 +30,6 @@
       >Accept Student Registration</a
     >
     <div style="display: flex">
-      <a
-        routerLink="login"
-        *ngIf="!courseData.isLoggedIn"
-        (click)="courseData.isFaculty = true"
-        >Login as Faculty</a
-      >
       <a mat-raised-button (click)="loginlogout(); courseData.isFaculty = false">{{
         courseData.AuthedUser ? "Logout" : "Login"
       }}</a>
