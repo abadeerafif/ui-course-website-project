@@ -33,7 +33,7 @@ const routes: Routes = [
   },
   
   { path: 'my-faculty-course', component: FacultyMyCoursesComponent, canActivate: [FacultyGuard] },
-  { path: 'add-course', component: FacultyMyCoursesComponent, canActivate: [FacultyGuard] },
+  { path: 'add-course', component: FacultyMyCoursesComponent, canActivate: [AdminGuardGuard] },
   { path: 'course-content/:id', component: CourseContentComponent },
   { path: 'quiz/:id', component: QuizComponent },
   { path: 'videos/:id', component: VideoComponent },

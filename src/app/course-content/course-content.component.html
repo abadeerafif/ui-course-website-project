@@ -1,6 +1,4 @@
-<div *ngIf="loading">
-loading...
-</div>
+<div *ngIf="loading">loading...</div>
 <div class="course-content-layout" *ngIf="!loading">
   <mat-card-title>
     {{ selectedCourse.courseName }}
@@ -20,7 +18,5 @@ loading...
       </app-learning-objective>
     </div>
   </div>
-  <app-instructor [data]="selectedCourse.instructorDetails"></app-instructor>
-  <app-instructor [data]="selectedCourse.institutionDetails"></app-instructor>
   <app-syllabus [data]="selectedCourse"></app-syllabus>
 </div>

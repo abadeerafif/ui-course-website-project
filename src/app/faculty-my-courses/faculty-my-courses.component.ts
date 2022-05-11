@@ -54,15 +54,26 @@ export class FacultyMyCoursesComponent implements OnInit {
   addCourseForm = this.formBuilder.group({
     facultyCourse: [''],
     courseName: [''],
+    pre:[''],
     obj: [''],
     learningObjectives: [[]],
+    prerequisite: [[]],
     courseDesc: [''],
     courseVideos: [[]],
     courseReadings: [[]],
     courseQuizzes: [[]],
     numberOfHouesToComplete: [''],
   });
-  obj: string = '';
+  addCoursePrerequisite(){
+    if (this.addCourseForm.value.pre === '') {
+      alert('please enter prerequisite first');
+      return;
+    }
+    this.addCourseForm.value.prerequisite.push(
+      this.addCourseForm.value.pre
+    );
+    this.addCourseForm.controls['pre'].setValue('');
+  }
   addCourseObjective() {
     if (this.addCourseForm.value.obj === '') {
       alert('please enter objective first');
