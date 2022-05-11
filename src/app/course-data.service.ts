@@ -1,8 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { filter } from 'rxjs';
-import {GetCourses,Getuseraccepted,Getuserspending,GetCoursesname,deleteuser,approveeuser,addcourse} from '../app/firebasemodules/getingdatamodule'
-import {signin} from '../app/firebasemodules/signinmodule'
+import {
+  GetCourses,
+  Getuseraccepted,
+  Getuserspending,
+  GetCoursesname,
+  deleteuser,
+  approveeuser,
+  addcourse,
+} from '../app/firebasemodules/getingdatamodule';
+import { signin } from '../app/firebasemodules/signinmodule';
 
 @Injectable({
   providedIn: 'root',
@@ -166,14 +174,14 @@ export class CourseDataService {
   //   email: 'asd@gmail.com',
   //   type: 'faculty',
   // };
-  AuthedUser:any=null;
+  AuthedUser: any = null;
 
   /*Authentication */
   setAuthedUser(authedUser: any) {
     this.AuthedUser = authedUser;
   }
   getAuthedUser() {
-    console.log(this.AuthedUser)
+    console.log(this.AuthedUser);
     return this.AuthedUser;
   }
   login(authedUser: any) {
@@ -204,31 +212,40 @@ export class CourseDataService {
     }
   }
 
-  coursesAfterTheseOne(courseNames: string[]) {
+  coursesAfterTheseOne(courseNames: string[], allCourse: any[]) {
+    console.log('pre', courseNames, allCourse);
     let courses = new Set();
     for (let j = 0; j < courseNames.length; j++) {
-      for (let i = 0; i < this.allCourse.length; i++) {
-        if (this.allCourse[i].prerequisite.length < 2) {
+      for (let i = 0; i < allCourse.length; i++) {
+        if (allCourse[i].prerequisite.length < 2) {
           if (
-            this.allCourse[i].courseName !== courseNames[j] &&
-            this.allCourse[i].prerequisite.includes(courseNames[j])
+            allCourse[i].courseName !== courseNames[j] &&
+            allCourse[i].prerequisite.includes(courseNames[j])
           ) {
-            courses.add(this.allCourse[i].courseName);
-            console.log(this.allCourse[i].courseName);
+            courses.add(allCourse[i].courseName);
+            console.log(allCourse[i].courseName);
           }
         } else {
           let allFound = true;
-          for (let k = 0; k < this.allCourse[i].prerequisite.length; k++) {
-            allFound = courseNames.includes(this.allCourse[i].prerequisite[k]);
+          for (let k = 0; k < allCourse[i].prerequisite.length; k++) {
+            allFound = courseNames.includes(allCourse[i].prerequisite[k]);
           }
           if (allFound) {
-            courses.add(this.allCourse[i].courseName);
-            console.log(this.allCourse[i].courseName);
+            courses.add(allCourse[i].courseName);
+            console.log(allCourse[i].courseName);
           }
         }
       }
     }
-
+    for (let i = 0; i < allCourse.length; i++) {
+      if (
+        allCourse[i].prerequisite.length === 0 &&
+        !courseNames.includes(allCourse[i].courseName)
+      ) {
+        courses.add(allCourse[i].courseName);
+        console.log(allCourse[i].courseName);
+      }
+    }
     return Array.from(courses);
   }
   /*Manage Users */
@@ -241,19 +258,12 @@ export class CourseDataService {
     const output = await Getuserspending();
     return output;
   }
-  async acceptuser(mails:string[]) {
-    for (let j = 0; j < mails.length; j++)
-    {
-      approveeuser(mails[j])
-
+  async acceptuser(mails: string[]) {
+    for (let j = 0; j < mails.length; j++) {
+      approveeuser(mails[j]);
     }
-  
-
   }
-  async addcoursetodatabase(cour : any)
-  {
-    await addcourse(cour)
-
+  async addcoursetodatabase(cour: any) {
+    await addcourse(cour);
   }
-
 }

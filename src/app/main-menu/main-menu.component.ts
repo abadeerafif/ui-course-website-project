@@ -17,9 +17,10 @@ export class MainMenuComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     this.courses = await this.courseData.getCourseNames();
     this.studentCourses = this.courseData.AuthedUser.courses;
+    let allCourses=await this.courseData.getCourses();
     if (this.courseData.AuthedUser.type === 'student') {
       this.availablePrerequisitedCourses = this.courseData.coursesAfterTheseOne(
-        this.studentCourses
+        this.studentCourses,allCourses
       );
     }
   }

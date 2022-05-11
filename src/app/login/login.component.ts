@@ -39,37 +39,29 @@ export class LoginComponent implements OnInit {
     const mess= await signin(email,password);
     console.log(mess)
     this.courseData.setAuthedUser(mess.user)
-    
+    console.log(this.courseData.AuthedUser)
     GetCourses()
     if(mess["state"]=="error")
     {
       this.dialog.open(dialogg,{data:mess["message"]});
     }
-  //   else{
-  //     if(mess["user"]["type"]=="admin")
-  //   {
-  //     this.courseData.setIsAdmin(true);
-  //     this.courseData.AuthedUser.type="admin";
-  //     console.log(this.courseData.AuthedUser)
-  //     this.router.navigate(['/all-user-details']);
-  //   }
-  //   else if(mess["user"]["type"]=="faculty")
-  //   {
-  //     this.courseData.setIsFaculty(true);
-  //     this.courseData.AuthedUser.type="faculty";
-  //     console.log("faculity")
-  //     this.router.navigate(['/mainMenu']);
-  //   }
-  //   else
-  //   {
-  //     console.log("student");
-  //     this.courseData.AuthedUser.type="student";
-  //     console.log(this.courseData.AuthedUser)
-  //     this.router.navigate(['/mainMenu']);
-  //   }
-  //   this.courseData.login(mess);
-    
-  // }
+    else{
+      if(mess["user"]["type"]=="admin")
+    {
+      
+      this.router.navigate(['/all-user-details']);
+    }
+    else if(mess["user"]["type"]=="faculty")
+    {
+      
+      this.router.navigate(['/mainMenu']);
+    }
+    else
+    {
+      
+      this.router.navigate(['/mainMenu']);
+    }
+  }
 }
 
 
