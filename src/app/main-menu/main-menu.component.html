@@ -42,6 +42,7 @@
   <div style="display: flex; justify-content: center">
     <app-course-card *ngFor="let course of studentCourses;let i=index;" [course]="course" [number]="i+courses.length">
     </app-course-card>
+    <h2 *ngIf="studentCourses.length===0">no courses found</h2>
   </div>
 </div>
 
@@ -51,6 +52,17 @@
   <div style="display: flex; justify-content: center">
     <app-course-card [canEnroll]="true" *ngFor="let course of availablePrerequisitedCourses;let i=index;" [course]="course" [number]="i+courses.length+studentCourses.length">
     </app-course-card>
+    <h2 *ngIf="availablePrerequisitedCourses.length===0">no courses found</h2>
+  </div>
+</div>
+
+<div *ngIf="courseData.AuthedUser && courseData.AuthedUser.type === 'student'">
+  <h2 style="margin-left: 100px">Finished Courses</h2>
+
+  <div style="display: flex; justify-content: center">
+    <app-course-card  *ngFor="let course of finishedCourses;let i=index;" [course]="course" [number]="i+courses.length+studentCourses.length">
+    </app-course-card>
+    <h2 *ngIf="finishedCourses.length===0">no courses found</h2>
   </div>
 </div>
 

@@ -1,8 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { filter } from 'rxjs';
-import {GetCourses,Getuseraccepted,Getuserspending,GetCoursesname,deleteuser,approveeuser,addcourse,enrollcourss} from '../app/firebasemodules/getingdatamodule'
-import {signin} from '../app/firebasemodules/signinmodule'
+import {
+  GetCourses,
+  Getuseraccepted,
+  Getuserspending,
+  GetCoursesname,
+  deleteuser,
+  approveeuser,
+  addcourse,
+  enrollcourss,
+} from '../app/firebasemodules/getingdatamodule';
+import { signin } from '../app/firebasemodules/signinmodule';
 
 @Injectable({
   providedIn: 'root',
@@ -212,17 +221,18 @@ export class CourseDataService {
         if (allCourse[i].prerequisite.length < 2) {
           if (
             allCourse[i].courseName !== courseNames[j] &&
-            allCourse[i].prerequisite.includes(courseNames[j])
+            allCourse[i].prerequisite.includes(courseNames[j]) &&
+            !courseNames.includes(allCourse[i].courseName)
           ) {
             courses.add(allCourse[i].courseName);
-            console.log(allCourse[i].courseName);
+            console.log('adding to pre', allCourse[i].courseName);
           }
         } else {
           let allFound = true;
           for (let k = 0; k < allCourse[i].prerequisite.length; k++) {
             allFound = courseNames.includes(allCourse[i].prerequisite[k]);
           }
-          if (allFound) {
+          if (allFound && !courseNames.includes(allCourse[i].courseName)) {
             courses.add(allCourse[i].courseName);
             console.log(allCourse[i].courseName);
           }
@@ -258,12 +268,9 @@ export class CourseDataService {
   async addcoursetodatabase(cour: any) {
     await addcourse(cour);
   }
-  async enroll(cour : string)
-  {
-   const carr=this.AuthedUser["courses"]
-    carr.push(cour)
-    await enrollcourss(carr,this.AuthedUser["email"])
-
+  async enroll(cour: string) {
+    const carr = this.AuthedUser['courses'];
+    carr.push(cour);
+    await enrollcourss(carr, this.AuthedUser['email']);
   }
-
 }

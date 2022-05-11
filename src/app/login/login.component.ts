@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit {
     const mess= await signin(email,password);
     console.log(mess)
     this.courseData.setAuthedUser(mess.user)
-    console.log(this.courseData.AuthedUser)
     GetCourses()
     if(mess["state"]=="error")
     {
@@ -61,7 +60,7 @@ export class LoginComponent implements OnInit {
        
        this.router.navigate(['/mainMenu']);
      }
-     this.courseData.login(mess);
+     this.courseData.login(mess.user);
     
    }
 }
