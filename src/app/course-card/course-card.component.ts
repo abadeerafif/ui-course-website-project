@@ -11,13 +11,7 @@ export class CourseCardComponent implements OnInit {
 
   @Input() number=0;
 
-  notAuthed=false;
-
-  ngOnInit(): void {
-    if(!this.courseData.AuthedUser){
-      this.notAuthed=true;
-    }
-  }
+  ngOnInit(): void {}
   @Input() course = '';
   goToRoute(courseName: string) {
     return `course-content/${courseName}`;
