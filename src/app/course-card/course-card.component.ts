@@ -24,5 +24,6 @@ export class CourseCardComponent implements OnInit {
 
   addCourse(){
     console.log("add this course to the student");
+    this.courseData.enroll(this.course)
   }
 }
