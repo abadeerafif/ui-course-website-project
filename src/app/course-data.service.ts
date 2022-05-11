@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { filter } from 'rxjs';
-import {GetCourses,Getuseraccepted,Getuserspending,GetCoursesname,deleteuser,approveeuser,addcourse,enrollcourss} from '../app/firebasemodules/getingdatamodule'
+import {GetCourses,Getuseraccepted,Getuserspending,GetCoursesname,deleteuser,approveeuser,addcourse,enrollcourss,Getfacultynames} from '../app/firebasemodules/getingdatamodule'
 import {signin} from '../app/firebasemodules/signinmodule'
 
 @Injectable({
@@ -261,6 +261,13 @@ export class CourseDataService {
     carr.push(cour)
     await enrollcourss(carr,this.AuthedUser["email"])
 
+  }
+  async GetfacultyNames(): Promise<string[]> {
+    const output = await Getfacultynames();
+    console.log("oaaaaaaaaaaaaaaaa",output);
+
+
+    return output;
   }
 
 }
