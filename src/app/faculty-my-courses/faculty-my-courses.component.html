@@ -1,5 +1,7 @@
+
 <div *ngIf="loading">
-  loading...
+  <mat-progress-bar mode="buffer"*ngIf="loading"></mat-progress-bar>
+  <div>loading...</div>
   </div>
 <mat-card *ngIf="!loading">
   <mat-card-title>{{

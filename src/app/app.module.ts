@@ -48,7 +48,7 @@ import { QuizComponent } from './quiz/quiz.component';
 import { QuizQuestionComponent } from './quiz-question/quiz-question.component';
 import { CourseCardComponent } from './course-card/course-card.component';
 import { MatTableModule } from '@angular/material/table';
-
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -94,6 +94,8 @@ import { MatTableModule } from '@angular/material/table';
     MatDialogModule,
     MatCheckboxModule,
     MatTableModule,
+    MatProgressBarModule,
+    
   ],
   providers: [CourseDataService],
   bootstrap: [AppComponent],
