@@ -138,10 +138,18 @@ export async function approveeuser(mail:string)
         console.log("error")
         return "error"
       }
+      const approvedu ={
+        type: u["type"], 
+        courses: [], 
+        email: u["email"],
+        name: u["name"],
+
+      }
+     
     
     
     await deleteDoc(docRef);
-    await setDoc(doc(db, "users", mail), u);
+    await setDoc(doc(db, "users", mail), approvedu);
     console.log("done")
     return "done"
     

@@ -13,7 +13,7 @@ export class AdminGuardGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-    if(this.courseData.AuthedUser.type!="admin"){
+    if(this.courseData.AuthedUser.type=="admin"){
       console.log(this.courseData.AuthedUser)
       alert('You are not allowed to view this page');
       return false;
