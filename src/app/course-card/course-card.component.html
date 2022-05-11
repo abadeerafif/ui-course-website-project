@@ -11,8 +11,8 @@
         src="https://picsum.photos/1000/1000?random={{number}}"
         alt="Photo of a book"
       />
-      <mat-card-actions>
-        <button mat-button (click)="goto(goToRoute(course))" >
+      <mat-card-actions >
+        <button mat-button (click)="goto(goToRoute(course))" disabled="{{notAuthed}}">
           View Course
         </button>
       </mat-card-actions>

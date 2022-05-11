@@ -1,9 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { CourseDataService } from '../course-data.service';
 import {signin} from '../firebasemodules/signinmodule';
 import {GetCourses} from '../firebasemodules/getingdatamodule'
-import {MatDialog} from '@angular/material/dialog';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -54,13 +55,17 @@ export class LoginComponent implements OnInit {
     GetCourses()
     if(mess=="error")
     {
-      this.dialog.open(dialogg);
+      this.dialog.open(dialogg,{data:{
+        problem:"invalid input"
+      }});
     }
     else{
     this.courseData.login(mess);
     this.router.navigate(['/all-user-details']);
   }
-  }
+}
+
+
 }
 
 @Component({
@@ -68,9 +73,23 @@ export class LoginComponent implements OnInit {
   templateUrl: 'dialog.html',
 })
 export class dialogg {
-  message:string="please insert valid data"; 
-  
-  
-  
+  message:string=""; 
+  title:string="";
+
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any
+ ) { }
+
+  ngOnInit(): void {
+    if(this.data.problem=="invalid input"){
+      this.title="Invalid Input";
+      this.message="Please insert valid data";
+    }
+
+    if(this.data.problem=="pending"){
+      this.title="Pending Approval";
+      this.message="Your account is pending approval from the admin";
+    }
+  }
   
 }
