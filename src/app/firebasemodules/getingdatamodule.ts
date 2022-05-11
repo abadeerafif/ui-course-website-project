@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { collection, getDocs, setDoc,doc, query, where,getDoc,deleteDoc} from "firebase/firestore"; 
+import { collection, getDocs, setDoc,doc, query, where,getDoc,deleteDoc,updateDoc } from "firebase/firestore"; 
 const firebaseConfig = {
     apiKey: "AIzaSyC_60OgwzHwk5crb7-MFxBwg8WLU4smWdU",
     authDomain: "uiproject-fc8e0.firebaseapp.com",
@@ -138,10 +138,18 @@ export async function approveeuser(mail:string)
         console.log("error")
         return "error"
       }
+      const approvedu ={
+        type: u["type"], 
+        courses: [], 
+        email: u["email"],
+        name: u["name"],
+
+      }
+     
     
     
     await deleteDoc(docRef);
-    await setDoc(doc(db, "users", mail), u);
+    await setDoc(doc(db, "users", mail), approvedu);
     console.log("done")
     return "done"
     
@@ -151,4 +159,15 @@ export async function approveeuser(mail:string)
 export async function addcourse(course:any)
 {
   await setDoc(doc(db, "courses", course["courseName"]),course);
+}
+export async function enrollcourss(courses:string[],email:string)
+{
+  const docRef = doc(db, "users", email);
+  
+
+  // Set the "capital" field of the city 'DC'
+    await updateDoc(docRef, {
+      courses: courses
+});
+
 }

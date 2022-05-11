@@ -45,23 +45,25 @@ export class LoginComponent implements OnInit {
     {
       this.dialog.open(dialogg,{data:mess["message"]});
     }
-    else{
-      if(mess["user"]["type"]=="admin")
-    {
+  else{
+       if(mess["user"]["type"]=="admin")
+     {
       
-      this.router.navigate(['/all-user-details']);
-    }
-    else if(mess["user"]["type"]=="faculty")
-    {
+       this.router.navigate(['/accept-student-registration']);
+     }
+     else if(mess["user"]["type"]=="faculty")
+     {
       
-      this.router.navigate(['/mainMenu']);
-    }
-    else
-    {
-      
-      this.router.navigate(['/mainMenu']);
-    }
-  }
+       this.router.navigate(['/mainMenu']);
+     }
+     else
+     {
+       
+       this.router.navigate(['/mainMenu']);
+     }
+     this.courseData.login(mess);
+    
+   }
 }
 
 
