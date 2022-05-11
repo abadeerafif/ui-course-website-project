@@ -171,3 +171,21 @@ export async function enrollcourss(courses:string[],email:string)
 });
 
 }
+export async function Getfacultynames()
+{
+    
+    const facultynames = new Set<string>();
+    const arr: string[]=[];
+
+    const querySnapshot = await getDocs(collection(db, "courses"));
+    querySnapshot.forEach((doc) => {
+        console.log(doc.data());
+        facultynames.add(doc.data()["facultyCourse"])
+    });
+    for (let name of facultynames) {
+      arr.push(name)     
+  }
+    return arr
+    
+
+}
