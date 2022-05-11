@@ -54,24 +54,34 @@
       <div *ngIf="readMore" class="contentDiv" style="margin-top: 10px">
         <span class="example-list-section">
           <ul>
-            <li *ngFor="let video of data.courseVideos; let i = index">
+            <li *ngFor="let video of selectedVideos; let i = index">
               <!-- [(ngModel)]="course.completed"
               (ngModelChange)="updateAllComplete()" -->
               <div style="display: flex; align-items: center; gap: 10px">
-                <mat-checkbox></mat-checkbox>
+                <input
+                  type="checkbox"
+                  [value]="video.video"
+                  [checked]="video.selected"
+                  (change)="updateSelectedVideos($event)"
+                />
                 <div style="display: flex; align-items: center">
                   <span class="material-icons">video_library</span>
                   <a
                     [routerLink]="['/videos/' + (i + 1)]"
-                    [queryParams]="{ video: video }"
+                    [queryParams]="{ video: video.video }"
                     >Video {{ i + 1 }}</a
                   >
                 </div>
               </div>
             </li>
-            <li *ngFor="let reading of data.courseReadings; let i = index">
+            <li *ngFor="let reading of selectedReadings; let i = index">
               <div style="display: flex; align-items: center; gap: 10px">
-                <mat-checkbox></mat-checkbox>
+                <input
+                  type="checkbox"
+                  [value]="reading.reading"
+                  [checked]="reading.selected"
+                  (change)="updateSelectedReadings($event)"
+                />
                 <div style="display: flex; align-items: center">
                   <span class="material-icons">book</span>
                   <a>Reading {{ i + 1 }}</a>

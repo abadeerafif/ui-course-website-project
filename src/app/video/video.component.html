@@ -1,2 +1,6 @@
-<div [innerHTML]="url">{{url}}</div>
-<textarea class="course-desc">This course provides a broad overview of the fundamental concepts, principles, and practices of mindfulness. With interactive exercises to help students explore their own attitudes, mental habits and behaviors, Foundations of Mindfulness offers a pathway for living with more freedom, authenticity and ease. Featured components of the course include experiential exercises, guided meditations, personal reflection and interactive discussions.</textarea>
+<div [innerHTML]="getDocumentContentTrusted()" style="width: 800px;margin:0 auto">
+  {{ url }}
+</div>
+<textarea class="course-desc">
+This course provides a broad overview of the fundamental concepts, principles, and practices of mindfulness. With interactive exercises to help students explore their own attitudes, mental habits and behaviors, Foundations of Mindfulness offers a pathway for living with more freedom, authenticity and ease. Featured components of the course include experiential exercises, guided meditations, personal reflection and interactive discussions.</textarea
+>

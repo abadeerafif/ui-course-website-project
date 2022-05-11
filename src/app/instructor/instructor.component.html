@@ -1,8 +1,8 @@
 <div class="instructor">
   <h3>Instructor</h3>
   <div class="flex-space-between">
-    <span *ngIf="data.isSchool==='school'" class="material-icons"> school </span>
-    <span *ngIf="data.isSchool==='inst'" class="material-icons"> account_circle </span>
+    <span *ngIf="data.isSchool.toLowerCase()==='school'" class="material-icons"> school </span>
+    <span *ngIf="data.isSchool.toLowerCase()==='inst'" class="material-icons"> account_circle </span>
     <div>
       <p>
         {{ data.Name }}

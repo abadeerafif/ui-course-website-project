@@ -17,10 +17,10 @@ export class CourseContentComponent implements OnInit {
   selectedCourse: any = null;
   async ngAfterContentInit() {
 
-    this.selectedCourse =this.courseData.allCourse[0]
-    // await this.courseData.GetCourseDetails(
-    //   this.route.snapshot.paramMap.get('id')
-    // );
+    this.selectedCourse =
+    await this.courseData.GetCourseDetails(
+      this.route.snapshot.paramMap.get('id')
+    );
     console.log()
   }
 }
