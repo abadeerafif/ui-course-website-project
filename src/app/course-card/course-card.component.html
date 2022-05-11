@@ -12,7 +12,7 @@
         alt="Photo of a book"
       />
       <mat-card-actions >
-        <button mat-button (click)="goto(goToRoute(course))" disabled="{{notAuthed}}">
+        <button mat-button (click)="goto(goToRoute(course))" disabled="{{courseData.AuthedUser==null}}">
           View Course
         </button>
       </mat-card-actions>

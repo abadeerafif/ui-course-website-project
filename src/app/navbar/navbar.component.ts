@@ -24,6 +24,6 @@ export class NavbarComponent implements OnInit {
   }
 
   gotoCourse(){
-    this.router.navigate(['/explore'],{ queryParams: { destination: '#ourCourses' } });
+    this.router.navigate(['/explore'],{ fragment: 'ourCourses' });
   }
 }
