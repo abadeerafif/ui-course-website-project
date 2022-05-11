@@ -20,7 +20,26 @@ export class FacultyMyCoursesComponent implements OnInit {
   public courses: string[] = [];
   public AuthedUser: any = null;
   async ngOnInit(): Promise<void> {
-    this.courses = await this.courseData.getCourseNames();
+    var coursesobj=await this.courseData.getCourses();
+    this.AuthedUser = this.courseData.getAuthedUser();
+    console.log(this.AuthedUser)
+    if (this.AuthedUser.type === 'faculty'){
+      this.addCourseForm.controls['facultyCourse'].setValue('FCIS');
+      for(var i=0;i<coursesobj.length;i++)
+      {
+        if(coursesobj[i]["facultyCourse"]==this.AuthedUser.name)
+        {
+          
+          this.courses.push(coursesobj[i]["courseName"])
+        }
+      }
+    }
+    else if(this.AuthedUser.type == 'admin')
+    {
+      this.courses = await this.courseData.getCourseNames();
+    }
+  
+    
     
     this.loading=false;
   }
@@ -56,6 +75,10 @@ export class FacultyMyCoursesComponent implements OnInit {
   }
   saveForm() {
     console.log('saving', this.addCourseForm.value);
+   
+    this.addCourseForm.value["courseQuizzes"]=this.addCourseForm.value["courseQuizzes"][0];
+    console.log('saving1', this.addCourseForm.value);
+    this.courseData.addcoursetodatabase(this.addCourseForm.value)
   }
   openQuizDialog() {
     let dialogRef = this.dialog.open(AddCourseQuizDialogComponent);

@@ -148,3 +148,7 @@ export async function approveeuser(mail:string)
     
 
 }
+export async function addcourse(course:any)
+{
+  await setDoc(doc(db, "courses", course["courseName"]),course);
+}
