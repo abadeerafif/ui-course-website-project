@@ -16,7 +16,7 @@ export class ExploreComponent implements OnInit {
   public faculties: string[] = [];
   async ngOnInit(): Promise<void> {
     this.courses=await this.courseData.getCourseNames();
-    // this.faculties=await this.courseData.getFaculties();  function to get all faculties having courses
+    this.faculties=await this.courseData.GetfacultyNames();  
   }
 
   goto(simple_route:string) {

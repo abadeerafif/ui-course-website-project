@@ -2,9 +2,9 @@
 <div>
     <h1>Faculties</h1>
     <div style="justify-content: center; flex-wrap: wrap; display: flex;">
-    <mat-card class="courses" *ngFor="let item of [].constructor(4); let i = index" style="margin: 10px; width:20%;">
+    <mat-card class="courses" *ngFor="let faculty of faculties; let i = index" style="margin: 10px; width:20%;">
       <mat-card-header style="justify-content: center;">
-        <mat-card-title>Faculty {{i+1}}</mat-card-title>
+        <mat-card-title>{{faculty}}</mat-card-title>
       </mat-card-header>
       <img mat-card-image src="https://picsum.photos/1000/1000?random={{i+courses.length}}" alt="Photo of a book" style="height: 350px;">
     </mat-card>
