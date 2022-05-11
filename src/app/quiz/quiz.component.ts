@@ -16,10 +16,13 @@ export class QuizComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.quiz = await this.courseData.GetCourseDetails(this.route.snapshot.paramMap.get('id'))
+    this.coursename=this.quiz.courseName;
+    console.log("abaaaaaaaaa",this.quiz)
     this.quiz=this.quiz.courseQuizzes;
   }
   quizName: string = 'coming from route';
   quiz: any = [];
+  coursename:string="";
   answers: any[] = [
     { question: 1, answer: '' },
     { question: 2, answer: '' },
@@ -46,6 +49,10 @@ export class QuizComponent implements OnInit {
       if (this.answers[i].answer === this.quiz[i].questionAnswer) {
         this.grade++;
       }
+    }
+    if(this.grade>4)
+    {
+      this.courseData.finishcour(this.coursename)
     }
   }
 }
