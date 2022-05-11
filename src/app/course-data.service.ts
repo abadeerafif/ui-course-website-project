@@ -161,11 +161,12 @@ export class CourseDataService {
     };
   }
 
-  AuthedUser: any = {
-    name: 'Ain Shams University',
-    email: 'asd@gmail.com',
-    type: 'faculty',
-  };
+  // AuthedUser: any = {
+  //   name: 'Ain Shams University',
+  //   email: 'asd@gmail.com',
+  //   type: 'faculty',
+  // };
+  AuthedUser:any=null;
 
   /*Authentication */
   setAuthedUser(authedUser: any) {

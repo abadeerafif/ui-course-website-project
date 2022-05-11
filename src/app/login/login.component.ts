@@ -48,18 +48,21 @@ export class LoginComponent implements OnInit {
       if(mess["user"]["type"]=="admin")
     {
       this.courseData.setIsAdmin(true);
+      this.courseData.AuthedUser.type="admin";
       console.log("admin")
       this.router.navigate(['/all-user-details']);
     }
     else if(mess["user"]["type"]=="faculty")
     {
       this.courseData.setIsFaculty(true);
+      this.courseData.AuthedUser.type="faculty";
       console.log("faculity")
       this.router.navigate(['/mainMenu']);
     }
     else
     {
-      console.log("student")
+      console.log("student");
+      this.courseData.AuthedUser.type="student";
       this.router.navigate(['/mainMenu']);
     }
     this.courseData.login(mess);
