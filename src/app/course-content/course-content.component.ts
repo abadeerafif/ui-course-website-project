@@ -15,12 +15,14 @@ export class CourseContentComponent implements OnInit {
   courses: any[] = [];
   ngOnInit(): void {}
   selectedCourse: any = null;
+  loading:boolean=true;
   async ngAfterContentInit() {
 
     this.selectedCourse =
     await this.courseData.GetCourseDetails(
       this.route.snapshot.paramMap.get('id')
     );
+    this.loading=false;
     console.log()
   }
 }

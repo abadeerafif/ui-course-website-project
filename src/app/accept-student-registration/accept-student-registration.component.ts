@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CourseDataService } from '../course-data.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { LiveAnnouncer } from '@angular/cdk/a11y';
-import { MatSort, Sort } from '@angular/material/sort';
 @Component({
   selector: 'app-accept-student-registration',
   templateUrl: './accept-student-registration.component.html',
@@ -16,15 +14,10 @@ export class AcceptStudentRegistrationComponent implements OnInit {
   public selected: any[] = [];
   parentSelector: boolean = false;
   usersToBeRemoved: string[] = [];
-  @ViewChild(MatSort)
-  sort: MatSort = new MatSort();
  async ngOnInit(): Promise<void> {
     this.data = await this.courseData.getAllUsersWaitingApproval();
     this.selected = this.data.map((d) => ({ selected: false, ...d }));
     this.dataSource = new MatTableDataSource(this.selected);
-  }
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
   }
   Accept(username: string) {
     console.log("abaaaaaaaaaaaaaaa",username);

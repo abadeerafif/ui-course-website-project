@@ -16,17 +16,21 @@ export class FacultyMyCoursesComponent implements OnInit {
     private formBuilder: FormBuilder,
     public dialog: MatDialog
   ) {}
-
+  loading:boolean=true;
   public courses: string[] = [];
   public AuthedUser: any = null;
   async ngOnInit(): Promise<void> {
     this.courses = await this.courseData.getCourseNames();
-    this.AuthedUser = this.courseData.getAuthedUser();
+    
+    this.loading=false;
   }
   ngAfterContentInit() {
+    this.AuthedUser = this.courseData.getAuthedUser();
+    console.log(this.AuthedUser)
     if (this.AuthedUser.type === 'faculty')
       this.addCourseForm.controls['facultyCourse'].setValue('FCIS');
-  }
+  
+    }
 
   addCourseForm = this.formBuilder.group({
     facultyCourse: [''],

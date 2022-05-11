@@ -172,6 +172,7 @@ export class CourseDataService {
     this.AuthedUser = authedUser;
   }
   getAuthedUser() {
+    console.log(this.AuthedUser)
     return this.AuthedUser;
   }
   login(authedUser: any) {

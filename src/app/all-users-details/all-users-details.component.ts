@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CourseDataService } from '../course-data.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { LiveAnnouncer } from '@angular/cdk/a11y';
-import { MatSort, Sort } from '@angular/material/sort';
 @Component({
   selector: 'app-all-users-details',
   templateUrl: './all-users-details.component.html',
@@ -11,7 +9,6 @@ import { MatSort, Sort } from '@angular/material/sort';
 export class AllUsersDetailsComponent implements OnInit {
   constructor(
     private courseData: CourseDataService,
-    private _liveAnnouncer: LiveAnnouncer
   ) {}
 
   displayedColumns: string[] = ['name', 'email', 'id'];
@@ -20,15 +17,10 @@ export class AllUsersDetailsComponent implements OnInit {
   public selected: any[] = [];
   parentSelector: boolean = false;
   usersToBeRemoved: string[] = [];
-  @ViewChild(MatSort)
-  sort: MatSort = new MatSort();
   async ngOnInit(): Promise<void> {
     this.data = await this.courseData.GetAllSystemUsernames();
     this.selected = this.data.map((d) => ({ selected: false, ...d }));
     this.dataSource = new MatTableDataSource(this.selected);
-  }
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
   }
   searchstring: string = '';
   search(searchstring: string) {

@@ -1,4 +1,7 @@
-<mat-card>
+<div *ngIf="loading">
+  loading...
+  </div>
+<mat-card *ngIf="!loading">
   <mat-card-title>{{
     AuthedUser.type === "admin"
       ? "All University Courses"
