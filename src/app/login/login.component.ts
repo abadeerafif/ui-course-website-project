@@ -40,20 +40,18 @@ export class LoginComponent implements OnInit {
     this.courseData.setAuthedUser(mess)
     
     GetCourses()
-    if(mess=="error")
+    if(mess["state"]=="error")
     {
-      this.dialog.open(dialogg,{data:{
-        problem:"invalid input"
-      }});
+      this.dialog.open(dialogg,{data:mess["message"]});
     }
     else{
-      if(mess["type"]=="admin")
+      if(mess["user"]["type"]=="admin")
     {
       this.courseData.setIsAdmin(true);
       console.log("admin")
       this.router.navigate(['/all-user-details']);
     }
-    else if(mess["type"]=="faculty")
+    else if(mess["user"]["type"]=="faculty")
     {
       this.courseData.setIsFaculty(true);
       console.log("faculity")
@@ -85,15 +83,9 @@ export class dialogg {
  ) { }
 
   ngOnInit(): void {
-    if(this.data.problem=="invalid input"){
-      this.title="Invalid Input";
-      this.message="Please insert valid data";
-    }
-
-    if(this.data.problem=="pending"){
-      this.title="Pending Approval";
-      this.message="Your account is pending approval from the admin";
-    }
+    
+      this.title="sorry";
+      this.message=this.data;
   }
   
 }

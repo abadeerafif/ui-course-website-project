@@ -16,23 +16,35 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 export async function signin(email:string,password:string):Promise<any>
 {
-    var output;
+    var output={state:"noerror",
+    message:"error mess",
+    user:{}
+
+    };
     
     var usersi=await signInWithEmailAndPassword(auth, email, password).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log("erraaaaaaaaor :",errorMessage)
-        var output="error"
+        output["message"]=errorMessage
+         output["state"]="error"
       });
       if(usersi==null)
       {
-        output="error"
+        output["state"]="error"
       }
       else{
         const accepted=await isaccepted(email);
         console.log("acccccccccccccccccccc",accepted)
         if(accepted)
-          output=await Getuserdata(email);
+        {
+          output["state"]="noerror"
+          output["user"]=await Getuserdata(email);
+        }
+        else{
+          output["message"]="your account is waiting approval"
+         output["state"]="error"
+
+          }
 
 
       }
