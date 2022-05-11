@@ -21,24 +21,23 @@
   <img [src]="netImage" class="img1" />
 </div>
 
-<div style="margin-left: 100px">
-  <h4 style="color: #c280ff">Courses and Specialization</h4>
-  <h2>Courses You Can Complete in a Day</h2>
-  <h5>
-    Over 4,000 courses in topics like business analytics, graphic design,
-    Python, and more.
-  </h5>
+<div>
+  <div style="margin-left: 100px">
+    <h4 style="color: #c280ff">Courses and Specialization</h4>
+    <h2>Courses You Can Complete in a Day</h2>
+    <h5>
+      Over 4,000 courses in topics like business analytics, graphic design,
+      Python, and more.
+    </h5>
+  </div>
   <div style="display: flex; justify-content: center">
     <app-course-card *ngFor="let course of courses; let i=index;" [course]="course" [number]="i">
     </app-course-card>
   </div>
 </div>
 
-<div
-  style="margin-left: 100px"
-  *ngIf="courseData.AuthedUser && courseData.AuthedUser.type === 'student'"
->
-  <h2>Your Courses</h2>
+<div *ngIf="courseData.AuthedUser && courseData.AuthedUser.type === 'student'">
+  <h2 style="margin-left: 100px">Your Courses</h2>
 
   <div style="display: flex; justify-content: center">
     <app-course-card *ngFor="let course of studentCourses;let i=index;" [course]="course" [number]="i+courses.length">
@@ -46,11 +45,8 @@
   </div>
 </div>
 
-<div
-  style="margin-left: 100px"
-  *ngIf="courseData.AuthedUser && courseData.AuthedUser.type === 'student'"
->
-  <h2>Courses you Can apply to</h2>
+<div *ngIf="courseData.AuthedUser && courseData.AuthedUser.type === 'student'">
+  <h2 style="margin-left: 100px">Courses you can apply to</h2>
 
   <div style="display: flex; justify-content: center">
     <app-course-card *ngFor="let course of availablePrerequisitedCourses;let i=index;" [course]="course" [number]="i+courses.length+studentCourses.length">

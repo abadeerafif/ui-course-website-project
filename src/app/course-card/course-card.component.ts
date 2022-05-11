@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { CourseDataService } from '../course-data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-course-card',
@@ -7,11 +7,17 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./course-card.component.css'],
 })
 export class CourseCardComponent implements OnInit {
-  constructor(private route: Router) {}
+  constructor(private route: Router, public courseData: CourseDataService ) {}
 
   @Input() number=0;
 
-  ngOnInit(): void {}
+  notAuthed=false;
+
+  ngOnInit(): void {
+    if(!this.courseData.AuthedUser){
+      this.notAuthed=true;
+    }
+  }
   @Input() course = '';
   goToRoute(courseName: string) {
     return `course-content/${courseName}`;
