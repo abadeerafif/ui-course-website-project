@@ -27,7 +27,8 @@ export class AcceptStudentRegistrationComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
   Accept(username: string) {
-    console.log(username);
+    console.log("abaaaaaaaaaaaaaaa",username);
+    
   }
   Decline(username: string) {
     console.log(username);
@@ -67,11 +68,27 @@ export class AcceptStudentRegistrationComponent implements OnInit {
   removeUser() {
     this.selected.map((user) => {
       if (user.selected) {
-        this.usersToBeRemoved.push(user.name);
+        this.usersToBeRemoved.push(user.email);
       }
     });
 
     console.log(this.usersToBeRemoved);
+    
+    
+    
+    this.usersToBeRemoved = [];
+  }
+  acceptUser() {
+    this.selected.map((user) => {
+      if (user.selected) {
+        this.usersToBeRemoved.push(user.email);
+      }
+    });
+
+    console.log(this.usersToBeRemoved);
+    
+    
+    this.courseData.acceptuser(this.usersToBeRemoved)
     this.usersToBeRemoved = [];
   }
 }

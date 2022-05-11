@@ -124,3 +124,27 @@ export async function deleteuser(mail:string)
     
 
 }
+export async function approveeuser(mail:string)
+{
+    const docRef = doc(db, "pendingusers",mail);
+    const docSnap = await getDoc(docRef);
+    var u;
+    if (docSnap.exists()) {
+        console.log("Document data:", docSnap.data());
+        u= docSnap.data();
+      } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+        console.log("error")
+        return "error"
+      }
+    
+    
+    await deleteDoc(docRef);
+    await setDoc(doc(db, "users", mail), u);
+    console.log("done")
+    return "done"
+    
+    
+
+}

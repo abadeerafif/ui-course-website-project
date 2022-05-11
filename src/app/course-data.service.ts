@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { filter } from 'rxjs';
-import {GetCourses,Getuseraccepted,Getuserspending,GetCoursesname,deleteuser} from '../app/firebasemodules/getingdatamodule'
+import {GetCourses,Getuseraccepted,Getuserspending,GetCoursesname,deleteuser,approveeuser} from '../app/firebasemodules/getingdatamodule'
 import {signin} from '../app/firebasemodules/signinmodule'
 
 @Injectable({
@@ -236,5 +236,13 @@ export class CourseDataService {
   async getAllUsersWaitingApproval() :Promise<string[]>{
     const output=await Getuserspending()
     return output;
+  }
+  async acceptuser(mails:string[]) {
+    for (let j = 0; j < mails.length; j++)
+    {
+      approveeuser(mails[j])
+
+    }
+  
   }
 }
