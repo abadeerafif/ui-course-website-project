@@ -1,5 +1,7 @@
 <div class="course-content-layout">
-  {{ selectedCourse.courseName }}
+  <mat-card-title>
+    {{ selectedCourse.courseName }}
+  </mat-card-title>
   <h1>About this Course</h1>
   <textarea class="course-desc">
         {{ selectedCourse.courseDesc }}
@@ -18,4 +20,4 @@
   <app-instructor [data]="selectedCourse.instructorDetails"></app-instructor>
   <app-instructor [data]="selectedCourse.institutionDetails"></app-instructor>
 </div>
-<app-syllabus [data]="selectedCourse.courseName"></app-syllabus>
+<app-syllabus [data]="selectedCourse"></app-syllabus>

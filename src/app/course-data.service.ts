@@ -1,13 +1,19 @@
 import { Injectable } from '@angular/core';
 import { filter } from 'rxjs';
-import {GetCourses,Getuseraccepted,Getuserspending,GetCoursesname,deleteuser} from '../app/firebasemodules/getingdatamodule'
-import {signin} from '../app/firebasemodules/signinmodule'
-
+import {
+  GetCourses,
+  Getuseraccepted,
+  Getuserspending,
+  GetCoursesname,
+  deleteuser,
+} from '../app/firebasemodules/getingdatamodule';
+import { signin } from '../app/firebasemodules/signinmodule';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root',
 })
 export class CourseDataService {
-  constructor() {}
+  constructor(private router: Router) {}
 
   email = 'petergeoorge@gmail.com';
 
@@ -34,12 +40,13 @@ export class CourseDataService {
   allCourse = [
     {
       prerequisite: ['DataStructure', 'Algorithms'],
-      courseVideos: [[
-
-      ]],
-      courseReadings: [[
-
-      ]],
+      courseVideos: [
+        '<iframe width="894" height="503" src="https://www.youtube.com/embed/SU8CIjgyKmI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+        '<iframe width="894" height="503" src="https://www.youtube.com/embed/SU8CIjgyKmI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+        '<iframe width="894" height="503" src="https://www.youtube.com/embed/SU8CIjgyKmI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+        '<iframe width="894" height="503" src="https://www.youtube.com/embed/SU8CIjgyKmI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      ],
+      courseReadings: ['asdasda', 'sadasd', 'asdsad', 'asdasdsa'],
       courseQuizzes: [
         {
           question: 'How many Letters in the alphabet',
@@ -140,7 +147,7 @@ export class CourseDataService {
   ];
 
   async getCourses() {
-    const Courses=await GetCourses()
+    const Courses = await GetCourses();
     return Courses;
   }
 
@@ -160,10 +167,10 @@ export class CourseDataService {
   }
 
   AuthedUser: any = {
-      name: 'Ain Shams University',
-      email: 'asd@gmail.com',
-      type: 'admin',
-    };
+    name: 'Ain Shams University',
+    email: 'asd@gmail.com',
+    type: 'admin',
+  };
 
   /*Authentication */
   setAuthedUser(authedUser: any) {
@@ -178,26 +185,26 @@ export class CourseDataService {
   logout() {
     this.setAuthedUser(null);
     console.log(this.AuthedUser);
+    this.router.navigate(['/mainMenu']);
   }
 
   /*Courses */
   async getCourseNames() {
-    const names= await GetCoursesname()
+    const names = await GetCoursesname();
     return names;
   }
   async GetCourseDetails(courseName: any): Promise<any> {
-    const co= await this.getCourses()
+    const co = await this.getCourses();
     for (let i = 0; i < co.length; i++) {
       if (courseName === co[i].courseName) return co[i];
     }
     return null;
   }
   async deleteusers(uNames: string[]): Promise<void> {
-    const co= await this.getCourses()
+    const co = await this.getCourses();
     for (let i = 0; i < uNames.length; i++) {
       deleteuser(uNames[i]);
     }
-    
   }
 
   coursesAfterTheseOne(courseNames: string[]) {
@@ -228,13 +235,13 @@ export class CourseDataService {
     return Array.from(courses);
   }
   /*Manage Users */
-  async GetAllSystemUsernames() :Promise<string[]>{
-    const output=await Getuseraccepted()
+  async GetAllSystemUsernames(): Promise<string[]> {
+    const output = await Getuseraccepted();
 
     return output;
   }
-  async getAllUsersWaitingApproval() :Promise<string[]>{
-    const output=await Getuserspending()
+  async getAllUsersWaitingApproval(): Promise<string[]> {
+    const output = await Getuserspending();
     return output;
   }
 }

@@ -28,13 +28,16 @@ export class SyllabusComponent implements OnInit {
     this.allComplete =
       this.content != null && this.content.every((t) => t.completed);
   }
-  @Input() data = '';
+  @Input() data: any = null;
 
-  goto(simple_route: string) {
-    console.log(simple_route);
-    this.route.navigateByUrl(simple_route);
+  goto(simple_route: string,video:string) {
+    console.log(simple_route,video);
+    this.route.createUrlTree([simple_route, {my_object: JSON.stringify(video)}]);
   }
   navigateToQuiz() {
     this.route.navigateByUrl('/quiz/' + this.data);
+  }
+  math(number: number) {
+    return Math.ceil(number);
   }
 }

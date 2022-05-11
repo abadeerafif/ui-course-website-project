@@ -1,26 +1,36 @@
 <h1 class="syllabusheader">Syllabus - What you will learn from this Course</h1>
 <div class="syllabuscont">
-    <div class="week">
-        <div class="weekheader">
-            <h2>Content</h2>
+  <div class="week">
+    <div class="weekheader">
+      <h2>Content</h2>
+    </div>
+    <div class="courcontent">
+      <div class="hourstocomplete">
+        <span class="material-icons"> schedule </span>
+        <div>
+          {{
+            math(
+              (data.courseVideos.length * 20) / 60 +
+                (data.courseReadings.length * 20) / 60
+            )
+          }}
+          hour to complete
         </div>
-        <div class="courcontent">
-            <div class="hourstocomplete">
-                <span class="material-icons">
-                    schedule
-                    </span>
-                <div> 1 hour to complete </div>
-            </div>
-            <div class="courselength">
-                <span class="material-icons">
-                    menu_book
-                </span>
-                <div class="videocount">
-                    {{vidCount}} videos , {{readCount}} readings
-                </div>
-            </div>
-            <a (click)="readMore=!readMore" style="color: blue; text-decoration-line: underline; margin-top: 10px;"><p *ngIf="!readMore" style="margin-left: 200px;">Read More..</p><p *ngIf="readMore" style="margin-left: 200px;">Show Less..</p></a>
-            <!-- <div *ngIf="readMore" style="margin-top: 10px;">
+      </div>
+      <div class="courselength">
+        <span class="material-icons"> menu_book </span>
+        <div class="videocount">
+          {{ data.courseVideos.length }} videos ,
+          {{ data.courseReadings.length }} readings
+        </div>
+      </div>
+      <a
+        (click)="readMore = !readMore"
+        style="color: blue; text-decoration-line: underline; margin-top: 10px"
+        ><p *ngIf="!readMore" style="margin-left: 200px">Read More..</p>
+        <p *ngIf="readMore" style="margin-left: 200px">Show Less..</p></a
+      >
+      <!-- <div *ngIf="readMore" style="margin-top: 10px;">
                 <div class="numOfVideos">
                 <span class="material-icons">video_library</span>
                 <h3> 2 Videos</h3>
@@ -41,27 +51,46 @@
                 </div>
             </div> -->
 
-            <div *ngIf="readMore" class="contentDiv" style="margin-top: 10px;">
-                <span class="example-list-section">
-                    <ul>
-                      <li *ngFor="let course of content">
-                        <mat-checkbox [(ngModel)]="course.completed" (ngModelChange)="updateAllComplete()">
-                        <div *ngIf="course.type=='video'">
-                            <span class="material-icons">video_library</span>
-                            <a (click)="goto('videos/1')">{{course.title}}</a>
-                        </div>
-                        <div *ngIf="course.type=='readings'">
-                            <span class="material-icons">book</span>
-                            <a>{{course.title}}</a>
-                        </div>
-                        </mat-checkbox>
-                      </li>
-                    </ul>
-                  </span>
-                  <button mat-raised-button title="Go to Quiz" *ngIf="allComplete" (click)="navigateToQuiz()">Go to Quiz</button>
-            </div>
-
-        </div>
-
+      <div *ngIf="readMore" class="contentDiv" style="margin-top: 10px">
+        <span class="example-list-section">
+          <ul>
+            <li *ngFor="let video of data.courseVideos; let i = index">
+              <!-- [(ngModel)]="course.completed"
+              (ngModelChange)="updateAllComplete()" -->
+              <div style="display: flex; align-items: center; gap: 10px">
+                <mat-checkbox></mat-checkbox>
+                <div style="display: flex; align-items: center">
+                  <span class="material-icons">video_library</span>
+                  <a
+                    [routerLink]="['/videos/' + (i + 1)]"
+                    [queryParams]="{ video: video }"
+                    >Video {{ i + 1 }}</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li *ngFor="let reading of data.courseReadings; let i = index">
+              <div style="display: flex; align-items: center; gap: 10px">
+                <mat-checkbox></mat-checkbox>
+                <div style="display: flex; align-items: center">
+                  <span class="material-icons">book</span>
+                  <a>Reading {{ i + 1 }}</a>
+                </div>
+              </div>
+              <!-- [(ngModel)]="course.completed"
+                (ngModelChange)="updateAllComplete()" -->
+            </li>
+          </ul>
+        </span>
+        <button
+          mat-raised-button
+          title="Go to Quiz"
+          *ngIf="allComplete"
+          (click)="navigateToQuiz()"
+        >
+          Go to Quiz
+        </button>
+      </div>
     </div>
+  </div>
 </div>
