@@ -140,7 +140,8 @@ export async function approveeuser(mail:string)
       }
       const approvedu ={
         type: u["type"], 
-        courses: [], 
+        courses: [],
+        finshedcourses:[], 
         email: u["email"],
         name: u["name"],
 
@@ -187,5 +188,16 @@ export async function Getfacultynames()
   }
     return arr
     
+
+}
+export async function finicourss(courses:string[],email:string)
+{
+  const docRef = doc(db, "users", email);
+  
+
+  // Set the "capital" field of the city 'DC'
+    await updateDoc(docRef, {
+      finshedcourses: courses
+});
 
 }
