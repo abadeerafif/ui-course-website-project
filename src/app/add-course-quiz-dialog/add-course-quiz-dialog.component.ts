@@ -42,7 +42,7 @@ export class AddCourseQuizDialogComponent implements OnInit {
     questionFiveAnswer: ['q'],
   });
 
-  returnQuiz: any = null;
+  returnQuiz: any = '';
   saveForm() {
     this.returnQuiz = [
       {

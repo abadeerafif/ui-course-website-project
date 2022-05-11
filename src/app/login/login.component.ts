@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit {
     const mess= await signin(email,password);
     console.log(mess)
     this.courseData.setAuthedUser(mess.user)
-    
     GetCourses()
     if(mess["state"]=="error")
     {
@@ -48,26 +47,20 @@ export class LoginComponent implements OnInit {
   else{
        if(mess["user"]["type"]=="admin")
      {
-       this.courseData.setIsAdmin(true);
-       this.courseData.AuthedUser.type="admin";
-       console.log(this.courseData.AuthedUser)
+      
        this.router.navigate(['/accept-student-registration']);
      }
      else if(mess["user"]["type"]=="faculty")
      {
-       this.courseData.setIsFaculty(true);
-       this.courseData.AuthedUser.type="faculty";
-       console.log("faculity")
+      
        this.router.navigate(['/mainMenu']);
      }
      else
      {
-       console.log("student");
-       this.courseData.AuthedUser.type="student";
-       console.log(this.courseData.AuthedUser)
+       
        this.router.navigate(['/mainMenu']);
      }
-     this.courseData.login(mess);
+     this.courseData.login(mess.user);
     
    }
 }

@@ -129,7 +129,9 @@
           </mat-form-field>
         </div>
         <div class="add-course-buttons">
-          <button mat-button (click)="openQuizDialog()" mat-raised-button>
+          <button mat-button (click)="openQuizDialog()" mat-raised-button  [disabled]="
+          addCourseForm.value.courseQuizzes.length === 1 ? true : false
+        ">
             Add Quiz
           </button>
 

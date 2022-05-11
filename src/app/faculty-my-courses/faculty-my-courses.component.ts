@@ -16,45 +16,37 @@ export class FacultyMyCoursesComponent implements OnInit {
     private formBuilder: FormBuilder,
     public dialog: MatDialog
   ) {}
-  loading:boolean=true;
+  loading: boolean = true;
   public courses: string[] = [];
   public AuthedUser: any = null;
   async ngOnInit(): Promise<void> {
-    var coursesobj=await this.courseData.getCourses();
+    var coursesobj = await this.courseData.getCourses();
     this.AuthedUser = this.courseData.getAuthedUser();
-    console.log(this.AuthedUser)
-    if (this.AuthedUser.type === 'faculty'){
+    console.log(this.AuthedUser);
+    if (this.AuthedUser.type === 'faculty') {
       this.addCourseForm.controls['facultyCourse'].setValue('FCIS');
-      for(var i=0;i<coursesobj.length;i++)
-      {
-        if(coursesobj[i]["facultyCourse"]==this.AuthedUser.name)
-        {
-          
-          this.courses.push(coursesobj[i]["courseName"])
+      for (var i = 0; i < coursesobj.length; i++) {
+        if (coursesobj[i]['facultyCourse'] == this.AuthedUser.name) {
+          this.courses.push(coursesobj[i]['courseName']);
         }
       }
-    }
-    else if(this.AuthedUser.type == 'admin')
-    {
+    } else if (this.AuthedUser.type == 'admin') {
       this.courses = await this.courseData.getCourseNames();
     }
-  
-    
-    
-    this.loading=false;
+
+    this.loading = false;
   }
   ngAfterContentInit() {
     this.AuthedUser = this.courseData.getAuthedUser();
-    console.log(this.AuthedUser)
+    console.log(this.AuthedUser);
     if (this.AuthedUser.type === 'faculty')
       this.addCourseForm.controls['facultyCourse'].setValue('FCIS');
-  
-    }
+  }
 
   addCourseForm = this.formBuilder.group({
     facultyCourse: [''],
     courseName: [''],
-    pre:[''],
+    pre: [''],
     obj: [''],
     learningObjectives: [[]],
     prerequisite: [[]],
@@ -64,14 +56,12 @@ export class FacultyMyCoursesComponent implements OnInit {
     courseQuizzes: [[]],
     numberOfHouesToComplete: [''],
   });
-  addCoursePrerequisite(){
+  addCoursePrerequisite() {
     if (this.addCourseForm.value.pre === '') {
       alert('please enter prerequisite first');
       return;
     }
-    this.addCourseForm.value.prerequisite.push(
-      this.addCourseForm.value.pre
-    );
+    this.addCourseForm.value.prerequisite.push(this.addCourseForm.value.pre);
     this.addCourseForm.controls['pre'].setValue('');
   }
   addCourseObjective() {
@@ -86,15 +76,19 @@ export class FacultyMyCoursesComponent implements OnInit {
   }
   saveForm() {
     console.log('saving', this.addCourseForm.value);
-   
-    this.addCourseForm.value["courseQuizzes"]=this.addCourseForm.value["courseQuizzes"][0];
+
+    this.addCourseForm.value['courseQuizzes'] =
+      this.addCourseForm.value['courseQuizzes'][0];
     console.log('saving1', this.addCourseForm.value);
-    this.courseData.addcoursetodatabase(this.addCourseForm.value)
+    this.courseData.addcoursetodatabase(this.addCourseForm.value);
   }
   openQuizDialog() {
     let dialogRef = this.dialog.open(AddCourseQuizDialogComponent);
     dialogRef.afterClosed().subscribe((res) => {
-      this.addCourseForm.value.courseQuizzes.push(res);
+      console.log(res)
+      if (res) {
+        this.addCourseForm.value.courseQuizzes.push(res);
+      }
     });
   }
   openVideoDialog() {

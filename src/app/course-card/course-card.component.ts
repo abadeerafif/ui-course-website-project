@@ -7,10 +7,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./course-card.component.css'],
 })
 export class CourseCardComponent implements OnInit {
-  constructor(private route: Router, public courseData: CourseDataService ) {}
+  constructor(private route: Router, public courseData: CourseDataService) {}
 
-  @Input() number=0;
-  @Input() canEnroll=false;
+  @Input() number = 0;
+  @Input() canEnroll = false;
 
   ngOnInit(): void {}
   @Input() course = '';
@@ -22,8 +22,9 @@ export class CourseCardComponent implements OnInit {
     this.route.navigateByUrl(simple_route);
   }
 
-  addCourse(){
-    console.log("add this course to the student");
-    this.courseData.enroll(this.course)
+  addCourse() {
+    console.log('add this course to the student');
+    this.courseData.enroll(this.course);
+    this.goto(this.goToRoute(this.course));
   }
 }

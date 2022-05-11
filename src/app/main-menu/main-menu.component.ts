@@ -14,14 +14,18 @@ export class MainMenuComponent implements OnInit {
   public courses: string[] = [];
   public studentCourses: string[] = [];
   public availablePrerequisitedCourses: any[] = [];
+  public finishedCourses:any[]=[];
   async ngOnInit(): Promise<void> {
     this.courses = await this.courseData.getCourseNames();
-    this.studentCourses = this.courseData.AuthedUser.courses;
-    if (this.courseData.AuthedUser.type === 'student') {
-      this.availablePrerequisitedCourses = this.courseData.coursesAfterTheseOne(
-        this.studentCourses
-      );
+    if (this.courseData.AuthedUser) {
+      this.studentCourses = this.courseData.AuthedUser.courses;
+      let allCourses = await this.courseData.getCourses();
+      if (this.courseData.AuthedUser.type === 'student') {
+        this.availablePrerequisitedCourses =
+          this.courseData.coursesAfterTheseOne(this.studentCourses, allCourses);
+      }
     }
+    console.log('asdsadas', this.courseData.AuthedUser)
   }
   goset(emaill: string) {
     this.courseData.setEmail(emaill);
