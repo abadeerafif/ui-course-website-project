@@ -49,7 +49,7 @@
   <h2 style="margin-left: 100px">Courses you can apply to</h2>
 
   <div style="display: flex; justify-content: center">
-    <app-course-card *ngFor="let course of availablePrerequisitedCourses;let i=index;" [course]="course" [number]="i+courses.length+studentCourses.length">
+    <app-course-card [canEnroll]="true" *ngFor="let course of availablePrerequisitedCourses;let i=index;" [course]="course" [number]="i+courses.length+studentCourses.length">
     </app-course-card>
   </div>
 </div>

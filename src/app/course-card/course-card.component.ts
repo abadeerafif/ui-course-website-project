@@ -10,6 +10,7 @@ export class CourseCardComponent implements OnInit {
   constructor(private route: Router, public courseData: CourseDataService ) {}
 
   @Input() number=0;
+  @Input() canEnroll=false;
 
   ngOnInit(): void {}
   @Input() course = '';
@@ -19,5 +20,9 @@ export class CourseCardComponent implements OnInit {
   goto(simple_route: string) {
     console.log(simple_route);
     this.route.navigateByUrl(simple_route);
+  }
+
+  addCourse(){
+    console.log("add this course to the student");
   }
 }
