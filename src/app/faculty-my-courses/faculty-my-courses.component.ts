@@ -1,6 +1,6 @@
 import { CourseDataService } from '../course-data.service';
 import { Component, OnInit, Input } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder,FormGroup, FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { AddCourseQuizDialogComponent } from '../add-course-quiz-dialog/add-course-quiz-dialog.component';
 import { AddCourseVideoDialogComponent } from '../add-course-video-dialog/add-course-video-dialog.component';
@@ -11,6 +11,10 @@ import { AddCourseReadingsDialogComponent } from '../add-course-readings-dialog/
   styleUrls: ['./faculty-my-courses.component.css'],
 })
 export class FacultyMyCoursesComponent implements OnInit {
+  range=new FormGroup({
+    start:new FormControl(),
+    end:new FormControl()
+  });
   constructor(
     private courseData: CourseDataService,
     private formBuilder: FormBuilder,
@@ -19,6 +23,9 @@ export class FacultyMyCoursesComponent implements OnInit {
   loading: boolean = true;
   public courses: string[] = [];
   public AuthedUser: any = null;
+  printRange(){
+    console.log(this.range.value); //use range.value.start & .end
+  }
   async ngOnInit(): Promise<void> {
     var coursesobj = await this.courseData.getCourses();
     this.AuthedUser = this.courseData.getAuthedUser();
