@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Inject } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CourseDataService } from '../course-data.service';
 import {signin} from '../firebasemodules/signinmodule';
@@ -11,7 +12,13 @@ import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private router: Router, public courseData: CourseDataService,public dialog: MatDialog) {}
+  myForm:FormGroup = this.formBuilder.group({
+      email:['',[Validators.required,Validators.email]],
+      pass:['',[Validators.required]]
+    })
+
+    
+  constructor(private router: Router, public courseData: CourseDataService,public dialog: MatDialog,private formBuilder:FormBuilder) {}
   openDialog() {
     this.dialog.open(dialogg);
   }
@@ -30,8 +37,9 @@ export class LoginComponent implements OnInit {
     'Web Development',
   ];
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.isFaculty = this.courseData.isFaculty;
+    // this.myForm=
   }
   async login(email:string,password:string) {
     

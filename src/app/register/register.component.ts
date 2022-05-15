@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {signup} from '../firebasemodules/signupmodule'
 
@@ -8,8 +9,13 @@ import {signup} from '../firebasemodules/signupmodule'
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  myForm:FormGroup = this.formBuilder.group({
+    name:['',[Validators.required,Validators.minLength(4)]],
+    email:['',[Validators.required,Validators.email]],
+    pass:['',[Validators.required]]
+  })
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private formBuilder:FormBuilder) { }
 
   ngOnInit(): void {
   }

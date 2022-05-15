@@ -38,6 +38,17 @@ form {
   button:hover {
     opacity: 0.8;
   }
+
+  button:disabled{
+    color:black;
+    background-color: gray;
+  }
+  button:disabled:hover{
+    color:black;
+    background-color: gray;
+    opacity: 1;
+    cursor: default;
+  }
   
   .container {
     justify-content: center;

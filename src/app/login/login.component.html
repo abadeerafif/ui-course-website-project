@@ -1,18 +1,18 @@
-<form>
+<form [formGroup]="myForm">
   <h1>Welcome Back</h1>
   <div class="container">
     <div>
       <label for="uname"><b>Email</b></label> <br />
-      <input type="text" placeholder="Enter Email" name="uname" required #email/>
+      <input type="text" formControlName="email" placeholder="Enter Email" name="uname" required #email/>
     </div>
 
     <div>
       <label for="psw"><b>Password</b></label
       ><br />
-      <input type="password" placeholder="Enter Password" name="psw" required #password/>
+      <input type="password" formControlName="pass" placeholder="Enter Password" name="psw" required #password/>
     </div>
 
-    <button (click)="login(email.value,password.value)">Login</button>
+    <button [disabled]="!myForm.valid" (click)="login(email.value,password.value)">Login</button>
 
     <div
       class="anotherPage"
