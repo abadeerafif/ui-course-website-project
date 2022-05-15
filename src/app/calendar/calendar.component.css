@@ -1,8 +1,18 @@
 iframe{
     margin: auto;
     display: block;
+    margin-top: 40px;
 }
 table, th, td {
     border: 1px solid black;
     margin: auto;
+    padding: 10px;
+}
+
+th{
+    font-size: 25px;
+}
+
+td{
+    font-size: 20px;
 }
