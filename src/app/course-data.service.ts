@@ -258,6 +258,10 @@ export class CourseDataService {
   }
   async addcoursetodatabase(cour: any) {
     await addcourse(cour);
+    const carr = this.AuthedUser['courses'];
+    carr.push(cour["courseName"]);
+
+    await enrollcourss(carr, this.AuthedUser['email']);
   }
   async enroll(cour: string) {
     const carr = this.AuthedUser['courses'];

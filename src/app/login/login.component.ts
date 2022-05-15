@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
     
     
     const mess= await signin(email,password);
-    console.log(mess)
+    console.log("abaaaaaaaaaaaaaaaaaaaaaaaaa",mess)
     this.courseData.setAuthedUser(mess.user)
     GetCourses()
     if(mess["state"]=="error")
