@@ -87,7 +87,8 @@ export class FacultyMyCoursesComponent implements OnInit {
     this.addCourseForm.value['courseQuizzes'] =
       this.addCourseForm.value['courseQuizzes'][0];
     console.log('saving1', this.addCourseForm.value);
-    this.courseData.addcoursetodatabase(this.addCourseForm.value);
+  
+    this.courseData.addcoursetodatabase(this.addCourseForm.value,this.range.value.start,this.range.value.end);
   }
   openQuizDialog() {
     let dialogRef = this.dialog.open(AddCourseQuizDialogComponent);

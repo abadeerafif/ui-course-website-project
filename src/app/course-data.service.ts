@@ -256,11 +256,13 @@ export class CourseDataService {
       approveeuser(mails[j]);
     }
   }
-  async addcoursetodatabase(cour: any) {
+  async addcoursetodatabase(cour: any,start:any,end:any) {
+    cour.start=start;
+    cour.end=end;
+
     await addcourse(cour);
     const carr = this.AuthedUser['courses'];
     carr.push(cour["courseName"]);
-
     await enrollcourss(carr, this.AuthedUser['email']);
   }
   async enroll(cour: string) {
