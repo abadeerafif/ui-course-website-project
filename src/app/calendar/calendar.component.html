@@ -6,8 +6,8 @@
     </tr>
     <tr *ngFor="let course of filteredCourses;">
         <td>{{course.courseName}}</td>
-        <td>{{course.start}}</td>
-        <td>{{course.end}}</td>
+        <td>{{course.start | date:'dd/MM/yyyy'}}</td>
+        <td>{{course.end | date:'dd/MM/yyyy'}}</td>
     </tr>
 </table>
 
