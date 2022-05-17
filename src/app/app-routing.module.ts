@@ -38,6 +38,7 @@ const routes: Routes = [
   { path: 'quiz/:id', component: QuizComponent },
   { path: 'videos/:id', component: VideoComponent },
   { path: '', redirectTo: '/mainMenu', pathMatch: 'full' },
+  { path: '**', redirectTo: '/mainMenu'},
 ];
 
 @NgModule({
