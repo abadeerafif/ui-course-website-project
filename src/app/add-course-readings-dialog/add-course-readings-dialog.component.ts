@@ -9,5 +9,14 @@ export class AddCourseReadingsDialogComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-  ReadingContent: String = '';
+  ReadingContent: File | null = null;
+
+  viewFile(event:any){
+    this.ReadingContent=event.target.files[0];
+  }
+
+ readFile(){
+   console.log(this.ReadingContent);
+ }
+
 }

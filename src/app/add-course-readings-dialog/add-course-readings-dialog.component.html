@@ -3,14 +3,17 @@
   Please Add the <strong>Reading Content</strong>
 </div>
 <div class="dialog-body">
-  <mat-form-field class="full-width">
+  <input type="file" id="file" accept=".pdf" (change)='viewFile($event)'>
+  <!-- <mat-form-field class="full-width">
     <textarea
       [(ngModel)]="ReadingContent"
       matInput
       placeholder="Reading Content"
     ></textarea>
-  </mat-form-field>
+    
+  </mat-form-field> -->
   <div mat-dialog-actions>
+    <button mat-button (click)="readFile()">check file</button>
     <button mat-button mat-dialog-close>Cancel</button>
     <button mat-button mat-dialog-close mat-dialog-close="{{ ReadingContent }}">
       Submit
