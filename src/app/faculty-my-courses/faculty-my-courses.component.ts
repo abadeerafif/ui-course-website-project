@@ -31,7 +31,7 @@ export class FacultyMyCoursesComponent implements OnInit {
     this.AuthedUser = this.courseData.getAuthedUser();
     console.log(this.AuthedUser);
     if (this.AuthedUser.type === 'faculty') {
-      this.addCourseForm.controls['facultyCourse'].setValue('FCIS');
+      this.addCourseForm.controls['facultyCourse'].setValue(this.AuthedUser.name);
       for (var i = 0; i < coursesobj.length; i++) {
         if (coursesobj[i]['facultyCourse'] == this.AuthedUser.name) {
           this.courses.push(coursesobj[i]['courseName']);
