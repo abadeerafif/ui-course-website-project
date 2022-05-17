@@ -22,7 +22,7 @@
 </div>
 
 <div>
-  <div style="margin-left: 100px">
+  <div style="margin-left: 100px" id="AllCourses">
     <h4 style="color: #c280ff">Courses and Specialization</h4>
     <h2>Courses You Can Complete in a Day</h2>
     <h5>
@@ -30,13 +30,13 @@
       Python, and more.
     </h5>
   </div>
-  <div style="display: flex; justify-content: center">
+  <div style="display: flex; justify-content: center;">
     <app-course-card *ngFor="let course of courses; let i=index;" [course]="course" [number]="i">
     </app-course-card>
   </div>
 </div>
 
-<div *ngIf="courseData.AuthedUser && courseData.AuthedUser.type === 'student'">
+<div *ngIf="courseData.AuthedUser && courseData.AuthedUser.type === 'student'" id="MyCourses">
   <h2 style="margin-left: 100px">Your Courses</h2>
 
   <div style="display: flex; justify-content: center">
@@ -60,7 +60,7 @@
   <h2 style="margin-left: 100px">Finished Courses</h2>
 
   <div style="display: flex; justify-content: center">
-    <app-course-card  *ngFor="let course of finishedCourses;let i=index;" [course]="course" [number]="i+courses.length+studentCourses.length">
+    <app-course-card  *ngFor="let course of finishedCourses;let i=index;" [course]="course" [number]="i+courses.length+studentCourses.length+availablePrerequisitedCourses.length">
     </app-course-card>
     <h2 *ngIf="finishedCourses.length===0">no courses found</h2>
   </div>

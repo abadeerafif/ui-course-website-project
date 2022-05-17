@@ -8,8 +8,8 @@
         <a (click)="gotoCourse()">Courses</a>
       </div>
     </div>
-    <a *ngIf="courseData.AuthedUser && courseData.AuthedUser.type === 'student'" mat-button>Courses</a>
-    <a *ngIf="courseData.AuthedUser && courseData.AuthedUser.type === 'student'" mat-button>Registered Courses</a>
+    <a *ngIf="courseData.AuthedUser && courseData.AuthedUser.type === 'student'" mat-button (click)="viewAllCourses()">Courses</a>
+    <a *ngIf="courseData.AuthedUser && courseData.AuthedUser.type === 'student'" mat-button (click)="gotoMyCourses()">Registered Courses</a>
     <a *ngIf="courseData.AuthedUser && courseData.AuthedUser.type === 'student'" routerLink="calendar" mat-button>My Calendar</a>
     <a *ngIf="courseData.AuthedUser && courseData.AuthedUser.type === 'faculty'" routerLink="my-faculty-course" mat-button>Add/Edit Course</a>
     

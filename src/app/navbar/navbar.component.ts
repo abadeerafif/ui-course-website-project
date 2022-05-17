@@ -26,4 +26,10 @@ export class NavbarComponent implements OnInit {
   gotoCourse(){
     this.router.navigate(['/explore'],{ fragment: 'ourCourses' });
   }
+  gotoMyCourses(){
+    this.router.navigate(['/mainMenu'],{ fragment: 'MyCourses' });
+  }
+  viewAllCourses(){
+    this.router.navigate(['/mainMenu'],{ fragment: 'AllCourses' });
+  }
 }
