@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'explore', component: ExploreComponent },
-  { path: 'calendar', component: CalendarComponent },
+  { path: 'calendar', component: CalendarComponent, canActivate:[StudentGuard] },
   {
     path: 'accept-student-registration',
     component: AcceptStudentRegistrationComponent,
@@ -32,12 +32,13 @@ const routes: Routes = [
     canActivate: [AdminGuardGuard]
   },
   
-  { path: 'my-faculty-course', component: FacultyMyCoursesComponent, canActivate: [FacultyGuard] },
+  { path: 'my-faculty-course', component: FacultyMyCoursesComponent},
   { path: 'add-course', component: FacultyMyCoursesComponent, canActivate: [AdminGuardGuard] },
-  { path: 'course-content/:id', component: CourseContentComponent },
-  { path: 'quiz/:id', component: QuizComponent },
-  { path: 'videos/:id', component: VideoComponent },
+  { path: 'course-content/:id', component: CourseContentComponent, canActivate:[StudentGuard] },
+  { path: 'quiz/:id', component: QuizComponent, canActivate:[StudentGuard] },
+  { path: 'videos/:id', component: VideoComponent, canActivate:[StudentGuard] },
   { path: '', redirectTo: '/mainMenu', pathMatch: 'full' },
+  { path: '**', redirectTo: '/mainMenu'},
 ];
 
 @NgModule({

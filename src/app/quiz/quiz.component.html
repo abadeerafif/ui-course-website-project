@@ -16,4 +16,7 @@
       >/5
     </mat-card-title>
   </mat-card>
+  <button mat-raised-button [disabled]="grade>4?false:true" (click)="done()" style="margin: 25px 45%">
+    Done
+  </button>
 </mat-card>

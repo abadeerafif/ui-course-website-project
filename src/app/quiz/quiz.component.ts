@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { filter } from 'rxjs';
 import { CourseDataService } from '../course-data.service';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class QuizComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private courseData: CourseDataService
   ) {}
 
@@ -44,6 +45,7 @@ export class QuizComponent implements OnInit {
   graded = false;
   grade = 0;
   evaluate() {
+    this.grade=0;
     this.graded = true;
     for (let i = 0; i < 5; i++) {
       if (this.answers[i].answer === this.quiz[i].questionAnswer) {
@@ -54,5 +56,9 @@ export class QuizComponent implements OnInit {
     {
       this.courseData.finishcour(this.coursename)
     }
+  }
+
+  done(){
+    this.router.navigateByUrl('mainMenu');
   }
 }
