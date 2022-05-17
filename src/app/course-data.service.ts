@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { filter } from 'rxjs';
 import {GetCourses,Getuseraccepted,Getuserspending,GetCoursesname,deleteuser,approveeuser,addcourse,enrollcourss,Getfacultynames,finicourss} from '../app/firebasemodules/getingdatamodule'
 import {signin} from '../app/firebasemodules/signinmodule'
-
+import {uploadfile} from '../app/firebasemodules/firebasestoragemodule'
 @Injectable({
   providedIn: 'root',
 })
@@ -283,6 +283,11 @@ export class CourseDataService {
 
 
     return output;
+  }
+  async uploadreadingfile(courseName:string,file:any): Promise<void> {
+    uploadfile(courseName,file);
+
+    
   }
 
 }

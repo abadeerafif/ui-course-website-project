@@ -81,11 +81,22 @@ export class FacultyMyCoursesComponent implements OnInit {
     );
     this.addCourseForm.controls['obj'].setValue('');
   }
-  saveForm() {
+  async saveForm() {
+    console.log("abadeer",this.addCourseForm.value['courseReadings']);
+    await this.courseData.uploadreadingfile(this.addCourseForm.value['courseName'],this.addCourseForm.value['courseReadings']);
+    const readingnamearr : string[]=[];
+    for(let i=0;i<this.addCourseForm.value['courseReadings'].length;i++)
+    {
+      readingnamearr.push(this.addCourseForm.value['courseReadings'][i]["name"])
+
+    }
+    this.addCourseForm.value['courseReadings']=readingnamearr
+
+    
     console.log('saving', this.addCourseForm.value);
 
     this.addCourseForm.value['courseQuizzes'] =
-      this.addCourseForm.value['courseQuizzes'][0];
+    this.addCourseForm.value['courseQuizzes'][0];
     console.log('saving1', this.addCourseForm.value);
   
     this.courseData.addcoursetodatabase(this.addCourseForm.value,this.range.value.start,this.range.value.end);
@@ -109,6 +120,7 @@ export class FacultyMyCoursesComponent implements OnInit {
     let dialogRef = this.dialog.open(AddCourseReadingsDialogComponent);
     dialogRef.afterClosed().subscribe((res) => {
       this.addCourseForm.value.courseReadings.push(res);
+      console.log(res);
     });
   }
   selectedCourse: string = '';

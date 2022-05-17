@@ -15,7 +15,7 @@
   <div mat-dialog-actions>
     <button mat-button (click)="readFile()">check file</button>
     <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-button mat-dialog-close mat-dialog-close="{{ ReadingContent }}">
+    <button mat-button [mat-dialog-close]="ReadingContent" >
       Submit
     </button>
   </div>
