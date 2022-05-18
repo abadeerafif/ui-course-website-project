@@ -32,15 +32,14 @@ export async function uploadfile (courseName:string,file:any)
     
 
 }
-export async function downloadreading (courseName:string,filename:string)
+export async function downloadreading (courseName:string,filename:string) :Promise<string>
 {
   const readingref = ref(storage, courseName+'/'+filename);
 
     
-  getDownloadURL(readingref)
-  .then((url) => {
-    return url;
-  })
+  const url=await getDownloadURL(readingref)
+  return url;
+  
   
     
 

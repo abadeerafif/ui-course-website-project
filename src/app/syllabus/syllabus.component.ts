@@ -16,16 +16,25 @@ export class SyllabusComponent implements OnInit {
   readCount = 0;
   public selectedReadings: any[] = [];
   public selectedVideos: any[] = [];
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.content = this.courseData.content;
     this.vidCount = this.content.filter((obj) => obj.type == 'video').length;
     this.readCount = this.content.filter(
       (obj) => obj.type == 'readings'
     ).length;
+    
+    
+    for(let i=0;i<this.data.courseReadings.length;i++)
+    {
+      console.log("file name"+this.data.courseReadings[i])
+      const reading=await this.courseData.downloadlink(this.data.courseName,this.data.courseReadings[i]);
+      this.data.courseReadings[i]=reading
+    }
+    console.log("paaaaa",this.data.courseReadings)
 
-    this.selectedReadings = this.data.courseReadings.map((reading: any) => ({
+    this.selectedReadings = this.data.courseReadings.map((readingg: string) => ({
       selected: false,
-      reading,
+      reading:readingg,
     }));
     this.selectedVideos = this.data.courseVideos.map((video: any) => ({
       selected: false,
