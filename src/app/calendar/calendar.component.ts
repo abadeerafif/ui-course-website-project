@@ -10,6 +10,7 @@ export class CalendarComponent implements OnInit {
 
   public courseList: string[] = [];
   public allAvailableCourses: any[] = [];
+  loading:boolean=true;
   public filteredCourses: any[] = [];
   constructor(public courseData: CourseDataService) { }
 
@@ -34,6 +35,8 @@ export class CalendarComponent implements OnInit {
       var enddate = mycourse.end.toDate().toDateString();
       mycourse.end=enddate;
     }
+    this.loading=false;
   }
+  
 
 }

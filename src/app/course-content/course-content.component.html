@@ -1,4 +1,7 @@
-<div *ngIf="loading">loading...</div>
+<div class="center" *ngIf="loading">
+  <mat-progress-bar mode="buffer" *ngIf="loading"></mat-progress-bar>
+  <div>loading...</div>
+</div>
 <div class="course-content-layout" *ngIf="!loading">
   <mat-card-title>
     {{ selectedCourse.courseName }}

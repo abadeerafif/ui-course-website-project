@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
   }
 
   isFaculty = false;
+  loading:boolean=false;
 
   courses: string[] = [
     'Data Structure',
@@ -43,11 +44,12 @@ export class LoginComponent implements OnInit {
   }
   async login(email:string,password:string) {
     
-    
+    this.loading=true
     const mess= await signin(email,password);
     console.log("abaaaaaaaaaaaaaaaaaaaaaaaaa",mess)
     this.courseData.setAuthedUser(mess.user)
-    GetCourses()
+    await GetCourses()
+    this.loading=false
     if(mess["state"]=="error")
     {
       this.dialog.open(dialogg,{data:mess["message"]});

@@ -15,6 +15,7 @@ export class MainMenuComponent implements OnInit {
   public studentCourses: string[] = [];
   public availablePrerequisitedCourses: any[] = [];
   public finishedCourses: any[] = [];
+  loading:boolean=true;
   async ngOnInit(): Promise<void> {
     this.courses = await this.courseData.getCourseNames();
     if (this.courseData.AuthedUser) {
@@ -30,6 +31,8 @@ export class MainMenuComponent implements OnInit {
       }
     }
     console.log('asdsadas', this.courseData.AuthedUser);
+    
+    this.loading=false;
   }
   goset(emaill: string) {
     this.courseData.setEmail(emaill);

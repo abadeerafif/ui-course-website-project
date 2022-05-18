@@ -6,7 +6,13 @@
         <img [src]="netImage" class="img1">
     </figure>
 </div> -->
+<div class="center" *ngIf="loading">
+  <mat-progress-bar mode="buffer" *ngIf="loading"></mat-progress-bar>
+  <div>loading...</div>
+</div>
 
+
+<div *ngIf="!loading">
 <div class="main-menu-layout" *ngIf="!courseData.AuthedUser">
   <div class="upperbutton">
     <h1>Learn without limits</h1>
@@ -97,4 +103,5 @@
     Add Cour
   </button>
 </div>-->
+</div>
 </div>
