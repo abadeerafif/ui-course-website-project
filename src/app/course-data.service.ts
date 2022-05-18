@@ -273,6 +273,11 @@ export class CourseDataService {
   async finishcour(cour : string)
   {
    const carr=this.AuthedUser["finshedcourses"]
+   for(let i=0;i<this.AuthedUser["finshedcourses"].length;i++)
+   {
+     if(this.AuthedUser["finshedcourses"][i]==cour)
+        return ;
+   }
     carr.push(cour)
     await finicourss(carr,this.AuthedUser["email"])
 
