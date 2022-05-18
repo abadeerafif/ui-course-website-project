@@ -14,24 +14,13 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth();
-export async function signup(email:string,password:string,name:string):Promise<string>
+export async function signup(email:string,password:string,name:string):Promise<void>
 {
-    var output="waiting"
+   
     
-    var usersi=await createUserWithEmailAndPassword(auth, email, password).catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log("erraaaaaaaaor :",errorMessage)
-        var output="error"
-      });
-      if(usersi==null)
-      {
-        output="error"
-      }
-     console.log(usersi)
-     adduserpending(email,name)
-  
-  
-  return output
+    var usersi=await createUserWithEmailAndPassword(auth, email, password).then(()=>{
+      console.log(usersi)
+      adduserpending(email,name)
 
+    })
 }

@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
     email:['',[Validators.required,Validators.email]],
     pass:['',[Validators.required]]
   })
+  error:boolean=false;
 
   constructor(private router: Router,private formBuilder:FormBuilder) { }
 
@@ -21,7 +22,8 @@ export class RegisterComponent implements OnInit {
   }
   submitsignup(email:string,password:string,fullname:string)
   {
-    signup(email,password,fullname);
+    this.error=false
+    signup(email,password,fullname).catch((error)=>{this.error=true});
     
 
   }

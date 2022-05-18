@@ -1,7 +1,9 @@
 <form [formGroup]="myForm">
     <h1>Sign Up</h1>
-    <h4 style="text-align: center;">Learn in your own time from top universities and businesses.</h4>
+    <h4  style="text-align: center;" >Learn in your own time from top universities and businesses.</h4>
+    <h5 style="text-align: center; color:red;"*ngIf="error">This Mail Already Exist</h5>
       <div class="container">
+        
     <div>
       <label for="fullname"><b>Full Name</b></label> <br/>
       <input type="text" formControlName="name" placeholder="Enter your Full Name" name="fullname" required #name>
