@@ -10,7 +10,7 @@ import {signup} from '../firebasemodules/signupmodule'
 })
 export class RegisterComponent implements OnInit {
   myForm:FormGroup = this.formBuilder.group({
-    name:['',[Validators.required,Validators.minLength(4)]],
+    name:['',[Validators.required,Validators.minLength(3)]],
     email:['',[Validators.required,Validators.email]],
     pass:['',[Validators.required]]
   })
